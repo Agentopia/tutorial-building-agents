@@ -1,0 +1,59 @@
+# BixoryAI Training Portal Integration Metadata
+
+# Specification version this course follows
+spec_version: "1.0.0"
+spec_url: "https://training-portal.bixory.ai/docs/integration-spec"
+last_updated: "2025-12-16"
+compliant: false  # Set to true after completing integration
+
+# Course information
+course:
+  id: "elated-neumann"                    # e.g., "advanced-ml"
+  title: "## 🎯 项目介绍"              # e.g., "Advanced Machine Learning"
+  local_port: 3001                        # Pick available port: 3001, 3002, etc.
+  production_url: "[TODO: https://...]"           # e.g., "https://advanced-ml.bixory.ai"
+  staging_url: "[TODO: https://staging...]"       # Optional
+
+# Tech stack requirements (from spec v1.0.0)
+requirements:
+  nextjs: "14.2.0"
+  react: "18.3.0"
+  typescript: "5.3.3"
+  course_sdk: "1.0.0"
+
+# Integration status
+integration:
+  endpoints:
+    manifest: false  # GET /api/manifest
+    health: false    # GET /api/health
+    progress: false  # POST /api/progress/sync
+
+  features:
+    sso: false              # Portal SSO integration
+    progress_tracking: false # Progress reporting
+    standalone_mode: false   # Can run independently
+    embedded_mode: false     # Can run in portal iframe
+
+  database:
+    supabase_connected: false  # Connected to shared Supabase
+    rls_configured: false      # Row-Level Security policies set
+
+# Course-specific features
+features:
+  code_execution: false      # Has interactive code runner
+  backend_services: false    # Has backend API
+  multilingual: false        # Multiple languages
+  chapters: 16   # Number of chapters
+  estimated_hours: 16  # Estimated completion time
+
+# Maintainer information
+maintainer:
+  organization: "[TODO: Your Organization]"
+  repository: "[TODO: https://github.com/your-org/your-course]"
+  contact: "[TODO: https://github.com/your-org/your-course/issues]"
+
+# Last verification
+verification:
+  last_tested: null
+  tested_with_portal_version: null
+  notes: "[TODO: Add notes or leave empty]"
