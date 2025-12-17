@@ -206,3 +206,6 @@ next-env.d.ts
 # Lock files (keep package-lock.json, ignore others)
 yarn.lock
 pnpm-lock.yaml
+
+# Claude Code settings
+.claude/
