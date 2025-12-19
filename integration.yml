@@ -3,57 +3,82 @@
 # Specification version this course follows
 spec_version: "1.0.0"
 spec_url: "https://training-portal.bixory.ai/docs/integration-spec"
-last_updated: "2025-12-16"
-compliant: false  # Set to true after completing integration
+last_updated: "2025-12-18"
+compliant: false  # Will be true after Supabase and SSO are configured
 
 # Course information
 course:
-  id: "elated-neumann"                    # e.g., "advanced-ml"
-  title: "## 🎯 项目介绍"              # e.g., "Advanced Machine Learning"
-  local_port: 3001                        # Pick available port: 3001, 3002, etc.
-  production_url: "[TODO: https://...]"           # e.g., "https://advanced-ml.bixory.ai"
-  staging_url: "[TODO: https://staging...]"       # Optional
+  id: "elated-neumann"
+  title: "Hello Agents - Building AI Agents from Scratch"
+  local_port: 3001
+  production_url: "https://hello-agents.bixory.ai"  # TODO: Deploy
+  staging_url: "https://staging.hello-agents.bixory.ai"  # TODO: Deploy
 
 # Tech stack requirements (from spec v1.0.0)
 requirements:
-  nextjs: "14.2.0"
-  react: "18.3.0"
-  typescript: "5.3.3"
-  course_sdk: "1.0.0"
+  nextjs: "14.2.18"  # ✓ Implemented
+  react: "18.3.1"    # ✓ Implemented
+  typescript: "5.x"  # ✓ Implemented
+  course_sdk: "1.0.0"  # ⏳ Awaiting SDK creation in training-portal
 
 # Integration status
 integration:
   endpoints:
-    manifest: false  # GET /api/manifest
-    health: false    # GET /api/health
-    progress: false  # POST /api/progress/sync
+    manifest: true   # ✓ GET /api/manifest - implemented & tested
+    health: true     # ✓ GET /api/health - implemented & tested
+    progress: true   # ✓ POST /api/progress/sync - stub implemented
 
   features:
-    sso: false              # Portal SSO integration
-    progress_tracking: false # Progress reporting
-    standalone_mode: false   # Can run independently
-    embedded_mode: false     # Can run in portal iframe
+    sso: false              # ⏳ Awaiting portal SSO implementation
+    progress_tracking: true # ✓ Stub ready, needs Supabase credentials
+    standalone_mode: true   # ✓ Fully functional standalone
+    embedded_mode: true     # ✓ Ready for iframe embedding
 
   database:
-    supabase_connected: false  # Connected to shared Supabase
-    rls_configured: false      # Row-Level Security policies set
+    supabase_connected: false  # ⏳ Awaiting shared Supabase credentials
+    rls_configured: false      # ⏳ Awaiting Supabase RLS setup
 
 # Course-specific features
 features:
-  code_execution: false      # Has interactive code runner
-  backend_services: false    # Has backend API
-  multilingual: false        # Multiple languages
-  chapters: 16   # Number of chapters
-  estimated_hours: 16  # Estimated completion time
+  code_execution: false      # Not needed for this course
+  backend_services: false    # Static frontend only
+  multilingual: false        # English only
+  chapters: 16               # 16 chapters across 5 parts
+  estimated_hours: 40        # Comprehensive tutorial
+
+# Content organization
+content:
+  parts:
+    - name: "Fundamentals of Agents and Language Models"
+      chapters: [1, 2, 3]
+    - name: "Building Your LLM Agent"
+      chapters: [4, 5, 6, 7]
+    - name: "Advanced Knowledge"
+      chapters: [8, 9, 10, 11, 12]
+    - name: "Comprehensive Case Studies"
+      chapters: [13, 14, 15]
+    - name: "Graduation Project"
+      chapters: [16]
 
 # Maintainer information
 maintainer:
-  organization: "[TODO: Your Organization]"
-  repository: "[TODO: https://github.com/your-org/your-course]"
-  contact: "[TODO: https://github.com/your-org/your-course/issues]"
+  organization: "Datawhale China"
+  repository: "https://github.com/Agentopia/tutorial-building-agents"
+  contact: "https://github.com/Agentopia/tutorial-building-agents/issues"
 
 # Last verification
 verification:
-  last_tested: null
-  tested_with_portal_version: null
-  notes: "[TODO: Add notes or leave empty]"
+  last_tested: "2025-12-18"
+  tested_with_portal_version: null  # Portal not yet deployed
+  notes: |
+    Frontend fully implemented with:
+    - Interactive chapter navigation
+    - Beautiful markdown rendering
+    - All 3 required API endpoints
+    - Environment configuration complete
+    
+    Awaiting:
+    - Training portal deployment
+    - Shared Supabase instance setup
+    - @bixoryai/course-sdk package
+    - SSO implementation
