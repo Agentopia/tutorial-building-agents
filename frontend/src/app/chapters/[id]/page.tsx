@@ -499,7 +499,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   { id: 'e8', source: 'get', target: 'reach', animated: true },
                   { id: 'e9', source: 'get', target: 'grasp', animated: true },
                   { id: 'e10', source: 'put', target: 'tower', label: 'Place', animated: true },
-                  { id: 'e11', source: 'tower', target: 'builder', label: 'Feedback', animated: true, style: { stroke: '#22c55e' } }
+                  { id: 'e11', source: 'tower', target: 'builder', label: 'Feedback', animated: true }
                 ]}
                 height={700}
               />
@@ -562,8 +562,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   { id: 'e4', source: 'action', target: 'env', animated: true },
                   { id: 'e5', source: 'env', target: 'newstate', label: '3. Transition', animated: true },
                   { id: 'e6', source: 'env', target: 'reward', label: '4. Feedback', animated: true },
-                  { id: 'e7', source: 'reward', target: 'agent', label: '5. Learn & Update π', animated: true, style: { stroke: '#22c55e' } },
-                  { id: 'e8', source: 'newstate', target: 'agent', label: 'Next cycle', animated: true, style: { strokeDasharray: '5,5' } }
+                  { id: 'e7', source: 'reward', target: 'agent', label: '5. Learn & Update π', animated: true },
+                  { id: 'e8', source: 'newstate', target: 'agent', label: 'Next cycle', animated: true }
                 ]}
                 height={400}
               />
@@ -659,9 +659,9 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   { id: 'e7', source: 'tools', target: 'action', animated: true },
                   { id: 'e8', source: 'action', target: 'newstate', animated: true },
                   { id: 'e9', source: 'execution', target: 'result', label: 'Return', animated: true },
-                  { id: 'e10', source: 'result', target: 'llm', label: 'Feedback', animated: true, style: { stroke: '#22c55e' } },
-                  { id: 'e11', source: 'newstate', target: 'perception', label: 'Next Observation', animated: true, style: { strokeDasharray: '5,5' } },
-                  { id: 'e12', source: 'llm', target: 'memory', label: 'Update', animated: true, style: { stroke: '#f59e0b' } }
+                  { id: 'e10', source: 'result', target: 'llm', label: 'Feedback', animated: true },
+                  { id: 'e11', source: 'newstate', target: 'perception', label: 'Next Observation', animated: true },
+                  { id: 'e12', source: 'llm', target: 'memory', label: 'Update', animated: true }
                 ]}
                 height={650}
               />
@@ -674,9 +674,12 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                 Test your understanding of agent evolution, paradigm shifts, and historical milestones.
               </p>
               <Quiz
+                chapterId={2}
+                title="Chapter 2 Knowledge Check"
                 questions={[
                   {
                     id: 'q1',
+                    type: 'multiple-choice' as const,
                     question: 'What is the core limitation of symbolicism (rule-based systems) that ELIZA demonstrated?',
                     options: [
                       { id: 'a', text: 'Too slow to process user input', isCorrect: false },
@@ -689,6 +692,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   },
                   {
                     id: 'q2',
+                    type: 'multiple-choice' as const,
                     question: 'According to Minsky\'s Society of Mind theory, where does complex intelligence come from?',
                     options: [
                       { id: 'a', text: 'A single, powerful central reasoning engine', isCorrect: false },
@@ -701,6 +705,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   },
                   {
                     id: 'q3',
+                    type: 'multiple-choice' as const,
                     question: 'What are the three core elements of the Reinforcement Learning framework?',
                     options: [
                       { id: 'a', text: 'Sensor, Processor, Actuator', isCorrect: false },
@@ -713,6 +718,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   },
                   {
                     id: 'q4',
+                    type: 'multiple-choice' as const,
                     question: 'How did the pre-training paradigm solve symbolicism\'s "knowledge acquisition bottleneck"?',
                     options: [
                       { id: 'a', text: 'By manually encoding more rules into the system', isCorrect: false },
@@ -725,6 +731,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   },
                   {
                     id: 'q5',
+                    type: 'multiple-choice' as const,
                     question: 'Which emergent ability of large language models enables them to perform new tasks with just a few examples in the prompt?',
                     options: [
                       { id: 'a', text: 'Transfer learning', isCorrect: false },
@@ -737,6 +744,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   },
                   {
                     id: 'q6',
+                    type: 'multiple-choice' as const,
                     question: 'True or False: Modern LLM agents integrate all three historical paradigms - Symbolism (tool use, planning), Connectionism (neural networks), and Behaviorism (RL/RLHF).',
                     options: [
                       { id: 'true', text: 'True', isCorrect: true },
@@ -747,6 +755,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   },
                   {
                     id: 'q7',
+                    type: 'multiple-choice' as const,
                     question: 'What was the key innovation of Expert Systems like MYCIN in the 1970s-80s?',
                     options: [
                       { id: 'a', text: 'Using neural networks to learn from data', isCorrect: false },
@@ -759,6 +768,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   },
                   {
                     id: 'q8',
+                    type: 'multiple-choice' as const,
                     question: 'In the RL loop, what does the agent\'s POLICY (π) represent?',
                     options: [
                       { id: 'a', text: 'The total reward the agent has accumulated', isCorrect: false },
@@ -828,13 +838,6 @@ print(f"Step 3: P(learns|agent) = {count_agent_learns}/{count_agent} = {p_learns
 # --- Finally: Multiply the probabilities ---
 p_sentence = p_datawhale * p_agent_given_datawhale * p_learns_given_agent
 print(f"\\nFinal: P('datawhale agent learns') ≈ {p_sentence:.3f}")`}
-                testCases={[
-                  {
-                    input: '',
-                    expectedOutput: '0.167',
-                    description: 'Verify probability calculation matches 0.167'
-                  }
-                ]}
               />
             </section>
 
@@ -873,13 +876,6 @@ print(f"Result vector (king - man + woman): {result_vec}")
 print(f"Queen vector: {embeddings['queen']}")
 print(f"Cosine similarity: {sim:.4f}")
 print(f"\\nPerfect match! This shows embeddings capture abstract concepts like 'royalty' and 'gender'.")`}
-                testCases={[
-                  {
-                    input: '',
-                    expectedOutput: '1.0000',
-                    description: 'Verify cosine similarity is 1.0 (perfect match)'
-                  }
-                ]}
               />
             </section>
 
@@ -1005,7 +1001,7 @@ print(f"\\nPerfect match! This shows embeddings capture abstract concepts like '
                   { id: 'e9', source: 'pos-dec', target: 'dec-layer', animated: true },
                   { id: 'e10', source: 'dec-layer', target: 'masked-attn', label: 'Layer details', animated: true },
                   { id: 'e11', source: 'dec-layer', target: 'cross-attn', animated: true },
-                  { id: 'e12', source: 'enc-output', target: 'cross-attn', label: 'K, V from encoder', animated: true, style: { stroke: '#10b981' } },
+                  { id: 'e12', source: 'enc-output', target: 'cross-attn', label: 'K, V from encoder', animated: true },
                   { id: 'e13', source: 'cross-attn', target: 'ffn-dec', animated: true },
                   { id: 'e14', source: 'ffn-dec', target: 'linear', animated: true },
                   { id: 'e15', source: 'linear', target: 'softmax', animated: true }
@@ -1152,13 +1148,6 @@ for i in range(num_merges):
     print("-" * 50)
 
 print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
-                testCases={[
-                  {
-                    input: '',
-                    expectedOutput: 'ug</w>',
-                    description: 'Verify BPE creates "ug</w>" token through merging'
-                  }
-                ]}
               />
             </section>
 
@@ -1169,9 +1158,12 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                 Test your understanding of language models, transformers, attention mechanisms, and tokenization.
               </p>
               <Quiz
+                chapterId={3}
+                title="Chapter 3 Knowledge Check"
                 questions={[
                   {
                     id: 'q1',
+                    type: 'multiple-choice' as const,
                     question: 'What is the core limitation of N-gram language models that neural networks solve?',
                     options: [
                       { id: 'a', text: 'Computational complexity', isCorrect: false },
@@ -1184,6 +1176,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q2',
+                    type: 'multiple-choice' as const,
                     question: 'In the attention mechanism formula Attention(Q,K,V) = softmax(QK^T/√d_k)V, what does the √d_k scaling factor prevent?',
                     options: [
                       { id: 'a', text: 'Attention weights from summing to more than 1', isCorrect: false },
@@ -1196,6 +1189,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q3',
+                    type: 'multiple-choice' as const,
                     question: 'What is the purpose of Multi-Head Attention (using h=8 heads instead of h=1)?',
                     options: [
                       { id: 'a', text: 'Reduce computational cost by parallelizing attention', isCorrect: false },
@@ -1208,6 +1202,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q4',
+                    type: 'multiple-choice' as const,
                     question: 'Why does Transformer use Positional Encoding instead of position embeddings?',
                     options: [
                       { id: 'a', text: 'Self-attention is order-invariant - without position info, "agent learns" = "learns agent"', isCorrect: true },
@@ -1220,6 +1215,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q5',
+                    type: 'multiple-choice' as const,
                     question: 'In BPE tokenization, what determines which token pair to merge next?',
                     options: [
                       { id: 'a', text: 'The pair with the highest frequency in the corpus', isCorrect: true },
@@ -1232,6 +1228,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q6',
+                    type: 'multiple-choice' as const,
                     question: 'What is the role of the Feed-Forward Network (FFN) in each Transformer layer?',
                     options: [
                       { id: 'a', text: 'Aggregate information across the sequence', isCorrect: false },
@@ -1244,6 +1241,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q7',
+                    type: 'multiple-choice' as const,
                     question: 'True or False: In Decoder self-attention, "masking" prevents tokens from attending to future positions, ensuring autoregressive generation.',
                     options: [
                       { id: 'true', text: 'True', isCorrect: true },
@@ -1254,6 +1252,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q8',
+                    type: 'multiple-choice' as const,
                     question: 'Why are word embeddings better than one-hot encoding for neural language models?',
                     options: [
                       { id: 'a', text: 'One-hot vectors are too large (vocabulary size) and treat words as isolated symbols with no semantic relationships', isCorrect: true },
@@ -1302,72 +1301,79 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   {
                     id: '1',
                     type: 'input',
-                    data: { label: 'Start: Define Your Project', description: 'What type of agent application do you need to build?' },
+                    label: 'Start: Define Your Project',
+                    description: 'What type of agent application do you need to build?',
                     position: { x: 250, y: 0 }
                   },
                   {
                     id: '2',
                     type: 'default',
-                    data: { label: 'Team Technical Background?', description: 'Assess programming skills and technical expertise' },
+                    label: 'Team Technical Background?',
+                    description: 'Assess programming skills and technical expertise',
                     position: { x: 250, y: 100 }
                   },
                   {
                     id: '3',
                     type: 'default',
-                    data: { label: 'Non-Technical Team', description: 'Product managers, designers, operations, no coding skills' },
+                    label: 'Non-Technical Team',
+                    description: 'Product managers, designers, operations, no coding skills',
                     position: { x: 50, y: 200 }
                   },
                   {
                     id: '4',
                     type: 'default',
-                    data: { label: 'Mixed Team', description: 'Some technical background, prefer low-code efficiency' },
+                    label: 'Mixed Team',
+                    description: 'Some technical background, prefer low-code efficiency',
                     position: { x: 250, y: 200 }
                   },
                   {
                     id: '5',
                     type: 'default',
-                    data: { label: 'Technical Team', description: 'Strong programming skills, need deep customization' },
+                    label: 'Technical Team',
+                    description: 'Strong programming skills, need deep customization',
                     position: { x: 450, y: 200 }
                   },
                   {
                     id: '6',
                     type: 'output',
-                    data: { label: '✅ Choose Coze', description: 'Zero-code, drag-and-drop, rich plugins, one-click multi-platform publishing' },
-                    position: { x: 50, y: 300 },
-                    style: { background: '#10b981', color: 'white' }
+                    label: '✅ Choose Coze',
+                    description: 'Zero-code, drag-and-drop, rich plugins, one-click multi-platform publishing',
+                    position: { x: 50, y: 300 }
                   },
                   {
                     id: '7',
                     type: 'default',
-                    data: { label: 'Data Security?', description: 'Can data leave your infrastructure?' },
+                    label: 'Data Security?',
+                    description: 'Can data leave your infrastructure?',
                     position: { x: 250, y: 300 }
                   },
                   {
                     id: '8',
                     type: 'default',
-                    data: { label: 'Use Case Type?', description: 'Business automation or AI application?' },
+                    label: 'Use Case Type?',
+                    description: 'Business automation or AI application?',
                     position: { x: 450, y: 300 }
                   },
                   {
                     id: '9',
                     type: 'output',
-                    data: { label: '✅ Choose Dify (Cloud)', description: 'SaaS deployment, rapid prototyping, full-stack LLM development' },
-                    position: { x: 150, y: 400 },
-                    style: { background: '#10b981', color: 'white' }
+                    label: '✅ Choose Dify (Cloud)',
+                    description: 'SaaS deployment, rapid prototyping, full-stack LLM development',
+                    position: { x: 150, y: 400 }
                   },
                   {
                     id: '10',
                     type: 'output',
-                    data: { label: '✅ Choose Dify (Self-Hosted)', description: 'Private deployment, enterprise security, AES-256 encryption, RBAC' },
-                    position: { x: 350, y: 400 },
-                    style: { background: '#10b981', color: 'white' }
+                    label: '✅ Choose Dify (Self-Hosted)',
+                    description: 'Private deployment, enterprise security, AES-256 encryption, RBAC',
+                    position: { x: 350, y: 400 }
                   },
                   {
                     id: '11',
                     type: 'output',
-                    data: { label: '✅ Choose n8n', description: 'Workflow automation + AI, connect 500+ services, private deployment' },
-                    position: { x: 450, y: 400 },
-                    style: { background: '#10b981', color: 'white' }
+                    label: '✅ Choose n8n',
+                    description: 'Workflow automation + AI, connect 500+ services, private deployment',
+                    position: { x: 450, y: 400 }
                   }
                 ]}
                 edges={[
@@ -1402,56 +1408,64 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   {
                     id: '1',
                     type: 'input',
-                    data: { label: 'User Request', description: 'Trigger: "Generate today\'s AI brief"' },
+                    label: 'User Request',
+                    description: 'Trigger: "Generate today\'s AI brief"',
                     position: { x: 250, y: 0 }
                   },
                   {
                     id: '2',
                     type: 'default',
-                    data: { label: 'RSS Plugin (36Kr)', description: 'Feed: https://www.36kr.com/feed' },
+                    label: 'RSS Plugin (36Kr)',
+                    description: 'Feed: https://www.36kr.com/feed',
                     position: { x: 50, y: 100 }
                   },
                   {
                     id: '3',
                     type: 'default',
-                    data: { label: 'RSS Plugin (Huxiu)', description: 'Feed: https://rss.huxiu.com/' },
+                    label: 'RSS Plugin (Huxiu)',
+                    description: 'Feed: https://rss.huxiu.com/',
                     position: { x: 150, y: 100 }
                   },
                   {
                     id: '4',
                     type: 'default',
-                    data: { label: 'RSS Plugin (IT Home)', description: 'Feed: http://www.ithome.com/rss/' },
+                    label: 'RSS Plugin (IT Home)',
+                    description: 'Feed: http://www.ithome.com/rss/',
                     position: { x: 250, y: 100 }
                   },
                   {
                     id: '5',
                     type: 'default',
-                    data: { label: 'GitHub Plugin', description: 'Query: "AI", sort by updated, 10 repos' },
+                    label: 'GitHub Plugin',
+                    description: 'Query: "AI", sort by updated, 10 repos',
                     position: { x: 350, y: 100 }
                   },
                   {
                     id: '6',
                     type: 'default',
-                    data: { label: 'arXiv Plugin', description: 'Search: "AI", count: 5, sort by latest' },
+                    label: 'arXiv Plugin',
+                    description: 'Search: "AI", count: 5, sort by latest',
                     position: { x: 450, y: 100 }
                   },
                   {
                     id: '7',
                     type: 'default',
-                    data: { label: 'Large Model Node', description: 'Role: Senior Tech Media Editor. Filter AI-related content, add emojis, format as brief' },
+                    label: 'Large Model Node',
+                    description: 'Role: Senior Tech Media Editor. Filter AI-related content, add emojis, format as brief',
                     position: { x: 250, y: 230 }
                   },
                   {
                     id: '8',
                     type: 'output',
-                    data: { label: 'Structured AI Brief', description: '🚀 10 AI News + 📚 5 Papers + 💻 5 GitHub Projects with titles, links, summaries' },
-                    position: { x: 250, y: 360 },
-                    style: { background: '#6366f1', color: 'white' }
+                    label: 'Structured AI Brief',
+                    description: '🚀 10 AI News + 📚 5 Papers + 💻 5 GitHub Projects with titles, links, summaries',
+                    position: { x: 250, y: 360 }
                   },
                   {
                     id: '9',
                     type: 'default',
-                    data: { label: 'One-Click Publishing', description: 'Deploy to WeChat, Feishu, Doubao, or Coze Store' },
+                    label: 'One-Click Publishing',
+                    description: 'Deploy to WeChat, Feishu, Doubao, or Coze Store',
                     position: { x: 250, y: 460 }
                   }
                 ]}
@@ -1489,52 +1503,58 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   {
                     id: '1',
                     type: 'input',
-                    data: { label: 'User Request', description: 'Natural language query from user' },
+                    label: 'User Request',
+                    description: 'Natural language query from user',
                     position: { x: 300, y: 0 }
                   },
                   {
                     id: '2',
                     type: 'default',
-                    data: { label: 'Question Classifier', description: 'Intelligent router: Analyze intent → Route to specialized agent' },
-                    position: { x: 300, y: 100 },
-                    style: { background: '#f59e0b', color: 'white' }
+                    label: 'Question Classifier',
+                    description: 'Intelligent router: Analyze intent → Route to specialized agent',
+                    position: { x: 300, y: 100 }
                   },
                   {
                     id: '3',
                     type: 'default',
-                    data: { label: 'Daily Assistant', description: 'General Q&A + Time Tools. Role: Daily Question Consultation Expert' },
+                    label: 'Daily Assistant',
+                    description: 'General Q&A + Time Tools. Role: Daily Question Consultation Expert',
                     position: { x: 50, y: 220 }
                   },
                   {
                     id: '4',
                     type: 'default',
-                    data: { label: 'Copywriting Optimizer', description: 'Polish, expand, improve text. Output: 500+ words, emotional resonance' },
+                    label: 'Copywriting Optimizer',
+                    description: 'Polish, expand, improve text. Output: 500+ words, emotional resonance',
                     position: { x: 180, y: 220 }
                   },
                   {
                     id: '5',
                     type: 'default',
-                    data: { label: 'Multimodal Generator', description: 'Doubao plugin: Image (1:1) + Video (seedream model)' },
+                    label: 'Multimodal Generator',
+                    description: 'Doubao plugin: Image (1:1) + Video (seedream model)',
                     position: { x: 310, y: 220 }
                   },
                   {
                     id: '6',
                     type: 'default',
-                    data: { label: 'Data Query Agent', description: 'rookie-text2data plugin: SQL generation → DB query → Visualization (pie/bar/line charts)' },
+                    label: 'Data Query Agent',
+                    description: 'rookie-text2data plugin: SQL generation → DB query → Visualization (pie/bar/line charts)',
                     position: { x: 440, y: 220 }
                   },
                   {
                     id: '7',
                     type: 'default',
-                    data: { label: 'MCP Tools Agent', description: 'ReAct mode: Amap navigation, dietary recommendations, news assistant (SSE)' },
+                    label: 'MCP Tools Agent',
+                    description: 'ReAct mode: Amap navigation, dietary recommendations, news assistant (SSE)',
                     position: { x: 570, y: 220 }
                   },
                   {
                     id: '8',
                     type: 'output',
-                    data: { label: 'Specialized Response', description: 'Context-aware answer from the most relevant agent' },
-                    position: { x: 300, y: 350 },
-                    style: { background: '#8b5cf6', color: 'white' }
+                    label: 'Specialized Response',
+                    description: 'Context-aware answer from the most relevant agent',
+                    position: { x: 300, y: 350 }
                   }
                 ]}
                 edges={[
@@ -1571,52 +1591,58 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   {
                     id: '1',
                     type: 'input',
-                    data: { label: 'Gmail Trigger', description: 'Event: Message Received. Automatically triggers on new email' },
+                    label: 'Gmail Trigger',
+                    description: 'Event: Message Received. Automatically triggers on new email',
                     position: { x: 250, y: 0 }
                   },
                   {
                     id: '2',
                     type: 'default',
-                    data: { label: 'Extract Email Data', description: 'From: sender, Subject: title, Body: content, ThreadId: conversation ID' },
+                    label: 'Extract Email Data',
+                    description: 'From: sender, Subject: title, Body: content, ThreadId: conversation ID',
                     position: { x: 250, y: 100 }
                   },
                   {
                     id: '3',
                     type: 'default',
-                    data: { label: 'AI Agent Node', description: 'Core brain: Gemini Chat Model + Memory + Tools. Autonomous decision-making' },
-                    position: { x: 250, y: 200 },
-                    style: { background: '#ec4899', color: 'white' }
+                    label: 'AI Agent Node',
+                    description: 'Core brain: Gemini Chat Model + Memory + Tools. Autonomous decision-making',
+                    position: { x: 250, y: 200 }
                   },
                   {
                     id: '4',
                     type: 'default',
-                    data: { label: 'Tool: SerpAPI', description: 'Search public information online to answer user questions' },
+                    label: 'Tool: SerpAPI',
+                    description: 'Search public information online to answer user questions',
                     position: { x: 50, y: 300 }
                   },
                   {
                     id: '5',
                     type: 'default',
-                    data: { label: 'Tool: Simple Vector Store', description: 'Query private knowledge base (work schedule, policies). Memory Key: my_private_knowledge' },
+                    label: 'Tool: Simple Vector Store',
+                    description: 'Query private knowledge base (work schedule, policies). Memory Key: my_private_knowledge',
                     position: { x: 250, y: 300 }
                   },
                   {
                     id: '6',
                     type: 'default',
-                    data: { label: 'Memory: Simple Memory', description: 'Remember conversation history per email thread. Key: threadId' },
+                    label: 'Memory: Simple Memory',
+                    description: 'Remember conversation history per email thread. Key: threadId',
                     position: { x: 450, y: 300 }
                   },
                   {
                     id: '7',
                     type: 'default',
-                    data: { label: 'Generate Response', description: 'Draft email with: Status prefix (work hours check) + Core answer (from SerpAPI) + Signature' },
+                    label: 'Generate Response',
+                    description: 'Draft email with: Status prefix (work hours check) + Core answer (from SerpAPI) + Signature',
                     position: { x: 250, y: 420 }
                   },
                   {
                     id: '8',
                     type: 'output',
-                    data: { label: 'Send Gmail Reply', description: 'To: sender, Subject: Re: [original], Body: formatted HTML with <br> tags' },
-                    position: { x: 250, y: 520 },
-                    style: { background: '#10b981', color: 'white' }
+                    label: 'Send Gmail Reply',
+                    description: 'To: sender, Subject: Re: [original], Body: formatted HTML with <br> tags',
+                    position: { x: 250, y: 520 }
                   }
                 ]}
                 edges={[
@@ -1651,52 +1677,58 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   {
                     id: '1',
                     type: 'input',
-                    data: { label: 'LLM Agent', description: 'User query: "Find restaurants near me"' },
+                    label: 'LLM Agent',
+                    description: 'User query: "Find restaurants near me"',
                     position: { x: 250, y: 0 }
                   },
                   {
                     id: '2',
                     type: 'default',
-                    data: { label: 'MCP Client', description: 'Agent-side: Send tool discovery request + function calls' },
+                    label: 'MCP Client',
+                    description: 'Agent-side: Send tool discovery request + function calls',
                     position: { x: 250, y: 100 }
                   },
                   {
                     id: '3',
                     type: 'default',
-                    data: { label: 'MCP Server', description: 'Standardized protocol server. Communication: SSE (Server-Sent Events) or JSON-RPC' },
-                    position: { x: 250, y: 200 },
-                    style: { background: '#06b6d4', color: 'white' }
+                    label: 'MCP Server',
+                    description: 'Standardized protocol server. Communication: SSE (Server-Sent Events) or JSON-RPC',
+                    position: { x: 250, y: 200 }
                   },
                   {
                     id: '4',
                     type: 'default',
-                    data: { label: 'Tool Discovery', description: 'MCP Server returns: Available tools (search_place, get_route, get_weather) + schemas' },
+                    label: 'Tool Discovery',
+                    description: 'MCP Server returns: Available tools (search_place, get_route, get_weather) + schemas',
                     position: { x: 80, y: 320 }
                   },
                   {
                     id: '5',
                     type: 'default',
-                    data: { label: 'Amap API', description: 'External service: Map data, POI search, route planning. API Key: AMAP_MAPS_API_KEY' },
+                    label: 'Amap API',
+                    description: 'External service: Map data, POI search, route planning. API Key: AMAP_MAPS_API_KEY',
                     position: { x: 250, y: 320 }
                   },
                   {
                     id: '6',
                     type: 'default',
-                    data: { label: 'Other APIs', description: 'Dietary recommendations, news feeds, weather services, etc.' },
+                    label: 'Other APIs',
+                    description: 'Dietary recommendations, news feeds, weather services, etc.',
                     position: { x: 420, y: 320 }
                   },
                   {
                     id: '7',
                     type: 'default',
-                    data: { label: 'Execute Tool Call', description: 'MCP Server calls Amap API: search_place(query="restaurant", location="current")' },
+                    label: 'Execute Tool Call',
+                    description: 'MCP Server calls Amap API: search_place(query="restaurant", location="current")',
                     position: { x: 250, y: 440 }
                   },
                   {
                     id: '8',
                     type: 'output',
-                    data: { label: 'Return Results', description: 'MCP Server → Agent: Restaurant list with names, addresses, ratings' },
-                    position: { x: 250, y: 540 },
-                    style: { background: '#10b981', color: 'white' }
+                    label: 'Return Results',
+                    description: 'MCP Server → Agent: Restaurant list with names, addresses, ratings',
+                    position: { x: 250, y: 540 }
                   }
                 ]}
                 edges={[
@@ -1812,9 +1844,12 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                 Knowledge Check: Low-Code Platforms Mastery
               </h3>
               <Quiz
+                chapterId={5}
+                title="Chapter 5 Knowledge Check"
                 questions={[
                   {
                     id: 'q1',
+                    type: 'multiple-choice' as const,
                     question: 'What is the PRIMARY advantage of low-code platforms over pure code development for agent applications?',
                     options: [
                       { id: 'a', text: 'Low-code platforms are always faster and more performant', isCorrect: false },
@@ -1827,6 +1862,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q2',
+                    type: 'multiple-choice' as const,
                     question: 'In the Coze Daily AI Brief case (Section 5.2.2), what is the role of the Large Model Node?',
                     options: [
                       { id: 'a', text: 'It directly fetches RSS feeds and GitHub data', isCorrect: false },
@@ -1839,6 +1875,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q3',
+                    type: 'multiple-choice' as const,
                     question: 'Why is NOT supporting MCP (Model Context Protocol) considered a major limitation for Coze?',
                     options: [
                       { id: 'a', text: 'MCP is just a marketing buzzword with no real benefits', isCorrect: false },
@@ -1851,6 +1888,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q4',
+                    type: 'multiple-choice' as const,
                     question: 'In the Dify Super Agent (Section 5.3.2), what architectural pattern is used to handle diverse user requests?',
                     options: [
                       { id: 'a', text: 'A single monolithic agent handles all tasks with conditional logic', isCorrect: false },
@@ -1863,6 +1901,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q5',
+                    type: 'multiple-choice' as const,
                     question: 'In the n8n Intelligent Email Assistant (Section 5.4), what happens if Simple Vector Store and Simple Memory are used without replacement?',
                     options: [
                       { id: 'a', text: 'They work perfectly in production with no issues', isCorrect: false },
@@ -1875,6 +1914,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q6',
+                    type: 'multiple-choice' as const,
                     question: 'Which platform is the BEST choice for a non-technical team (product manager + designer) needing to quickly prototype an AI chatbot for WeChat?',
                     options: [
                       { id: 'a', text: 'n8n - it has the most powerful workflow capabilities', isCorrect: false },
@@ -1887,6 +1927,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q7',
+                    type: 'multiple-choice' as const,
                     question: 'What is the key difference between traditional automation workflows and modern AI Agent workflows (as demonstrated in n8n)?',
                     options: [
                       { id: 'a', text: 'Traditional workflows are faster than AI Agent workflows', isCorrect: false },
@@ -1899,6 +1940,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   },
                   {
                     id: 'q8',
+                    type: 'multiple-choice' as const,
                     question: 'In Dify\'s Copywriting Optimization module, the prompt requires output "exceeding 500 words." What is the rationale behind this hard length requirement?',
                     options: [
                       { id: 'a', text: 'Longer text always equals better quality', isCorrect: false },
