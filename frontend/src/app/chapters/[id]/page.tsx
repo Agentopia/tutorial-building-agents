@@ -10,6 +10,7 @@ const AgentFlowDiagram = dynamic(() => import('@/components/AgentFlowDiagram'), 
 const CodePlayground = dynamic(() => import('@/components/CodePlayground'), { ssr: false })
 const Exercise = dynamic(() => import('@/components/Exercise'), { ssr: false })
 const Quiz = dynamic(() => import('@/components/Quiz'), { ssr: false })
+const ElizaChatbot = dynamic(() => import('@/components/ElizaChatbot'), { ssr: false })
 
 const chapterTitles: { [key: number]: string } = {
   1: 'Introduction to Agents',
@@ -264,6 +265,509 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                     ],
                     explanation: 'False. Simple reflex agents have no memory or predictive capability. They only react to current perceptions using condition-action rules.',
                     points: 10
+                  }
+                ]}
+                passingScore={70}
+              />
+            </section>
+          </div>
+        )}
+
+        {/* Interactive Components for Chapter 2 */}
+        {chapterId === 2 && (
+          <div className="mt-12 space-y-12">
+            {/* Separator */}
+            <div className="border-t pt-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold gradient-text mb-2">
+                  Interactive Learning Experience
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Explore the evolution of AI agents through history
+                </p>
+              </div>
+            </div>
+
+            {/* Historical Timeline Diagram */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">AI Agent Evolution Timeline (1950s-2024)</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Click on nodes to learn about major milestones in agent development across three paradigms: Symbolism, Connectionism, and Behaviorism.
+              </p>
+              <AgentFlowDiagram
+                title="From Symbolic Systems to Modern LLM Agents"
+                description="Trace the journey from early rule-based systems to today's intelligent agents"
+                nodes={[
+                  {
+                    id: 'dartmouth',
+                    label: '1956 Dartmouth',
+                    description: 'Birth of AI as a field. Focus on symbolic manipulation and logic.',
+                    position: { x: 50, y: 50 },
+                    type: 'input'
+                  },
+                  {
+                    id: 'eliza',
+                    label: '1966 ELIZA',
+                    description: 'First chatbot using pattern matching. Demonstrated the "ELIZA effect" - illusion of understanding.',
+                    position: { x: 150, y: 50 }
+                  },
+                  {
+                    id: 'mycin',
+                    label: '1976 MYCIN',
+                    description: 'Expert system for medical diagnosis. 450 rules, 69% accuracy. Showed power and brittleness of symbolism.',
+                    position: { x: 250, y: 50 }
+                  },
+                  {
+                    id: 'society',
+                    label: '1986 Society of Mind',
+                    description: 'Minsky\'s theory: Intelligence emerges from collaboration of simple agents. Foundation for multi-agent systems.',
+                    position: { x: 350, y: 50 }
+                  },
+                  {
+                    id: 'backprop',
+                    label: '1986 Backpropagation',
+                    description: 'Revival of neural networks. Shift from symbolism to connectionism begins.',
+                    position: { x: 350, y: 150 }
+                  },
+                  {
+                    id: 'deepblue',
+                    label: '1997 Deep Blue',
+                    description: 'IBM\'s chess program defeats world champion. Brute-force search + evaluation functions.',
+                    position: { x: 450, y: 50 }
+                  },
+                  {
+                    id: 'alexnet',
+                    label: '2012 AlexNet',
+                    description: 'Deep learning breakthrough in image recognition. Connectionism becomes mainstream.',
+                    position: { x: 550, y: 150 }
+                  },
+                  {
+                    id: 'alphago',
+                    label: '2016 AlphaGo',
+                    description: 'Deep RL defeats Go champion. Combines neural networks with reinforcement learning (behaviorism).',
+                    position: { x: 650, y: 250 }
+                  },
+                  {
+                    id: 'transformer',
+                    label: '2017 Transformer',
+                    description: 'Attention mechanism revolutionizes NLP. Foundation for modern LLMs.',
+                    position: { x: 750, y: 150 }
+                  },
+                  {
+                    id: 'gpt',
+                    label: '2018 GPT-1',
+                    description: 'Generative pre-training paradigm. Language models gain world knowledge from data.',
+                    position: { x: 850, y: 150 }
+                  },
+                  {
+                    id: 'gpt3',
+                    label: '2020 GPT-3',
+                    description: 'Scale brings emergent abilities: in-context learning, few-shot reasoning.',
+                    position: { x: 950, y: 150 }
+                  },
+                  {
+                    id: 'chatgpt',
+                    label: '2022 ChatGPT',
+                    description: 'RLHF (Reinforcement Learning from Human Feedback) makes LLMs conversational and helpful.',
+                    position: { x: 1050, y: 150 }
+                  },
+                  {
+                    id: 'llmagents',
+                    label: '2023-24 LLM Agents',
+                    description: 'Integration of all paradigms: Symbolic reasoning (tool use, planning) + Neural networks (LLM) + RL (RLHF, Agentic-RL)',
+                    position: { x: 1150, y: 150 },
+                    type: 'output'
+                  }
+                ]}
+                edges={[
+                  { id: 'e1', source: 'dartmouth', target: 'eliza', label: 'Symbolism', animated: true },
+                  { id: 'e2', source: 'eliza', target: 'mycin', animated: true },
+                  { id: 'e3', source: 'mycin', target: 'society', animated: true },
+                  { id: 'e4', source: 'mycin', target: 'deepblue', label: 'Symbolic peak', animated: true },
+                  { id: 'e5', source: 'society', target: 'backprop', label: 'Connectionism', animated: true },
+                  { id: 'e6', source: 'backprop', target: 'alexnet', animated: true },
+                  { id: 'e7', source: 'alexnet', target: 'transformer', animated: true },
+                  { id: 'e8', source: 'transformer', target: 'gpt', animated: true },
+                  { id: 'e9', source: 'gpt', target: 'gpt3', animated: true },
+                  { id: 'e10', source: 'gpt3', target: 'chatgpt', label: 'RLHF', animated: true },
+                  { id: 'e11', source: 'chatgpt', target: 'llmagents', animated: true },
+                  { id: 'e12', source: 'backprop', target: 'alphago', label: 'Behaviorism', animated: true },
+                  { id: 'e13', source: 'alphago', target: 'llmagents', label: 'RL Integration', animated: true }
+                ]}
+                height={400}
+              />
+            </section>
+
+            {/* ELIZA Interactive Demo */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">ELIZA Chatbot Demo (1966)</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Experience the pioneering chatbot that used pattern matching and pronoun swapping.
+                Notice how it creates an illusion of understanding without real comprehension.
+              </p>
+              <ElizaChatbot />
+            </section>
+
+            {/* Society of Mind Diagram */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Society of Mind: Building a Block Tower</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Minsky's theory shows how complex intelligence emerges from collaboration of simple "mindless" agents.
+                Click nodes to see how each agency contributes to the emergent behavior.
+              </p>
+              <AgentFlowDiagram
+                title="Emergence Through Collaboration"
+                description="No single agent understands 'building a tower' - intelligence emerges from their interaction"
+                nodes={[
+                  {
+                    id: 'goal',
+                    type: 'input',
+                    label: '🎯 Goal: Build Tower',
+                    description: 'High-level intention activated by user or higher-level agency',
+                    position: { x: 400, y: 0 }
+                  },
+                  {
+                    id: 'build-tower',
+                    label: 'BUILD-TOWER Agency',
+                    description: 'Doesn\'t know HOW to build. Only role: activate subordinate agency BUILDER',
+                    position: { x: 400, y: 100 }
+                  },
+                  {
+                    id: 'builder',
+                    label: 'BUILDER Agency',
+                    description: 'Simple loop logic: While tower not finished, activate ADD-BLOCK. No physical knowledge.',
+                    position: { x: 400, y: 200 }
+                  },
+                  {
+                    id: 'add-block',
+                    label: 'ADD-BLOCK Agency',
+                    description: 'Coordinates subtasks. Sequentially activates: FIND-BLOCK → GET-BLOCK → PUT-ON-TOP',
+                    position: { x: 400, y: 300 }
+                  },
+                  {
+                    id: 'find',
+                    label: 'FIND-BLOCK',
+                    description: 'Activates visual agents (SEE-SHAPE) to locate suitable block',
+                    position: { x: 200, y: 400 }
+                  },
+                  {
+                    id: 'get',
+                    label: 'GET-BLOCK',
+                    description: 'Activates motor agents (REACH, GRASP) to acquire block',
+                    position: { x: 400, y: 400 }
+                  },
+                  {
+                    id: 'put',
+                    label: 'PUT-ON-TOP',
+                    description: 'Activates placement agents to position block on tower',
+                    position: { x: 600, y: 400 }
+                  },
+                  {
+                    id: 'see',
+                    label: '👁️ SEE-SHAPE',
+                    description: 'Low-level visual agent. Only identifies shapes. Doesn\'t know what a "tower" is.',
+                    position: { x: 100, y: 500 }
+                  },
+                  {
+                    id: 'reach',
+                    label: '🦾 REACH',
+                    description: 'Low-level motor agent. Extends arm to target. No concept of "grasping".',
+                    position: { x: 300, y: 500 }
+                  },
+                  {
+                    id: 'grasp',
+                    label: '✊ GRASP',
+                    description: 'Low-level motor agent. Closes gripper. Doesn\'t know what it\'s grasping or why.',
+                    position: { x: 500, y: 500 }
+                  },
+                  {
+                    id: 'tower',
+                    type: 'output',
+                    label: '🏗️ Tower Built!',
+                    description: 'Emergent result: No single agent planned this. Intelligence arose from local interactions.',
+                    position: { x: 400, y: 600 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1', source: 'goal', target: 'build-tower', label: 'Activate', animated: true },
+                  { id: 'e2', source: 'build-tower', target: 'builder', label: 'Delegate', animated: true },
+                  { id: 'e3', source: 'builder', target: 'add-block', label: 'Loop', animated: true },
+                  { id: 'e4', source: 'add-block', target: 'find', label: 'Step 1', animated: true },
+                  { id: 'e5', source: 'add-block', target: 'get', label: 'Step 2', animated: true },
+                  { id: 'e6', source: 'add-block', target: 'put', label: 'Step 3', animated: true },
+                  { id: 'e7', source: 'find', target: 'see', animated: true },
+                  { id: 'e8', source: 'get', target: 'reach', animated: true },
+                  { id: 'e9', source: 'get', target: 'grasp', animated: true },
+                  { id: 'e10', source: 'put', target: 'tower', label: 'Place', animated: true },
+                  { id: 'e11', source: 'tower', target: 'builder', label: 'Feedback', animated: true, style: { stroke: '#22c55e' } }
+                ]}
+                height={700}
+              />
+            </section>
+
+            {/* Reinforcement Learning Loop */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Reinforcement Learning: Agent-Environment Loop</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                RL agents learn optimal behavior through trial and error. Example: AlphaGo learned to play Go
+                by playing millions of games against itself, receiving rewards for wins.
+              </p>
+              <AgentFlowDiagram
+                title="Learning Through Interaction"
+                description="Agent observes state, takes action, receives reward, updates policy"
+                nodes={[
+                  {
+                    id: 'agent',
+                    label: '🤖 Agent',
+                    description: 'Learner and decision-maker. Contains Policy π (mapping from states to actions) that it continuously improves.',
+                    position: { x: 200, y: 150 },
+                    type: 'default'
+                  },
+                  {
+                    id: 'env',
+                    label: '🌍 Environment',
+                    description: 'Everything external to the agent. For AlphaGo: Go rules + opponent. For robot: physical world.',
+                    position: { x: 600, y: 150 },
+                    type: 'default'
+                  },
+                  {
+                    id: 'state',
+                    label: 'State St',
+                    description: 'Specific description of environment at time t. Example: current board position in Go.',
+                    position: { x: 400, y: 0 }
+                  },
+                  {
+                    id: 'action',
+                    label: 'Action At',
+                    description: 'Operation chosen by agent based on policy π. Example: place stone at position (7,9).',
+                    position: { x: 400, y: 100 }
+                  },
+                  {
+                    id: 'reward',
+                    label: 'Reward Rt+1',
+                    description: 'Scalar feedback signal. For AlphaGo: +1 for win, -1 for loss. Guides learning.',
+                    position: { x: 400, y: 300 }
+                  },
+                  {
+                    id: 'newstate',
+                    label: 'State St+1',
+                    description: 'New environment state after action. Example: updated board after opponent\'s response.',
+                    position: { x: 600, y: 250 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1', source: 'env', target: 'state', label: '1. Observe', animated: true },
+                  { id: 'e2', source: 'state', target: 'agent', animated: true },
+                  { id: 'e3', source: 'agent', target: 'action', label: '2. Decide (Policy π)', animated: true },
+                  { id: 'e4', source: 'action', target: 'env', animated: true },
+                  { id: 'e5', source: 'env', target: 'newstate', label: '3. Transition', animated: true },
+                  { id: 'e6', source: 'env', target: 'reward', label: '4. Feedback', animated: true },
+                  { id: 'e7', source: 'reward', target: 'agent', label: '5. Learn & Update π', animated: true, style: { stroke: '#22c55e' } },
+                  { id: 'e8', source: 'newstate', target: 'agent', label: 'Next cycle', animated: true, style: { strokeDasharray: '5,5' } }
+                ]}
+                height={400}
+              />
+              <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+                <p className="text-sm text-blue-900 dark:text-blue-100">
+                  <strong>💡 Key Insight:</strong> Agent's goal is to maximize <strong>cumulative reward</strong> (Return),
+                  not just immediate reward. This requires "foresight" - sometimes sacrificing current gains for greater future rewards.
+                </p>
+              </div>
+            </section>
+
+            {/* LLM Agent Architecture */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Modern LLM Agent Architecture</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Today's agents integrate all three paradigms: Symbolic (tool use, planning) +
+                Neural (LLM reasoning) + Behavioral (RLHF training). This is the culmination of 70 years of AI research.
+              </p>
+              <AgentFlowDiagram
+                title="Perceive → Think → Act Loop"
+                description="LLM-driven agents combine planning, reasoning, memory, and tool use"
+                nodes={[
+                  {
+                    id: 'env-in',
+                    type: 'input',
+                    label: '🌐 Environment',
+                    description: 'External world: APIs, databases, user input, system state',
+                    position: { x: 400, y: 0 }
+                  },
+                  {
+                    id: 'perception',
+                    label: '👁️ Perception Module',
+                    description: 'Receives raw input through sensors. Forms observations from environment changes.',
+                    position: { x: 400, y: 100 }
+                  },
+                  {
+                    id: 'planning',
+                    label: '📋 Planning Module',
+                    description: 'Decomposes goals into steps. Reflection & self-criticism. Formulates high-level strategy.',
+                    position: { x: 200, y: 200 }
+                  },
+                  {
+                    id: 'llm',
+                    label: '🧠 LLM Core',
+                    description: 'Central reasoning engine. Integrates observation + memory. Decides tool calls. Generates responses.',
+                    position: { x: 400, y: 250 }
+                  },
+                  {
+                    id: 'memory',
+                    label: '💾 Memory',
+                    description: 'Short-term: Conversation history. Long-term: RAG/vector DB. Provides context for reasoning.',
+                    position: { x: 600, y: 200 }
+                  },
+                  {
+                    id: 'execution',
+                    label: '⚙️ Execution Module',
+                    description: 'Parses LLM instructions. Calls selected tools. Manages tool registry.',
+                    position: { x: 400, y: 350 }
+                  },
+                  {
+                    id: 'tools',
+                    label: '🔧 Tool Use',
+                    description: 'Code executors, search engines, calculators, databases, APIs. Extends agent capabilities.',
+                    position: { x: 200, y: 450 }
+                  },
+                  {
+                    id: 'action',
+                    label: '🎬 Action',
+                    description: 'Actual interaction with environment. Changes environment state.',
+                    position: { x: 400, y: 450 }
+                  },
+                  {
+                    id: 'result',
+                    label: '📊 Tool Result',
+                    description: 'Direct feedback from tool execution. Returned to LLM as new observation.',
+                    position: { x: 600, y: 350 }
+                  },
+                  {
+                    id: 'newstate',
+                    type: 'output',
+                    label: '🔄 New Environment State',
+                    description: 'Environment changed by action. Triggers next perceive-think-act cycle.',
+                    position: { x: 400, y: 550 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1', source: 'env-in', target: 'perception', label: 'Observe', animated: true },
+                  { id: 'e2', source: 'perception', target: 'planning', animated: true },
+                  { id: 'e3', source: 'planning', target: 'llm', label: 'Strategy', animated: true },
+                  { id: 'e4', source: 'memory', target: 'llm', label: 'Context', animated: true },
+                  { id: 'e5', source: 'llm', target: 'execution', label: 'Tool Call', animated: true },
+                  { id: 'e6', source: 'execution', target: 'tools', animated: true },
+                  { id: 'e7', source: 'tools', target: 'action', animated: true },
+                  { id: 'e8', source: 'action', target: 'newstate', animated: true },
+                  { id: 'e9', source: 'execution', target: 'result', label: 'Return', animated: true },
+                  { id: 'e10', source: 'result', target: 'llm', label: 'Feedback', animated: true, style: { stroke: '#22c55e' } },
+                  { id: 'e11', source: 'newstate', target: 'perception', label: 'Next Observation', animated: true, style: { strokeDasharray: '5,5' } },
+                  { id: 'e12', source: 'llm', target: 'memory', label: 'Update', animated: true, style: { stroke: '#f59e0b' } }
+                ]}
+                height={650}
+              />
+            </section>
+
+            {/* Knowledge Check Quiz */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Knowledge Check: History of Agents</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Test your understanding of agent evolution, paradigm shifts, and historical milestones.
+              </p>
+              <Quiz
+                questions={[
+                  {
+                    id: 'q1',
+                    question: 'What is the core limitation of symbolicism (rule-based systems) that ELIZA demonstrated?',
+                    options: [
+                      { id: 'a', text: 'Too slow to process user input', isCorrect: false },
+                      { id: 'b', text: 'Lack of semantic understanding - only pattern matching without comprehension', isCorrect: true },
+                      { id: 'c', text: 'Required too much computational power', isCorrect: false },
+                      { id: 'd', text: 'Could not handle multiple users simultaneously', isCorrect: false }
+                    ],
+                    explanation: 'ELIZA performed pattern matching with NO understanding. It mechanically matched patterns like "I am (*)" and substituted responses, creating an illusion of intelligence ("ELIZA effect") while having zero semantic comprehension.',
+                    points: 10
+                  },
+                  {
+                    id: 'q2',
+                    question: 'According to Minsky\'s Society of Mind theory, where does complex intelligence come from?',
+                    options: [
+                      { id: 'a', text: 'A single, powerful central reasoning engine', isCorrect: false },
+                      { id: 'b', text: 'Emergence from collaboration of many simple "mindless" agents', isCorrect: true },
+                      { id: 'c', text: 'Pre-programmed knowledge bases with millions of rules', isCorrect: false },
+                      { id: 'd', text: 'Massive neural networks trained on big data', isCorrect: false }
+                    ],
+                    explanation: 'Minsky argued intelligence is NOT a single perfect system but emerges from interactions of numerous simple, specialized agents. Each agent is "mindless" (like GRASP or SEE-SHAPE), but their society produces intelligent behavior.',
+                    points: 15
+                  },
+                  {
+                    id: 'q3',
+                    question: 'What are the three core elements of the Reinforcement Learning framework?',
+                    options: [
+                      { id: 'a', text: 'Sensor, Processor, Actuator', isCorrect: false },
+                      { id: 'b', text: 'Input, Hidden Layer, Output', isCorrect: false },
+                      { id: 'c', text: 'Agent, Environment, Reward', isCorrect: true },
+                      { id: 'd', text: 'Perception, Planning, Action', isCorrect: false }
+                    ],
+                    explanation: 'RL framework: (1) AGENT makes decisions, (2) ENVIRONMENT provides state and feedback, (3) REWARD signal guides learning. The agent learns optimal policy through trial-and-error to maximize cumulative reward.',
+                    points: 10
+                  },
+                  {
+                    id: 'q4',
+                    question: 'How did the pre-training paradigm solve symbolicism\'s "knowledge acquisition bottleneck"?',
+                    options: [
+                      { id: 'a', text: 'By manually encoding more rules into the system', isCorrect: false },
+                      { id: 'b', text: 'By learning implicit world knowledge from massive text data through self-supervised learning', isCorrect: true },
+                      { id: 'c', text: 'By connecting to external knowledge bases like Wikipedia', isCorrect: false },
+                      { id: 'd', text: 'By using reinforcement learning to discover rules', isCorrect: false }
+                    ],
+                    explanation: 'Pre-training learns from trillions of texts via self-supervised learning (e.g., "predict next word"). This builds an implicit model of world knowledge in neural network weights - no manual encoding needed!',
+                    points: 15
+                  },
+                  {
+                    id: 'q5',
+                    question: 'Which emergent ability of large language models enables them to perform new tasks with just a few examples in the prompt?',
+                    options: [
+                      { id: 'a', text: 'Transfer learning', isCorrect: false },
+                      { id: 'b', text: 'In-context learning (few-shot)', isCorrect: true },
+                      { id: 'c', text: 'Fine-tuning', isCorrect: false },
+                      { id: 'd', text: 'Reinforcement learning', isCorrect: false }
+                    ],
+                    explanation: 'In-context learning: LLMs can understand and perform NEW tasks just from examples in the prompt, WITHOUT updating model weights. This emerged at scale and wasn\'t explicitly trained.',
+                    points: 15
+                  },
+                  {
+                    id: 'q6',
+                    question: 'True or False: Modern LLM agents integrate all three historical paradigms - Symbolism (tool use, planning), Connectionism (neural networks), and Behaviorism (RL/RLHF).',
+                    options: [
+                      { id: 'true', text: 'True', isCorrect: true },
+                      { id: 'false', text: 'False', isCorrect: false }
+                    ],
+                    explanation: 'TRUE! LLM agents are the culmination of 70 years: Symbolic reasoning (plan, tool calls) + Neural LLM (knowledge, reasoning) + Behavioral RL (RLHF training, Agentic-RL). All paradigms converged.',
+                    points: 10
+                  },
+                  {
+                    id: 'q7',
+                    question: 'What was the key innovation of Expert Systems like MYCIN in the 1970s-80s?',
+                    options: [
+                      { id: 'a', text: 'Using neural networks to learn from data', isCorrect: false },
+                      { id: 'b', text: 'Separating domain knowledge (rules) from inference engine, allowing expertise to be encoded', isCorrect: true },
+                      { id: 'c', text: 'Reinforcement learning from patient outcomes', isCorrect: false },
+                      { id: 'd', text: 'Natural language understanding through transformers', isCorrect: false }
+                    ],
+                    explanation: 'MYCIN architecture: Knowledge Base (450 IF-THEN rules from experts) + Inference Engine (applies rules). This separation allowed encoding medical expertise. But it was brittle and couldn\'t scale.',
+                    points: 15
+                  },
+                  {
+                    id: 'q8',
+                    question: 'In the RL loop, what does the agent\'s POLICY (π) represent?',
+                    options: [
+                      { id: 'a', text: 'The total reward the agent has accumulated', isCorrect: false },
+                      { id: 'b', text: 'A mapping from states to actions - defines agent behavior', isCorrect: true },
+                      { id: 'c', text: 'The set of all possible states in the environment', isCorrect: false },
+                      { id: 'd', text: 'The value function estimating future rewards', isCorrect: false }
+                    ],
+                    explanation: 'Policy π: State → Action mapping. It defines HOW the agent behaves. RL learning = improving π to maximize cumulative reward. Example: AlphaGo\'s policy maps board states to optimal moves.',
+                    points: 15
                   }
                 ]}
                 passingScore={70}
