@@ -185,6 +185,14 @@
   - ✅ MCP Protocol Flow: 8-node diagram showing standardized agent-to-tool communication (SSE/JSON-RPC)
   - ✅ Platform Comparison Table: Comprehensive 10-dimension comparison (positioning, users, ecosystem, MCP, deployment)
   - ✅ Knowledge Check Quiz: 8 questions (100 points, 70% passing) on low-code platforms and architecture
+- [x] **Add Chapter 6 interactive components** (2025-12-27)
+  - ✅ Framework Comparison Table: 4-framework matrix (AutoGen, AgentScope, CAMEL, LangGraph) across 7 dimensions
+  - ✅ AutoGen Round-Robin Flow: Bitcoin price tracker team (PM → Engineer → Reviewer → UserProxy)
+  - ✅ AgentScope Message Hub: 5-agent message-driven architecture with MsgHub central router
+  - ✅ CAMEL Role-Playing: Psychology e-book co-creation (Psychologist ↔ Writer with inception prompting)
+  - ✅ LangGraph State Machine: Research agent with Plan → Execute → Reflect conditional loop
+  - ✅ Code Playground: AutoGen vs LangGraph syntax comparison (conversation-driven vs graph-driven)
+  - ✅ Knowledge Check Quiz: 8 questions (97 points, 70% passing) on framework architecture and use cases
 
 ### 3.8 Remaining Tasks ⏳
 - [ ] Add interactive components to remaining chapters:
@@ -193,7 +201,7 @@
   - [x] Chapter 3 ✅
   - [x] Chapter 4 ✅
   - [x] Chapter 5 ✅
-  - [ ] Chapter 6
+  - [x] Chapter 6 ✅
   - [x] Chapter 7 ✅
   - [ ] Chapter 8
   - [ ] Chapter 9
@@ -262,7 +270,7 @@
 - Exercises: ✅ Complete (validation, hints, solutions)
 - Live Demos: ✅ Complete (trip planner, deep research, AI town)
 - Gamification: ✅ Complete (points, achievements, streaks)
-- Chapter Coverage: ⏳ 43% (7/16 chapters have interactive components)
+- Chapter Coverage: ⏳ 50% (8/16 chapters have interactive components)
 
 **Remaining:** Add interactive components to 9 more chapters
 

@@ -1958,6 +1958,528 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
           </div>
         )}
 
+        {/* Interactive Components for Chapter 6 */}
+        {chapterId === 6 && (
+          <div className="mt-12 space-y-12">
+            {/* Separator */}
+            <div className="border-t pt-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold gradient-text mb-2">
+                  Interactive Learning Experience
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Explore agent frameworks through interactive visualizations
+                </p>
+              </div>
+            </div>
+
+            {/* Framework Comparison Table */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                Agent Framework Comparison Matrix
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Compare four cutting-edge agent frameworks across architecture, collaboration patterns, and use cases.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="min-w-full border border-gray-200 dark:border-gray-700 rounded-lg">
+                  <thead className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+                    <tr>
+                      <th className="px-6 py-3 text-left text-sm font-semibold">Dimension</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold">AutoGen</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold">AgentScope</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold">CAMEL</th>
+                      <th className="px-6 py-3 text-left text-sm font-semibold">LangGraph</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                    <tr>
+                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Core Philosophy</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Collaboration through conversation</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Message-driven platform</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Role-playing autonomous collaboration</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Graph-based state machines</td>
+                    </tr>
+                    <tr className="bg-gray-50 dark:bg-gray-900">
+                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Architecture</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Async-first, layered (core + agentchat)</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Engineering-first, modular layers</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Inception prompting + role setup</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">StateGraph with nodes & edges</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Collaboration Pattern</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Round-robin group chat</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">MsgHub message passing</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">AI User ↔ AI Assistant dialogue</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Conditional edge routing</td>
+                    </tr>
+                    <tr className="bg-gray-50 dark:bg-gray-900">
+                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Key Components</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">AssistantAgent, UserProxyAgent, Team</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Msg, AgentBase, MsgHub, Pipeline</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">RolePlaying, ChatAgent</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">StateGraph, Node functions, Edges</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Best For</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Software development teams, fixed workflows</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Large-scale production systems, distributed deployment</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Creative tasks, cross-domain collaboration</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Iterative workflows, reflection, complex logic</td>
+                    </tr>
+                    <tr className="bg-gray-50 dark:bg-gray-900">
+                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Strengths</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Clear turn-taking, easy debugging</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Enterprise-grade, fault recovery, observability</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Minimal human intervention, autonomous</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Native loop support, flexible branching</td>
+                    </tr>
+                    <tr>
+                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Typical Use Case</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Bitcoin price tracker (PM → Engineer → Reviewer → Tester)</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Multi-agent customer service, distributed AI systems</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Psychology e-book (Psychologist ↔ Writer)</td>
+                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Research agent with planning → execution → reflection loop</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* AutoGen Round-Robin Flow */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                AutoGen: Round-Robin Group Chat Workflow
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                AutoGen coordinates multi-agent collaboration through sequential conversation turns,
+                simulating a software development team.
+              </p>
+              <AgentFlowDiagram
+                title="Bitcoin Price Tracker Development Team"
+                description="Four agents collaborate in fixed order until task completion (ProductManager → Engineer → CodeReviewer → UserProxy)"
+                nodes={[
+                  {
+                    id: '1',
+                    type: 'input',
+                    label: '📋 Product Manager',
+                    description: 'Analyzes requirements, proposes tech stack (Streamlit + CoinGecko API), defines acceptance criteria',
+                    position: { x: 50, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    label: '👨‍💻 Engineer',
+                    description: 'Implements code based on requirements, handles API integration, creates UI components',
+                    position: { x: 50, y: 120 }
+                  },
+                  {
+                    id: '3',
+                    label: '🔍 Code Reviewer',
+                    description: 'Checks code quality, security (API key handling), best practices, error handling',
+                    position: { x: 50, y: 240 }
+                  },
+                  {
+                    id: '4',
+                    type: 'output',
+                    label: '🧪 User Proxy',
+                    description: 'Tests implementation, verifies functionality, provides feedback, issues TERMINATE command',
+                    position: { x: 50, y: 360 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', label: 'Requirements', animated: true },
+                  { id: 'e2-3', source: '2', target: '3', label: 'Code', animated: true },
+                  { id: 'e3-4', source: '3', target: '4', label: 'Approved', animated: true },
+                  { id: 'e4-1', source: '4', target: '1', label: 'Feedback (if needed)', animated: false }
+                ]}
+                height={450}
+              />
+            </section>
+
+            {/* AgentScope Message Hub */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                AgentScope: Message-Driven Architecture
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                AgentScope uses MsgHub as a central message router, enabling asynchronous, location-transparent
+                communication between distributed agents.
+              </p>
+              <AgentFlowDiagram
+                title="MsgHub: Central Message Router"
+                description="All agent interactions abstracted as message passing through a central hub"
+                nodes={[
+                  {
+                    id: 'hub',
+                    label: '📬 MsgHub',
+                    description: 'Central message router: persistence, routing, distributed communication, observability',
+                    position: { x: 250, y: 200 }
+                  },
+                  {
+                    id: 'agent1',
+                    type: 'input',
+                    label: '🤖 Agent A',
+                    description: 'Sends Msg(name, content, role, metadata) to hub',
+                    position: { x: 50, y: 50 }
+                  },
+                  {
+                    id: 'agent2',
+                    label: '🤖 Agent B',
+                    description: 'Receives messages, executes reply() method, sends response',
+                    position: { x: 450, y: 50 }
+                  },
+                  {
+                    id: 'agent3',
+                    label: '🤖 Agent C',
+                    description: 'Subscribes to specific message types, processes asynchronously',
+                    position: { x: 50, y: 350 }
+                  },
+                  {
+                    id: 'agent4',
+                    type: 'output',
+                    label: '🤖 Agent D',
+                    description: 'Can run on remote server, location-transparent communication',
+                    position: { x: 450, y: 350 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1', source: 'agent1', target: 'hub', label: 'send(msg)', animated: true },
+                  { id: 'e2', source: 'hub', target: 'agent2', label: 'route', animated: true },
+                  { id: 'e3', source: 'agent3', target: 'hub', label: 'subscribe', animated: true },
+                  { id: 'e4', source: 'hub', target: 'agent4', label: 'broadcast', animated: true },
+                  { id: 'e5', source: 'agent2', target: 'hub', label: 'reply', animated: false },
+                  { id: 'e6', source: 'agent4', target: 'hub', label: 'ack', animated: false }
+                ]}
+                height={450}
+              />
+            </section>
+
+            {/* CAMEL Role-Playing */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                CAMEL: Autonomous Role-Playing Collaboration
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                CAMEL enables two agents to autonomously collaborate through inception prompting,
+                where each agent stays in character to achieve a common goal.
+              </p>
+              <AgentFlowDiagram
+                title="Psychology E-book Co-creation"
+                description="Psychologist and Writer collaborate autonomously using inception prompting to create 'The Psychology of Procrastination'"
+                nodes={[
+                  {
+                    id: 'task',
+                    type: 'input',
+                    label: '📝 Task Specification',
+                    description: 'Create psychology e-book: scientific + readable, 8000-10000 words, practical advice',
+                    position: { x: 250, y: 0 }
+                  },
+                  {
+                    id: 'user',
+                    label: '🧠 AI User (Psychologist)',
+                    description: 'Role: Psychology expert. Inception prompt: "Provide scientific insights, empirical research..." Proposes content structure, fact-checks, ensures rigor',
+                    position: { x: 100, y: 150 }
+                  },
+                  {
+                    id: 'assistant',
+                    label: '✍️ AI Assistant (Writer)',
+                    description: 'Role: Professional writer. Inception prompt: "Transform academic concepts into vivid narratives..." Creates engaging prose, simplifies terminology',
+                    position: { x: 400, y: 150 }
+                  },
+                  {
+                    id: 'output',
+                    type: 'output',
+                    label: '📚 E-book Output',
+                    description: 'Completed e-book: scientifically rigorous + highly readable, detected via <SOLUTION> markers',
+                    position: { x: 250, y: 300 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1', source: 'task', target: 'user', label: 'Initialize', animated: true },
+                  { id: 'e2', source: 'task', target: 'assistant', label: 'Initialize', animated: true },
+                  { id: 'e3', source: 'user', target: 'assistant', label: 'Proposes chapter structure', animated: true },
+                  { id: 'e4', source: 'assistant', target: 'user', label: 'Drafts engaging intro', animated: true },
+                  { id: 'e5', source: 'user', target: 'assistant', label: 'Adds research citations', animated: false },
+                  { id: 'e6', source: 'assistant', target: 'user', label: 'Simplifies jargon', animated: false },
+                  { id: 'e7', source: 'user', target: 'output', label: 'Validates', animated: true },
+                  { id: 'e8', source: 'assistant', target: 'output', label: '<SOLUTION>', animated: true }
+                ]}
+                height={400}
+              />
+            </section>
+
+            {/* LangGraph State Machine */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                LangGraph: Graph-Based Workflow with Cycles
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                LangGraph models agent workflows as directed graphs with conditional edges,
+                enabling iterative processes like planning, execution, and reflection loops.
+              </p>
+              <AgentFlowDiagram
+                title="Research Agent with Reflection Loop"
+                description="Plan → Execute → Reflect cycle continues until quality threshold met (3+ iterations or final answer reached)"
+                nodes={[
+                  {
+                    id: 'start',
+                    type: 'input',
+                    label: '▶️ Start',
+                    description: 'AgentState: {messages: [], current_task: "Analyze AI industry news", final_answer: ""}',
+                    position: { x: 250, y: 0 }
+                  },
+                  {
+                    id: 'planner',
+                    label: '🗺️ Planner Node',
+                    description: 'Formulates research plan, breaks down task into steps, updates state.messages',
+                    position: { x: 100, y: 120 }
+                  },
+                  {
+                    id: 'executor',
+                    label: '⚙️ Executor Node',
+                    description: 'Executes plan, calls tools (web search, API), appends results to state.messages',
+                    position: { x: 400, y: 120 }
+                  },
+                  {
+                    id: 'reflector',
+                    label: '🔍 Reflector Node',
+                    description: 'Evaluates quality, checks completeness, decides: continue iterating or finish',
+                    position: { x: 250, y: 240 }
+                  },
+                  {
+                    id: 'end',
+                    type: 'output',
+                    label: '✅ End',
+                    description: 'state.final_answer populated, workflow complete',
+                    position: { x: 250, y: 360 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1', source: 'start', target: 'planner', label: 'entry_point', animated: true },
+                  { id: 'e2', source: 'planner', target: 'executor', label: 'regular edge', animated: true },
+                  { id: 'e3', source: 'executor', target: 'reflector', label: 'regular edge', animated: true },
+                  { id: 'e4', source: 'reflector', target: 'planner', label: 'conditional: len(messages) < 3', animated: true },
+                  { id: 'e5', source: 'reflector', target: 'end', label: 'conditional: quality met', animated: true }
+                ]}
+                height={450}
+              />
+            </section>
+
+            {/* Code Playground */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                Framework Code Comparison: AutoGen vs LangGraph
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Experience the syntax differences between conversation-driven (AutoGen) and graph-driven (LangGraph) approaches.
+              </p>
+              <CodePlayground
+                language="python"
+                initialCode={`# ============================================
+# AutoGen: Conversation-Driven Multi-Agent
+# ============================================
+from autogen_agentchat.agents import AssistantAgent
+from autogen_agentchat.teams import RoundRobinGroupChat
+from autogen_agentchat.conditions import TextMentionTermination
+
+# Define agents with specific roles
+engineer = AssistantAgent(
+    name="Engineer",
+    model_client=model_client,
+    system_message="You are a skilled Python developer..."
+)
+
+reviewer = AssistantAgent(
+    name="Reviewer",
+    model_client=model_client,
+    system_message="You are a code review expert..."
+)
+
+# Create team with round-robin conversation
+team = RoundRobinGroupChat(
+    participants=[engineer, reviewer],
+    termination_condition=TextMentionTermination("APPROVE"),
+    max_turns=10
+)
+
+# Run collaborative task
+result = await team.run(task="Build a calculator app")
+
+# ============================================
+# LangGraph: Graph-Driven State Machine
+# ============================================
+from langgraph.graph import StateGraph, END
+from typing import TypedDict, List
+
+# Define shared state
+class AgentState(TypedDict):
+    messages: List[str]
+    code: str
+    review_passed: bool
+
+# Define node functions
+def engineer_node(state: AgentState) -> AgentState:
+    """Engineer writes code"""
+    code = generate_code(state["messages"][-1])
+    state["code"] = code
+    state["messages"].append(f"Code: {code}")
+    return state
+
+def reviewer_node(state: AgentState) -> AgentState:
+    """Reviewer checks code quality"""
+    passed = check_quality(state["code"])
+    state["review_passed"] = passed
+    state["messages"].append(f"Review: {'PASS' if passed else 'FAIL'}")
+    return state
+
+def should_continue(state: AgentState) -> str:
+    """Conditional routing"""
+    return "end" if state["review_passed"] else "engineer"
+
+# Build graph
+workflow = StateGraph(AgentState)
+workflow.add_node("engineer", engineer_node)
+workflow.add_node("reviewer", reviewer_node)
+workflow.set_entry_point("engineer")
+workflow.add_edge("engineer", "reviewer")
+workflow.add_conditional_edges(
+    "reviewer",
+    should_continue,
+    {"engineer": "engineer", "end": END}
+)
+
+app = workflow.compile()
+result = app.invoke({"messages": ["Build calculator"], "code": "", "review_passed": False})
+
+print("AutoGen: Conversation-driven, sequential turns")
+print("LangGraph: Graph-driven, conditional loops")`}
+              />
+            </section>
+
+            {/* Knowledge Check Quiz */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                Knowledge Check: Agent Framework Mastery
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Test your understanding of framework architectures, collaboration patterns, and use case selection.
+              </p>
+              <Quiz
+                chapterId={6}
+                title="Chapter 6 Knowledge Check"
+                questions={[
+                  {
+                    id: 'q1',
+                    type: 'multiple-choice' as const,
+                    question: 'What is the PRIMARY innovation of AutoGen 0.7.4 compared to earlier versions?',
+                    options: [
+                      { id: 'a', text: 'Support for more LLM providers', isCorrect: false },
+                      { id: 'b', text: 'Asynchronous-first architecture with layered design (autogen-core + autogen-agentchat)', isCorrect: true },
+                      { id: 'c', text: 'Built-in code execution sandbox', isCorrect: false },
+                      { id: 'd', text: 'Automatic prompt optimization', isCorrect: false }
+                    ],
+                    explanation: 'Section 6.2.1 explains AutoGen 0.7.4 introduced fundamental architectural changes: layered design (separating core foundation from high-level agentchat) and fully asynchronous programming to improve concurrent performance. This was an architectural refactoring, not just new features.',
+                    points: 12
+                  },
+                  {
+                    id: 'q2',
+                    type: 'multiple-choice' as const,
+                    question: 'In AutoGen\'s RoundRobinGroupChat, what determines the speaking order of agents?',
+                    options: [
+                      { id: 'a', text: 'Random selection by the system', isCorrect: false },
+                      { id: 'b', text: 'The order in the participants list when creating the group chat', isCorrect: true },
+                      { id: 'c', text: 'Based on agent priority scores', isCorrect: false },
+                      { id: 'd', text: 'Determined dynamically by conversation context', isCorrect: false }
+                    ],
+                    explanation: 'Section 6.2.2 explicitly states: "The order of the participants list determines the order in which agents speak." RoundRobinGroupChat follows a fixed sequential pattern, not dynamic or random selection.',
+                    points: 10
+                  },
+                  {
+                    id: 'q3',
+                    type: 'multiple-choice' as const,
+                    question: 'What is the core advantage of AgentScope\'s message-driven architecture?',
+                    options: [
+                      { id: 'a', text: 'Faster execution speed than function calls', isCorrect: false },
+                      { id: 'b', text: 'Asynchronous decoupling, location transparency, observability, and fault tolerance', isCorrect: true },
+                      { id: 'c', text: 'Simpler code syntax for developers', isCorrect: false },
+                      { id: 'd', text: 'Automatic debugging capabilities', isCorrect: false }
+                    ],
+                    explanation: 'Section 6.3.1 lists four key advantages of message-driven architecture: (1) Asynchronous decoupling - agents don\'t wait for each other, (2) Location transparency - agents can be local or remote, (3) Observability - every message logged, (4) Reliability - messages can be persisted and retried.',
+                    points: 13
+                  },
+                  {
+                    id: 'q4',
+                    type: 'multiple-choice' as const,
+                    question: 'In CAMEL framework, what is the role of "Inception Prompting"?',
+                    options: [
+                      { id: 'a', text: 'To initialize the conversation with user requirements', isCorrect: false },
+                      { id: 'b', text: 'To implant behavioral constraints and communication protocols ensuring agents stay in role and advance toward common goals', isCorrect: true },
+                      { id: 'c', text: 'To generate creative prompt variations', isCorrect: false },
+                      { id: 'd', text: 'To automatically optimize system messages', isCorrect: false }
+                    ],
+                    explanation: 'Section 6.4.1 explains inception prompting as a "carefully designed, structured initial instruction (System Prompt)" that clarifies roles, defines common goals, and most critically, "sets behavioral constraints and communication protocols" (e.g., propose one step at a time, use specific markers like <SOLUTION>) to prevent topic deviation and ensure structured, task-driven progress.',
+                    points: 14
+                  },
+                  {
+                    id: 'q5',
+                    type: 'multiple-choice' as const,
+                    question: 'What distinguishes LangGraph from traditional chain-based frameworks like LangChain?',
+                    options: [
+                      { id: 'a', text: 'Support for more data types', isCorrect: false },
+                      { id: 'b', text: 'Native support for loops and cycles through conditional edges in a directed graph', isCorrect: true },
+                      { id: 'c', text: 'Better integration with vector databases', isCorrect: false },
+                      { id: 'd', text: 'Faster execution speed', isCorrect: false }
+                    ],
+                    explanation: 'Section 6.5.1 states: "In traditional chain structures, information can only flow in one direction. LangGraph defines... nodes and uses Edges to define jump logic... This design naturally supports Cycles, making it exceptionally simple and intuitive to implement complex workflows such as Reflection that involve iteration, correction, and self-reflection." The key innovation is cyclic/loop support.',
+                    points: 12
+                  },
+                  {
+                    id: 'q6',
+                    type: 'multiple-choice' as const,
+                    question: 'Which framework would be MOST suitable for building a large-scale, production-ready customer service system with distributed agents across multiple servers?',
+                    options: [
+                      { id: 'a', text: 'AutoGen - for its round-robin conversation management', isCorrect: false },
+                      { id: 'b', text: 'AgentScope - for its enterprise-grade features, distributed deployment, fault recovery, and message-driven architecture', isCorrect: true },
+                      { id: 'c', text: 'CAMEL - for its autonomous role-playing capabilities', isCorrect: false },
+                      { id: 'd', text: 'LangGraph - for its state machine design', isCorrect: false }
+                    ],
+                    explanation: 'Section 6.3.1 describes AgentScope as "specifically designed for building large-scale, highly reliable multi-agent applications" with "enterprise-level features such as distributed deployment, fault recovery, and observability." The comparison table also lists AgentScope\'s strength as "enterprise-grade, fault recovery, observability" making it ideal for production systems.',
+                    points: 11
+                  },
+                  {
+                    id: 'q7',
+                    type: 'multiple-choice' as const,
+                    question: 'In LangGraph, what determines which node to execute next after a conditional edge?',
+                    options: [
+                      { id: 'a', text: 'The alphabetical order of node names', isCorrect: false },
+                      { id: 'b', text: 'A condition function that evaluates the current state and returns a routing key', isCorrect: true },
+                      { id: 'c', text: 'User input during execution', isCorrect: false },
+                      { id: 'd', text: 'Random selection by the framework', isCorrect: false }
+                    ],
+                    explanation: 'Section 6.5.1 shows the conditional edge mechanism: "add_conditional_edges() uses a function to judge the current state and then dynamically decides which node to jump to next." The example shows should_continue() checking len(messages) and returning either "continue_to_planner" or "end_workflow" which maps to target nodes.',
+                    points: 10
+                  },
+                  {
+                    id: 'q8',
+                    type: 'multiple-choice' as const,
+                    question: 'Which framework pair would you choose for: (A) A creative writing project requiring a novelist and editor to collaborate, and (B) A code review workflow that needs multiple iterations until quality passes?',
+                    options: [
+                      { id: 'a', text: 'A: AutoGen, B: CAMEL', isCorrect: false },
+                      { id: 'b', text: 'A: CAMEL, B: LangGraph', isCorrect: true },
+                      { id: 'c', text: 'A: AgentScope, B: AutoGen', isCorrect: false },
+                      { id: 'd', text: 'A: LangGraph, B: AgentScope', isCorrect: false }
+                    ],
+                    explanation: 'CAMEL excels at creative cross-domain collaboration (Section 6.4 example: psychologist + writer creating e-book) through autonomous role-playing. LangGraph\'s conditional edges naturally support iterative workflows with loops (Section 6.5: reflection loops, the code review example needs iteration until review_passed=true). AutoGen is better for fixed-turn workflows, not creative autonomy or complex iterations.',
+                    points: 15
+                  }
+                ]}
+                passingScore={70}
+              />
+            </section>
+          </div>
+        )}
+
         {/* Interactive Components for Chapter 7 */}
         {chapterId === 7 && (
           <div className="mt-12 space-y-12">
