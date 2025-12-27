@@ -177,6 +177,14 @@
   - ✅ Attention Mechanism Flow: 10-node Q/K/V transformation with attention formula
   - ✅ BPE Tokenization Demo: Interactive byte-pair encoding with iterative merging
   - ✅ Knowledge Check Quiz: 8 questions (100 points, 70% passing) on LLM fundamentals
+- [x] **Add Chapter 5 interactive components** (2025-12-27)
+  - ✅ Platform Decision Helper: 11-node decision tree for choosing Coze/Dify/n8n based on team/requirements
+  - ✅ Coze Daily AI Brief Workflow: 9-node plugin orchestration (RSS + GitHub + arXiv → LLM → Brief)
+  - ✅ Dify Multi-Agent Architecture: 8-node question classifier routing to specialized sub-agents
+  - ✅ n8n Email Agent Workflow: 8-node Gmail trigger → AI Agent (Memory + Tools) → automated reply
+  - ✅ MCP Protocol Flow: 8-node diagram showing standardized agent-to-tool communication (SSE/JSON-RPC)
+  - ✅ Platform Comparison Table: Comprehensive 10-dimension comparison (positioning, users, ecosystem, MCP, deployment)
+  - ✅ Knowledge Check Quiz: 8 questions (100 points, 70% passing) on low-code platforms and architecture
 
 ### 3.8 Remaining Tasks ⏳
 - [ ] Add interactive components to remaining chapters:
@@ -184,7 +192,7 @@
   - [x] Chapter 2 ✅
   - [x] Chapter 3 ✅
   - [x] Chapter 4 ✅
-  - [ ] Chapter 5
+  - [x] Chapter 5 ✅
   - [ ] Chapter 6
   - [x] Chapter 7 ✅
   - [ ] Chapter 8
@@ -254,9 +262,9 @@
 - Exercises: ✅ Complete (validation, hints, solutions)
 - Live Demos: ✅ Complete (trip planner, deep research, AI town)
 - Gamification: ✅ Complete (points, achievements, streaks)
-- Chapter Coverage: ⏳ 37% (6/16 chapters have interactive components)
+- Chapter Coverage: ⏳ 43% (7/16 chapters have interactive components)
 
-**Remaining:** Add interactive components to 10 more chapters
+**Remaining:** Add interactive components to 9 more chapters
 
 ### Phase 4: Advanced Features ⏳ 0%
 - SSO: ❌ Not Started

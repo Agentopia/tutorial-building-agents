@@ -1271,6 +1271,651 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
           </div>
         )}
 
+        {/* Interactive Components for Chapter 5 */}
+        {chapterId === 5 && (
+          <div className="mt-12 space-y-12">
+            {/* Separator */}
+            <div className="border-t pt-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold gradient-text mb-2">
+                  Interactive Learning Experience
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300">
+                  Master low-code platforms through visual workflows and platform comparisons
+                </p>
+              </div>
+            </div>
+
+            {/* Section 1: Platform Decision Helper */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                Platform Selection Decision Tree
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Choose the right low-code platform based on your project requirements, team capabilities, and deployment needs.
+                This decision tree guides you through key selection criteria: technical background, use case complexity, data security requirements, and integration needs.
+              </p>
+              <AgentFlowDiagram
+                title="Which Low-Code Platform Should You Choose?"
+                description="Decision flow: Project Requirements → Team Capabilities → Platform Selection"
+                nodes={[
+                  {
+                    id: '1',
+                    type: 'input',
+                    data: { label: 'Start: Define Your Project', description: 'What type of agent application do you need to build?' },
+                    position: { x: 250, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    type: 'default',
+                    data: { label: 'Team Technical Background?', description: 'Assess programming skills and technical expertise' },
+                    position: { x: 250, y: 100 }
+                  },
+                  {
+                    id: '3',
+                    type: 'default',
+                    data: { label: 'Non-Technical Team', description: 'Product managers, designers, operations, no coding skills' },
+                    position: { x: 50, y: 200 }
+                  },
+                  {
+                    id: '4',
+                    type: 'default',
+                    data: { label: 'Mixed Team', description: 'Some technical background, prefer low-code efficiency' },
+                    position: { x: 250, y: 200 }
+                  },
+                  {
+                    id: '5',
+                    type: 'default',
+                    data: { label: 'Technical Team', description: 'Strong programming skills, need deep customization' },
+                    position: { x: 450, y: 200 }
+                  },
+                  {
+                    id: '6',
+                    type: 'output',
+                    data: { label: '✅ Choose Coze', description: 'Zero-code, drag-and-drop, rich plugins, one-click multi-platform publishing' },
+                    position: { x: 50, y: 300 },
+                    style: { background: '#10b981', color: 'white' }
+                  },
+                  {
+                    id: '7',
+                    type: 'default',
+                    data: { label: 'Data Security?', description: 'Can data leave your infrastructure?' },
+                    position: { x: 250, y: 300 }
+                  },
+                  {
+                    id: '8',
+                    type: 'default',
+                    data: { label: 'Use Case Type?', description: 'Business automation or AI application?' },
+                    position: { x: 450, y: 300 }
+                  },
+                  {
+                    id: '9',
+                    type: 'output',
+                    data: { label: '✅ Choose Dify (Cloud)', description: 'SaaS deployment, rapid prototyping, full-stack LLM development' },
+                    position: { x: 150, y: 400 },
+                    style: { background: '#10b981', color: 'white' }
+                  },
+                  {
+                    id: '10',
+                    type: 'output',
+                    data: { label: '✅ Choose Dify (Self-Hosted)', description: 'Private deployment, enterprise security, AES-256 encryption, RBAC' },
+                    position: { x: 350, y: 400 },
+                    style: { background: '#10b981', color: 'white' }
+                  },
+                  {
+                    id: '11',
+                    type: 'output',
+                    data: { label: '✅ Choose n8n', description: 'Workflow automation + AI, connect 500+ services, private deployment' },
+                    position: { x: 450, y: 400 },
+                    style: { background: '#10b981', color: 'white' }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', animated: true },
+                  { id: 'e2-3', source: '2', target: '3', label: 'No coding' },
+                  { id: 'e2-4', source: '2', target: '4', label: 'Some coding' },
+                  { id: 'e2-5', source: '2', target: '5', label: 'Strong coding' },
+                  { id: 'e3-6', source: '3', target: '6', animated: true },
+                  { id: 'e4-7', source: '4', target: '7' },
+                  { id: 'e5-8', source: '5', target: '8' },
+                  { id: 'e7-9', source: '7', target: '9', label: 'Cloud OK' },
+                  { id: 'e7-10', source: '7', target: '10', label: 'Private only' },
+                  { id: 'e8-11', source: '8', target: '11', label: 'Automation' }
+                ]}
+                height={500}
+              />
+            </section>
+
+            {/* Section 2: Coze Daily AI Brief Workflow */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                Coze: Daily AI Brief Workflow Architecture
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Multi-source information aggregation using Coze plugins (Section 5.2.2).
+                This workflow demonstrates how Coze's plugin ecosystem enables zero-code integration of RSS feeds, GitHub repositories, and arXiv papers into a structured AI brief.
+              </p>
+              <AgentFlowDiagram
+                title="Coze Daily AI Brief: Plugin Orchestration"
+                description="Aggregate AI news from 36Kr, Huxiu, IT Home, InfoQ + GitHub projects + arXiv papers → Structured brief"
+                nodes={[
+                  {
+                    id: '1',
+                    type: 'input',
+                    data: { label: 'User Request', description: 'Trigger: "Generate today\'s AI brief"' },
+                    position: { x: 250, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    type: 'default',
+                    data: { label: 'RSS Plugin (36Kr)', description: 'Feed: https://www.36kr.com/feed' },
+                    position: { x: 50, y: 100 }
+                  },
+                  {
+                    id: '3',
+                    type: 'default',
+                    data: { label: 'RSS Plugin (Huxiu)', description: 'Feed: https://rss.huxiu.com/' },
+                    position: { x: 150, y: 100 }
+                  },
+                  {
+                    id: '4',
+                    type: 'default',
+                    data: { label: 'RSS Plugin (IT Home)', description: 'Feed: http://www.ithome.com/rss/' },
+                    position: { x: 250, y: 100 }
+                  },
+                  {
+                    id: '5',
+                    type: 'default',
+                    data: { label: 'GitHub Plugin', description: 'Query: "AI", sort by updated, 10 repos' },
+                    position: { x: 350, y: 100 }
+                  },
+                  {
+                    id: '6',
+                    type: 'default',
+                    data: { label: 'arXiv Plugin', description: 'Search: "AI", count: 5, sort by latest' },
+                    position: { x: 450, y: 100 }
+                  },
+                  {
+                    id: '7',
+                    type: 'default',
+                    data: { label: 'Large Model Node', description: 'Role: Senior Tech Media Editor. Filter AI-related content, add emojis, format as brief' },
+                    position: { x: 250, y: 230 }
+                  },
+                  {
+                    id: '8',
+                    type: 'output',
+                    data: { label: 'Structured AI Brief', description: '🚀 10 AI News + 📚 5 Papers + 💻 5 GitHub Projects with titles, links, summaries' },
+                    position: { x: 250, y: 360 },
+                    style: { background: '#6366f1', color: 'white' }
+                  },
+                  {
+                    id: '9',
+                    type: 'default',
+                    data: { label: 'One-Click Publishing', description: 'Deploy to WeChat, Feishu, Doubao, or Coze Store' },
+                    position: { x: 250, y: 460 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', animated: true },
+                  { id: 'e1-3', source: '1', target: '3', animated: true },
+                  { id: 'e1-4', source: '1', target: '4', animated: true },
+                  { id: 'e1-5', source: '1', target: '5', animated: true },
+                  { id: 'e1-6', source: '1', target: '6', animated: true },
+                  { id: 'e2-7', source: '2', target: '7', label: 'articles' },
+                  { id: 'e3-7', source: '3', target: '7', label: 'articles' },
+                  { id: 'e4-7', source: '4', target: '7', label: 'articles' },
+                  { id: 'e5-7', source: '5', target: '7', label: 'repos' },
+                  { id: 'e6-7', source: '6', target: '7', label: 'papers' },
+                  { id: 'e7-8', source: '7', target: '8', animated: true },
+                  { id: 'e8-9', source: '8', target: '9', animated: true }
+                ]}
+                height={600}
+              />
+            </section>
+
+            {/* Section 3: Dify Multi-Agent Architecture */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                Dify: Super Agent Personal Assistant Architecture
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Multi-agent system with intelligent question classification (Section 5.3.2).
+                The question classifier routes user requests to specialized sub-agents: Daily Assistant, Copywriting Optimizer, Multimodal Generator, Data Analyst, and MCP Tool Integration.
+              </p>
+              <AgentFlowDiagram
+                title="Dify Multi-Agent: Question Classifier + Specialized Sub-Agents"
+                description="Route requests to Daily Q&A, Copywriting, Image/Video Gen, Data Query, or MCP tools"
+                nodes={[
+                  {
+                    id: '1',
+                    type: 'input',
+                    data: { label: 'User Request', description: 'Natural language query from user' },
+                    position: { x: 300, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    type: 'default',
+                    data: { label: 'Question Classifier', description: 'Intelligent router: Analyze intent → Route to specialized agent' },
+                    position: { x: 300, y: 100 },
+                    style: { background: '#f59e0b', color: 'white' }
+                  },
+                  {
+                    id: '3',
+                    type: 'default',
+                    data: { label: 'Daily Assistant', description: 'General Q&A + Time Tools. Role: Daily Question Consultation Expert' },
+                    position: { x: 50, y: 220 }
+                  },
+                  {
+                    id: '4',
+                    type: 'default',
+                    data: { label: 'Copywriting Optimizer', description: 'Polish, expand, improve text. Output: 500+ words, emotional resonance' },
+                    position: { x: 180, y: 220 }
+                  },
+                  {
+                    id: '5',
+                    type: 'default',
+                    data: { label: 'Multimodal Generator', description: 'Doubao plugin: Image (1:1) + Video (seedream model)' },
+                    position: { x: 310, y: 220 }
+                  },
+                  {
+                    id: '6',
+                    type: 'default',
+                    data: { label: 'Data Query Agent', description: 'rookie-text2data plugin: SQL generation → DB query → Visualization (pie/bar/line charts)' },
+                    position: { x: 440, y: 220 }
+                  },
+                  {
+                    id: '7',
+                    type: 'default',
+                    data: { label: 'MCP Tools Agent', description: 'ReAct mode: Amap navigation, dietary recommendations, news assistant (SSE)' },
+                    position: { x: 570, y: 220 }
+                  },
+                  {
+                    id: '8',
+                    type: 'output',
+                    data: { label: 'Specialized Response', description: 'Context-aware answer from the most relevant agent' },
+                    position: { x: 300, y: 350 },
+                    style: { background: '#8b5cf6', color: 'white' }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', animated: true },
+                  { id: 'e2-3', source: '2', target: '3', label: 'General question' },
+                  { id: 'e2-4', source: '2', target: '4', label: 'Copywriting task' },
+                  { id: 'e2-5', source: '2', target: '5', label: 'Image/video request' },
+                  { id: 'e2-6', source: '2', target: '6', label: 'Data query' },
+                  { id: 'e2-7', source: '2', target: '7', label: 'Location/diet/news' },
+                  { id: 'e3-8', source: '3', target: '8', animated: true },
+                  { id: 'e4-8', source: '4', target: '8', animated: true },
+                  { id: 'e5-8', source: '5', target: '8', animated: true },
+                  { id: 'e6-8', source: '6', target: '8', animated: true },
+                  { id: 'e7-8', source: '7', target: '8', animated: true }
+                ]}
+                height={450}
+              />
+            </section>
+
+            {/* Section 4: n8n Email Agent Workflow */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                n8n: Intelligent Email Assistant Workflow
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Automated email processing with AI decision-making (Section 5.4).
+                Gmail Trigger → AI Agent (with Memory + Tools) → Automated Reply.
+                The AI Agent can search the web (SerpAPI), query private knowledge (Simple Vector Store), and remember conversation history (Simple Memory).
+              </p>
+              <AgentFlowDiagram
+                title="n8n Email Agent: Receive → AI Think → Tool Call → Reply"
+                description="24/7 automated customer support with context-aware responses"
+                nodes={[
+                  {
+                    id: '1',
+                    type: 'input',
+                    data: { label: 'Gmail Trigger', description: 'Event: Message Received. Automatically triggers on new email' },
+                    position: { x: 250, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    type: 'default',
+                    data: { label: 'Extract Email Data', description: 'From: sender, Subject: title, Body: content, ThreadId: conversation ID' },
+                    position: { x: 250, y: 100 }
+                  },
+                  {
+                    id: '3',
+                    type: 'default',
+                    data: { label: 'AI Agent Node', description: 'Core brain: Gemini Chat Model + Memory + Tools. Autonomous decision-making' },
+                    position: { x: 250, y: 200 },
+                    style: { background: '#ec4899', color: 'white' }
+                  },
+                  {
+                    id: '4',
+                    type: 'default',
+                    data: { label: 'Tool: SerpAPI', description: 'Search public information online to answer user questions' },
+                    position: { x: 50, y: 300 }
+                  },
+                  {
+                    id: '5',
+                    type: 'default',
+                    data: { label: 'Tool: Simple Vector Store', description: 'Query private knowledge base (work schedule, policies). Memory Key: my_private_knowledge' },
+                    position: { x: 250, y: 300 }
+                  },
+                  {
+                    id: '6',
+                    type: 'default',
+                    data: { label: 'Memory: Simple Memory', description: 'Remember conversation history per email thread. Key: threadId' },
+                    position: { x: 450, y: 300 }
+                  },
+                  {
+                    id: '7',
+                    type: 'default',
+                    data: { label: 'Generate Response', description: 'Draft email with: Status prefix (work hours check) + Core answer (from SerpAPI) + Signature' },
+                    position: { x: 250, y: 420 }
+                  },
+                  {
+                    id: '8',
+                    type: 'output',
+                    data: { label: 'Send Gmail Reply', description: 'To: sender, Subject: Re: [original], Body: formatted HTML with <br> tags' },
+                    position: { x: 250, y: 520 },
+                    style: { background: '#10b981', color: 'white' }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', animated: true },
+                  { id: 'e2-3', source: '2', target: '3', animated: true },
+                  { id: 'e3-4', source: '3', target: '4', label: 'Call tool' },
+                  { id: 'e3-5', source: '3', target: '5', label: 'Query KB' },
+                  { id: 'e3-6', source: '3', target: '6', label: 'Load history' },
+                  { id: 'e4-7', source: '4', target: '7', label: 'Search results' },
+                  { id: 'e5-7', source: '5', target: '7', label: 'Work hours' },
+                  { id: 'e6-7', source: '6', target: '7', label: 'Context' },
+                  { id: 'e7-8', source: '7', target: '8', animated: true }
+                ]}
+                height={620}
+              />
+            </section>
+
+            {/* Section 5: MCP Protocol Explanation */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                MCP (Model Context Protocol) Architecture
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                How MCP enables standardized agent-to-tool communication (Section 5.3.2).
+                MCP is the "new standard" for agent tool invocation, providing a unified protocol for LLMs to discover and call external services.
+                Unlike traditional REST APIs, MCP supports bidirectional communication and tool auto-expansion.
+              </p>
+              <AgentFlowDiagram
+                title="MCP Protocol: Standardized Agent-Tool Integration"
+                description="LLM Agent ↔ MCP Server ↔ External API/Service"
+                nodes={[
+                  {
+                    id: '1',
+                    type: 'input',
+                    data: { label: 'LLM Agent', description: 'User query: "Find restaurants near me"' },
+                    position: { x: 250, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    type: 'default',
+                    data: { label: 'MCP Client', description: 'Agent-side: Send tool discovery request + function calls' },
+                    position: { x: 250, y: 100 }
+                  },
+                  {
+                    id: '3',
+                    type: 'default',
+                    data: { label: 'MCP Server', description: 'Standardized protocol server. Communication: SSE (Server-Sent Events) or JSON-RPC' },
+                    position: { x: 250, y: 200 },
+                    style: { background: '#06b6d4', color: 'white' }
+                  },
+                  {
+                    id: '4',
+                    type: 'default',
+                    data: { label: 'Tool Discovery', description: 'MCP Server returns: Available tools (search_place, get_route, get_weather) + schemas' },
+                    position: { x: 80, y: 320 }
+                  },
+                  {
+                    id: '5',
+                    type: 'default',
+                    data: { label: 'Amap API', description: 'External service: Map data, POI search, route planning. API Key: AMAP_MAPS_API_KEY' },
+                    position: { x: 250, y: 320 }
+                  },
+                  {
+                    id: '6',
+                    type: 'default',
+                    data: { label: 'Other APIs', description: 'Dietary recommendations, news feeds, weather services, etc.' },
+                    position: { x: 420, y: 320 }
+                  },
+                  {
+                    id: '7',
+                    type: 'default',
+                    data: { label: 'Execute Tool Call', description: 'MCP Server calls Amap API: search_place(query="restaurant", location="current")' },
+                    position: { x: 250, y: 440 }
+                  },
+                  {
+                    id: '8',
+                    type: 'output',
+                    data: { label: 'Return Results', description: 'MCP Server → Agent: Restaurant list with names, addresses, ratings' },
+                    position: { x: 250, y: 540 },
+                    style: { background: '#10b981', color: 'white' }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', animated: true },
+                  { id: 'e2-3', source: '2', target: '3', animated: true, label: 'MCP protocol' },
+                  { id: 'e3-4', source: '3', target: '4', label: 'Discover tools' },
+                  { id: 'e3-5', source: '3', target: '5', label: 'Connect' },
+                  { id: 'e3-6', source: '3', target: '6', label: 'Connect' },
+                  { id: 'e5-7', source: '5', target: '7', label: 'API call' },
+                  { id: 'e7-8', source: '7', target: '8', animated: true }
+                ]}
+                height={640}
+              />
+            </section>
+
+            {/* Section 6: Platform Comparison Table */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                Platform Comparison: Coze vs Dify vs n8n
+              </h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Side-by-side comparison of the three major low-code platforms.
+                Use this table to quickly assess which platform best fits your project requirements based on technical background, use cases, deployment needs, and ecosystem support.
+              </p>
+              <div className="overflow-x-auto">
+                <table className="min-w-full border-collapse border border-gray-300 dark:border-gray-700">
+                  <thead className="bg-gray-100 dark:bg-gray-800">
+                    <tr>
+                      <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">Dimension</th>
+                      <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">Coze (ByteDance)</th>
+                      <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">Dify (Open Source)</th>
+                      <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">n8n (Open Source)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white dark:bg-gray-900">
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Core Positioning</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Zero-code AI agent builder</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Full-stack LLM app dev platform (BaaS + LLMOps)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Workflow automation + AI integration</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Target Users</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Non-technical: Product managers, operations, creators</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Developers + enterprises building scalable AI apps</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Technical teams needing business automation + AI</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Learning Curve</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⭐ Easy (drag-and-drop, no code)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⭐⭐ Medium (some technical background needed)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⭐⭐⭐ Steep (workflow logic + coding for customization)</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Plugin Ecosystem</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🔥 Rich plugin store (RSS, GitHub, arXiv, social media)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🔥🔥 8,677+ plugins (Google, Azure, Notion, DuckDuckGo)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🔥🔥🔥 500+ nodes (Gmail, Slack, databases, APIs)</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">MCP Support</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">❌ Not supported (major limitation)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ Full MCP support (SSE mode, ModelScope market)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ Supported via MCP nodes</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Deployment</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">☁️ Cloud-only (SaaS)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">☁️🏠 Cloud SaaS or self-hosted (Docker Compose)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🏠 Self-hosted (private deployment for data security)</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Multi-Platform Publishing</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ One-click: WeChat, Feishu, Doubao, Coze Store</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⚠️ API endpoints (manual integration)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⚠️ Webhook/API integration required</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Workflow Import/Export</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⚠️ ZIP file (paid version only, not JSON)</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ JSON export/import</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ JSON export/import (version control friendly)</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Best For</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🎯 Rapid prototyping, non-technical teams, multi-platform bots</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🎯 Enterprise AI apps, RAG pipelines, complex workflows</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🎯 Business automation + AI, connecting existing systems</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Main Limitations</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">No MCP, complex plugin config, no JSON export</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Steep learning curve, performance in high concurrency</td>
+                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Non-persistent memory/storage, version control challenges</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                <p className="text-sm text-blue-800 dark:text-blue-200">
+                  <strong>💡 Selection Guide:</strong>
+                  <br/>• <strong>Rapid prototype + no coding</strong> → Coze
+                  <br/>• <strong>Enterprise AI app + complex logic</strong> → Dify
+                  <br/>• <strong>Business automation + AI integration</strong> → n8n
+                  <br/>• <strong>Hybrid approach:</strong> Use low-code for prototyping, switch to code for production fine-tuning
+                </p>
+              </div>
+            </section>
+
+            {/* Section 7: Knowledge Check Quiz */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+                Knowledge Check: Low-Code Platforms Mastery
+              </h3>
+              <Quiz
+                questions={[
+                  {
+                    id: 'q1',
+                    question: 'What is the PRIMARY advantage of low-code platforms over pure code development for agent applications?',
+                    options: [
+                      { id: 'a', text: 'Low-code platforms are always faster and more performant', isCorrect: false },
+                      { id: 'b', text: 'They provide higher-level abstraction, allowing focus on business logic rather than low-level implementation', isCorrect: true },
+                      { id: 'c', text: 'Low-code platforms completely replace the need for programming skills', isCorrect: false },
+                      { id: 'd', text: 'They automatically generate better prompts than human engineers', isCorrect: false }
+                    ],
+                    explanation: 'Section 5.1.1: Low-code platforms provide "higher level of abstraction," enabling developers to focus on business logic and prompt engineering rather than underlying implementation details. They complement, not replace, coding skills.',
+                    points: 12
+                  },
+                  {
+                    id: 'q2',
+                    question: 'In the Coze Daily AI Brief case (Section 5.2.2), what is the role of the Large Model Node?',
+                    options: [
+                      { id: 'a', text: 'It directly fetches RSS feeds and GitHub data', isCorrect: false },
+                      { id: 'b', text: 'It filters AI-related content from multiple sources, adds emojis, and formats the structured brief', isCorrect: true },
+                      { id: 'c', text: 'It stores the final brief in a database', isCorrect: false },
+                      { id: 'd', text: 'It automatically publishes the brief to social media platforms', isCorrect: false }
+                    ],
+                    explanation: 'The Large Model Node receives inputs from RSS, GitHub, and arXiv plugins, then filters AI-related content, adds unique emojis per item, and structures the output into sections: AI Tech News (10), Papers (5), and Open-Source Projects (5).',
+                    points: 12
+                  },
+                  {
+                    id: 'q3',
+                    question: 'Why is NOT supporting MCP (Model Context Protocol) considered a major limitation for Coze?',
+                    options: [
+                      { id: 'a', text: 'MCP is just a marketing buzzword with no real benefits', isCorrect: false },
+                      { id: 'b', text: 'MCP provides a standardized protocol for tool discovery and bidirectional agent-service communication, enabling richer integrations', isCorrect: true },
+                      { id: 'c', text: 'MCP only works with open-source platforms, not commercial ones', isCorrect: false },
+                      { id: 'd', text: 'Without MCP, agents cannot call any external APIs', isCorrect: false }
+                    ],
+                    explanation: 'Section 5.3.2 explains MCP as the "new standard" for agent tool invocation. Unlike REST APIs, MCP supports tool auto-expansion, standardized discovery, and bidirectional communication via SSE/JSON-RPC. Coze's plugin store is rich, but lacking MCP limits extensibility.',
+                    points: 15
+                  },
+                  {
+                    id: 'q4',
+                    question: 'In the Dify Super Agent (Section 5.3.2), what architectural pattern is used to handle diverse user requests?',
+                    options: [
+                      { id: 'a', text: 'A single monolithic agent handles all tasks with conditional logic', isCorrect: false },
+                      { id: 'b', text: 'Question classifier intelligently routes requests to specialized sub-agents (Daily, Copywriting, Multimodal, Data, MCP)', isCorrect: true },
+                      { id: 'c', text: 'Users manually select which sub-agent to use from a menu', isCorrect: false },
+                      { id: 'd', text: 'All sub-agents run in parallel and the best response is selected', isCorrect: false }
+                    ],
+                    explanation: 'Multi-agent architecture with intelligent routing: Question Classifier analyzes user intent → Routes to specialized agent → Returns context-aware response. This design ensures each agent focuses on its domain expertise (e.g., Copywriting Optimizer outputs 500+ words with emotional resonance).',
+                    points: 12
+                  },
+                  {
+                    id: 'q5',
+                    question: 'In the n8n Intelligent Email Assistant (Section 5.4), what happens if Simple Vector Store and Simple Memory are used without replacement?',
+                    options: [
+                      { id: 'a', text: 'They work perfectly in production with no issues', isCorrect: false },
+                      { id: 'b', text: 'All conversation history and knowledge base data is lost when n8n service restarts (fatal for production)', isCorrect: true },
+                      { id: 'c', text: 'They automatically sync to cloud storage for persistence', isCorrect: false },
+                      { id: 'd', text: 'Performance degrades slowly over time but data is preserved', isCorrect: false }
+                    ],
+                    explanation: 'Section 5.4.5: "Simple Memory and Simple Vector Store are both memory-based, which means once the n8n service restarts, all conversation history and knowledge bases will be lost. This is fatal for production environments." Must replace with persistent storage (Redis, Pinecone).',
+                    points: 15
+                  },
+                  {
+                    id: 'q6',
+                    question: 'Which platform is the BEST choice for a non-technical team (product manager + designer) needing to quickly prototype an AI chatbot for WeChat?',
+                    options: [
+                      { id: 'a', text: 'n8n - it has the most powerful workflow capabilities', isCorrect: false },
+                      { id: 'b', text: 'Dify - it offers the most enterprise-grade features', isCorrect: false },
+                      { id: 'c', text: 'Coze - zero-code, drag-and-drop, one-click WeChat publishing', isCorrect: true },
+                      { id: 'd', text: 'Pure code development - gives the most control', isCorrect: false }
+                    ],
+                    explanation: 'Section 5.5: "Non-technical users, rapid prototype validation → Prioritize Coze." Coze targets "entry-level users, product managers, operations personnel" with "extremely friendly visual interface" and "one-click publishing to WeChat, Feishu, Doubao."',
+                    points: 12
+                  },
+                  {
+                    id: 'q7',
+                    question: 'What is the key difference between traditional automation workflows and modern AI Agent workflows (as demonstrated in n8n)?',
+                    options: [
+                      { id: 'a', text: 'Traditional workflows are faster than AI Agent workflows', isCorrect: false },
+                      { id: 'b', text: 'Traditional: Linear, predefined paths. AI Agent: Autonomous decision-making, dynamic tool selection based on context', isCorrect: true },
+                      { id: 'c', text: 'AI Agent workflows cannot connect to external APIs', isCorrect: false },
+                      { id: 'd', text: 'There is no fundamental difference; both are exactly the same', isCorrect: false }
+                    ],
+                    explanation: 'Section 5.4.2: "Traditional processes are linear, while the Agent will... autonomously understand user intent, make decisions and choices among multiple available tools." Process: Receive → AI Agent (Think → Decide → Tool Call) → Reply. Agent uses SerpAPI + Vector Store dynamically.',
+                    points: 13
+                  },
+                  {
+                    id: 'q8',
+                    question: 'In Dify\'s Copywriting Optimization module, the prompt requires output "exceeding 500 words." What is the rationale behind this hard length requirement?',
+                    options: [
+                      { id: 'a', text: 'Longer text always equals better quality', isCorrect: false },
+                      { id: 'b', text: 'It ensures comprehensive content expansion with emotional resonance, preventing overly brief or shallow optimization', isCorrect: true },
+                      { id: 'c', text: 'The LLM model only works properly with 500+ word outputs', isCorrect: false },
+                      { id: 'd', text: 'It\'s arbitrary; length requirements should never be used in prompts', isCorrect: false }
+                    ],
+                    explanation: 'Section 5.3.2 prompt: "appropriately expand and enrich copy content to provide a more comprehensive optimized version" + Example shows transformation from 9 words to 500+ words with emotional storytelling, value propositions, and call-to-action. Length ensures depth, not just surface edits.',
+                    points: 13
+                  }
+                ]}
+                passingScore={70}
+              />
+            </section>
+          </div>
+        )}
+
         {/* Interactive Components for Chapter 7 */}
         {chapterId === 7 && (
           <div className="mt-12 space-y-12">
