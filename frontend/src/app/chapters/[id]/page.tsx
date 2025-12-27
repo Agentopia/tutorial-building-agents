@@ -84,10 +84,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
           ← Back to Chapters
         </Link>
 
-        <div className="mb-6">
-          <div className="text-sm text-gray-500 mb-2">Chapter {chapterId} of 16</div>
-          <h1 className="text-4xl font-bold mb-4">{title}</h1>
-        </div>
+        <div className="text-sm text-gray-500 mb-6">Chapter {chapterId} of 16</div>
 
         <article className="prose prose-lg max-w-none">
           <MarkdownRenderer content={content} />

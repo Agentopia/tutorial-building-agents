@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { MapPin, ExternalLink, Code2, BookOpen } from 'lucide-react'
 
@@ -127,7 +129,11 @@ export default function TripPlannerDemo() {
           href="http://localhost:5173"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-primary justify-center"
+          className="btn-primary justify-center opacity-50 cursor-not-allowed"
+          onClick={(e) => {
+            e.preventDefault();
+            alert('⚠️ Demo Not Running\n\nThis demo needs to be started separately. Please follow the setup instructions below to run the demo locally.');
+          }}
         >
           <ExternalLink className="w-5 h-5" />
           Launch Demo
