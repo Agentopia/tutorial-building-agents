@@ -118,34 +118,26 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   {
                     id: '1',
                     type: 'input',
-                    data: {
-                      label: '🌍 Environment',
-                      description: 'The external world in which the agent operates (roads, markets, game boards, etc.)'
-                    },
+                    label: '🌍 Environment',
+                    description: 'The external world in which the agent operates (roads, markets, game boards, etc.)',
                     position: { x: 250, y: 0 }
                   },
                   {
                     id: '2',
-                    data: {
-                      label: '👁️ Sensors',
-                      description: 'Perceive environmental state (cameras, microphones, APIs, data streams)'
-                    },
+                    label: '👁️ Sensors',
+                    description: 'Perceive environmental state (cameras, microphones, APIs, data streams)',
                     position: { x: 100, y: 100 }
                   },
                   {
                     id: '3',
-                    data: {
-                      label: '🤖 Agent',
-                      description: 'Processes perceptions and makes autonomous decisions to achieve goals'
-                    },
+                    label: '🤖 Agent',
+                    description: 'Processes perceptions and makes autonomous decisions to achieve goals',
                     position: { x: 250, y: 200 }
                   },
                   {
                     id: '4',
-                    data: {
-                      label: '🦾 Actuators',
-                      description: 'Execute actions to change environment (robotic arms, code execution, API calls)'
-                    },
+                    label: '🦾 Actuators',
+                    description: 'Execute actions to change environment (robotic arms, code execution, API calls)',
                     position: { x: 400, y: 100 }
                   }
                 ]}
@@ -168,42 +160,32 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                 nodes={[
                   {
                     id: '1',
-                    data: {
-                      label: '1️⃣ Simple Reflex',
-                      description: 'Condition-action rules. Example: Thermostat (if temp > threshold, activate cooling)'
-                    },
+                    label: '1️⃣ Simple Reflex',
+                    description: 'Condition-action rules. Example: Thermostat (if temp > threshold, activate cooling)',
                     position: { x: 50, y: 0 }
                   },
                   {
                     id: '2',
-                    data: {
-                      label: '2️⃣ Model-Based',
-                      description: 'Internal world model + memory. Example: Autonomous car tracking vehicles in tunnel'
-                    },
+                    label: '2️⃣ Model-Based',
+                    description: 'Internal world model + memory. Example: Autonomous car tracking vehicles in tunnel',
                     position: { x: 50, y: 100 }
                   },
                   {
                     id: '3',
-                    data: {
-                      label: '3️⃣ Goal-Based',
-                      description: 'Plans actions to achieve specific goals. Example: GPS navigation finding optimal route'
-                    },
+                    label: '3️⃣ Goal-Based',
+                    description: 'Plans actions to achieve specific goals. Example: GPS navigation finding optimal route',
                     position: { x: 50, y: 200 }
                   },
                   {
                     id: '4',
-                    data: {
-                      label: '4️⃣ Utility-Based',
-                      description: 'Maximizes satisfaction across multiple goals. Example: Route that is fast, cheap, and avoids traffic'
-                    },
+                    label: '4️⃣ Utility-Based',
+                    description: 'Maximizes satisfaction across multiple goals. Example: Route that is fast, cheap, and avoids traffic',
                     position: { x: 50, y: 300 }
                   },
                   {
                     id: '5',
-                    data: {
-                      label: '5️⃣ Learning Agent',
-                      description: 'Learns from experience via reinforcement. Example: AlphaGo Zero learning chess strategies'
-                    },
+                    label: '5️⃣ Learning Agent',
+                    description: 'Learns from experience via reinforcement. Example: AlphaGo Zero learning chess strategies',
                     position: { x: 50, y: 400 }
                   }
                 ]}
@@ -318,35 +300,27 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   {
                     id: '1',
                     type: 'input',
-                    data: {
-                      label: '🏗️ Core Layer',
-                      description: 'Foundation: HelloAgentsLLM (multi-provider), Message system, Config, Agent base class, Exception handling'
-                    },
+                    label: '🏗️ Core Layer',
+                    description: 'Foundation: HelloAgentsLLM (multi-provider), Message system, Config, Agent base class, Exception handling',
                     position: { x: 250, y: 0 }
                   },
                   {
                     id: '2',
-                    data: {
-                      label: '🤖 Agents Layer',
-                      description: 'Implementations: SimpleAgent (basic chat), ReActAgent (reasoning+action), ReflectionAgent (self-critique), PlanSolveAgent (decompose+execute)'
-                    },
+                    label: '🤖 Agents Layer',
+                    description: 'Implementations: SimpleAgent (basic chat), ReActAgent (reasoning+action), ReflectionAgent (self-critique), PlanSolveAgent (decompose+execute)',
                     position: { x: 100, y: 120 }
                   },
                   {
                     id: '3',
-                    data: {
-                      label: '🛠️ Tools Layer',
-                      description: 'Tool base class, ToolRegistry, ToolChain manager, AsyncExecutor, Built-in tools (Calculator, Search)'
-                    },
+                    label: '🛠️ Tools Layer',
+                    description: 'Tool base class, ToolRegistry, ToolChain manager, AsyncExecutor, Built-in tools (Calculator, Search)',
                     position: { x: 400, y: 120 }
                   },
                   {
                     id: '4',
                     type: 'output',
-                    data: {
-                      label: '🎯 Design Philosophy',
-                      description: 'Lightweight + Teaching-friendly, Standard APIs, Progressive learning, "Everything is a Tool" abstraction'
-                    },
+                    label: '🎯 Design Philosophy',
+                    description: 'Lightweight + Teaching-friendly, Standard APIs, Progressive learning, "Everything is a Tool" abstraction',
                     position: { x: 250, y: 240 }
                   }
                 ]}
@@ -370,35 +344,27 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                   {
                     id: '1',
                     type: 'input',
-                    data: {
-                      label: '🔍 Check Specific Keys',
-                      description: 'Priority 1: Check MODELSCOPE_API_KEY, OPENAI_API_KEY, ZHIPU_API_KEY in environment'
-                    },
+                    label: '🔍 Check Specific Keys',
+                    description: 'Priority 1: Check MODELSCOPE_API_KEY, OPENAI_API_KEY, ZHIPU_API_KEY in environment',
                     position: { x: 50, y: 0 }
                   },
                   {
                     id: '2',
-                    data: {
-                      label: '🌐 Parse base_url',
-                      description: 'Priority 2: Check LLM_BASE_URL for domains (api-inference.modelscope.cn) or ports (:11434 for Ollama, :8000 for VLLM)'
-                    },
+                    label: '🌐 Parse base_url',
+                    description: 'Priority 2: Check LLM_BASE_URL for domains (api-inference.modelscope.cn) or ports (:11434 for Ollama, :8000 for VLLM)',
                     position: { x: 50, y: 120 }
                   },
                   {
                     id: '3',
-                    data: {
-                      label: '🔑 Analyze Key Format',
-                      description: 'Priority 3: Check LLM_API_KEY format (e.g., "ms-" prefix for ModelScope)'
-                    },
+                    label: '🔑 Analyze Key Format',
+                    description: 'Priority 3: Check LLM_API_KEY format (e.g., "ms-" prefix for ModelScope)',
                     position: { x: 50, y: 240 }
                   },
                   {
                     id: '4',
                     type: 'output',
-                    data: {
-                      label: '✅ Provider Detected',
-                      description: 'Auto-configures base_url, api_key, and default model for selected provider'
-                    },
+                    label: '✅ Provider Detected',
+                    description: 'Auto-configures base_url, api_key, and default model for selected provider',
                     position: { x: 50, y: 360 }
                   }
                 ]}
@@ -754,6 +720,536 @@ print(registry.execute_tool("weather", {"city": "Berlin"}))`}
           </div>
         )}
 
+        {/* Interactive Components for Chapter 13 */}
+        {chapterId === 13 && (
+          <div className="mt-12 space-y-12">
+            {/* Separator */}
+            <div className="border-t pt-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold gradient-text mb-2">
+                  Interactive Learning Experience
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Build a complete multi-agent travel planner from scratch
+                </p>
+              </div>
+            </div>
+
+            {/* Multi-Agent Collaboration Flow */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4">Multi-Agent Collaboration Architecture</h3>
+              <AgentFlowDiagram
+                title="Four Specialized Agents Working Together"
+                description="Click nodes to see each agent's responsibility"
+                nodes={[
+                  {
+                    id: '1',
+                    type: 'input',
+                    label: '👤 User Request',
+                    description: 'User inputs: city, dates, preferences, budget, transportation, accommodation',
+                    position: { x: 250, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    label: '🏛️ AttractionSearchAgent',
+                    description: 'Searches for attractions based on user preferences using Amap POI search. Calls: amap_maps_text_search',
+                    position: { x: 50, y: 120 }
+                  },
+                  {
+                    id: '3',
+                    label: '🌤️ WeatherQueryAgent',
+                    description: 'Queries weather forecast for travel dates. Calls: amap_maps_weather',
+                    position: { x: 200, y: 120 }
+                  },
+                  {
+                    id: '4',
+                    label: '🏨 HotelAgent',
+                    description: 'Recommends hotels matching budget and accommodation type. Calls: amap_maps_text_search',
+                    position: { x: 350, y: 120 }
+                  },
+                  {
+                    id: '5',
+                    label: '📋 PlannerAgent',
+                    description: 'Integrates all information to generate complete travel plan with daily itinerary, meals, budget',
+                    position: { x: 250, y: 240 }
+                  },
+                  {
+                    id: '6',
+                    type: 'output',
+                    label: '✈️ Complete Travel Plan',
+                    description: 'Final output: N-day itinerary with attractions, hotels, meals, weather, budget, map coordinates',
+                    position: { x: 250, y: 360 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', label: 'Preferences', animated: true },
+                  { id: 'e1-3', source: '1', target: '3', label: 'City + Dates', animated: true },
+                  { id: 'e1-4', source: '1', target: '4', label: 'Accommodation', animated: true },
+                  { id: 'e2-5', source: '2', target: '5', label: 'Attractions', animated: true },
+                  { id: 'e3-5', source: '3', target: '5', label: 'Weather', animated: true },
+                  { id: 'e4-5', source: '4', target: '5', label: 'Hotels', animated: true },
+                  { id: 'e5-6', source: '5', target: '6', animated: true }
+                ]}
+                height={450}
+              />
+            </section>
+
+            {/* MCP Integration Flow */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4">MCP (Model Context Protocol) Integration</h3>
+              <AgentFlowDiagram
+                title="How Agents Call External APIs Through MCP"
+                description="The MCP protocol enables seamless tool integration"
+                nodes={[
+                  {
+                    id: '1',
+                    type: 'input',
+                    label: '🤖 Agent Decides',
+                    description: 'Agent generates tool call marker: [TOOL_CALL:amap_maps_text_search:keywords=attraction,city=Beijing]',
+                    position: { x: 50, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    label: '🔧 MCPTool Parses',
+                    description: 'HelloAgents framework extracts tool name and parameters from marker',
+                    position: { x: 50, y: 100 }
+                  },
+                  {
+                    id: '3',
+                    label: '📡 JSON-RPC Request',
+                    description: 'MCPTool sends request to MCP server via stdin (inter-process communication)',
+                    position: { x: 50, y: 200 }
+                  },
+                  {
+                    id: '4',
+                    label: '🗺️ Amap MCP Server',
+                    description: 'Node.js process receives request, calls Amap HTTP API, returns formatted response',
+                    position: { x: 50, y: 300 }
+                  },
+                  {
+                    id: '5',
+                    type: 'output',
+                    label: '✅ Result to Agent',
+                    description: 'Attraction list returned to agent for next reasoning step',
+                    position: { x: 50, y: 400 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', animated: true },
+                  { id: 'e2-3', source: '2', target: '3', label: 'Call', animated: true },
+                  { id: 'e3-4', source: '3', target: '4', label: 'Execute', animated: true },
+                  { id: 'e4-5', source: '4', target: '5', label: 'Response', animated: true }
+                ]}
+                height={500}
+              />
+            </section>
+
+            {/* Code Playground */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4">Try It: Build a Simple Multi-Agent System</h3>
+              <CodePlayground
+                title="Coordinating Multiple Agents"
+                description="Learn the pattern for multi-agent collaboration"
+                language="python"
+                initialCode={`from hello_agents import SimpleAgent, HelloAgentsLLM
+
+class TripPlannerAgent:
+    """
+    Multi-agent travel planner coordinator
+    """
+
+    def __init__(self):
+        self.llm = HelloAgentsLLM()
+
+        # Create specialized agents
+        self.attraction_agent = SimpleAgent(
+            name="AttractionSearchAgent",
+            llm=self.llm,
+            system_prompt="You are an attraction search expert. Search for attractions based on user preferences."
+        )
+
+        self.weather_agent = SimpleAgent(
+            name="WeatherQueryAgent",
+            llm=self.llm,
+            system_prompt="You are a weather query expert. Provide weather forecasts."
+        )
+
+        self.planner_agent = SimpleAgent(
+            name="PlannerAgent",
+            llm=self.llm,
+            system_prompt="You are an itinerary planning expert. Integrate information and create travel plans."
+        )
+
+    def plan_trip(self, city: str, preferences: str, days: int) -> str:
+        """
+        Coordinate agents to create a travel plan
+        """
+        # Step 1: Search attractions
+        print(f"🏛️  Searching for {preferences} attractions in {city}...")
+        attraction_response = self.attraction_agent.run(
+            f"Search for {preferences} attractions in {city}"
+        )
+
+        # Step 2: Query weather
+        print(f"🌤️  Querying weather for {city}...")
+        weather_response = self.weather_agent.run(
+            f"Provide weather forecast for {city} for {days} days"
+        )
+
+        # Step 3: Generate plan
+        print("📋 Generating itinerary...")
+        planner_query = f"""
+Create a {days}-day travel plan for {city} based on:
+
+**Attractions:**
+{attraction_response}
+
+**Weather:**
+{weather_response}
+
+**User Preferences:** {preferences}
+
+Generate a concise itinerary with daily attractions and tips.
+"""
+
+        final_plan = self.planner_agent.run(planner_query)
+        return final_plan
+
+# Test the multi-agent system
+planner = TripPlannerAgent()
+result = planner.plan_trip(
+    city="Beijing",
+    preferences="history and culture",
+    days=3
+)
+
+print("\\n✈️ Travel Plan:")
+print(result)
+`}
+                tests={[
+                  {
+                    input: 'len([planner.attraction_agent, planner.weather_agent, planner.planner_agent])',
+                    expected: '3',
+                    description: 'Should have 3 specialized agents'
+                  }
+                ]}
+                hints={[
+                  'Each agent has a specific role and simple prompt',
+                  'Agents run sequentially, each using previous outputs',
+                  'The planner agent integrates all information',
+                  'This pattern scales to any number of specialized agents'
+                ]}
+                solution={`from hello_agents import SimpleAgent, HelloAgentsLLM, ToolRegistry
+from hello_agents.tools import MCPTool
+
+class TripPlannerAgent:
+    def __init__(self):
+        self.llm = HelloAgentsLLM()
+
+        # Create shared MCP tool (for Amap integration)
+        self.mcp_tool = MCPTool(
+            name="amap_mcp",
+            command="uvx",
+            args=["amap-mcp-server"],
+            env={"AMAP_API_KEY": "your_key"},
+            auto_expand=True  # Automatically expands to 16 tools
+        )
+
+        # Attraction search agent with MCP tools
+        self.attraction_agent = SimpleAgent(
+            name="AttractionSearchAgent",
+            llm=self.llm,
+            system_prompt="""You are an attraction search expert.
+Tool Format: [TOOL_CALL:amap_maps_text_search:keywords=attraction,city=city_name]
+Search based on user preferences."""
+        )
+        self.attraction_agent.add_tool(self.mcp_tool)
+
+        # Weather query agent
+        self.weather_agent = SimpleAgent(
+            name="WeatherQueryAgent",
+            llm=self.llm,
+            system_prompt="""You are a weather query expert.
+Tool Format: [TOOL_CALL:amap_maps_weather:city=city_name]"""
+        )
+        self.weather_agent.add_tool(self.mcp_tool)
+
+        # Planner agent (no tools needed, just integration)
+        self.planner_agent = SimpleAgent(
+            name="PlannerAgent",
+            llm=self.llm,
+            system_prompt="""You are an itinerary planning expert.
+Generate JSON format travel plans."""
+        )
+
+    def plan_trip(self, request):
+        # Sequential agent execution
+        attractions = self.attraction_agent.run(request.preferences)
+        weather = self.weather_agent.run(request.city)
+        plan = self.planner_agent.run(self._build_query(request, attractions, weather))
+        return plan
+`}
+              />
+            </section>
+
+            {/* Exercise */}
+            <section>
+              <Exercise
+                id="chapter13-multi-agent"
+                chapterId={13}
+                title="Add a Restaurant Recommendation Agent"
+                description="Extend the travel planner with a new specialized agent"
+                difficulty="hard"
+                points={150}
+                starterCode={`from hello_agents import SimpleAgent, HelloAgentsLLM
+
+class TripPlannerAgent:
+    def __init__(self):
+        self.llm = HelloAgentsLLM()
+
+        self.attraction_agent = SimpleAgent(
+            name="AttractionSearchAgent",
+            llm=self.llm,
+            system_prompt="Search for attractions"
+        )
+
+        # TODO: Add a restaurant recommendation agent
+        # Requirements:
+        # 1. Create self.restaurant_agent (SimpleAgent)
+        # 2. Write appropriate system prompt
+        # 3. Agent should recommend restaurants based on cuisine preferences
+        # 4. Agent should consider budget constraints
+
+        # Your code here
+
+        self.planner_agent = SimpleAgent(
+            name="PlannerAgent",
+            llm=self.llm,
+            system_prompt="Create travel plans"
+        )
+
+    def plan_trip(self, city: str, cuisine: str, budget: str) -> str:
+        """
+        TODO: Integrate the restaurant agent into the planning flow
+
+        1. Call attraction_agent to get attractions
+        2. Call restaurant_agent to get restaurant recommendations
+        3. Call planner_agent to integrate everything
+
+        Return the final plan
+        """
+        # Your code here
+        pass
+
+# Test
+planner = TripPlannerAgent()
+result = planner.plan_trip(
+    city="Paris",
+    cuisine="French",
+    budget="medium"
+)
+print(result)
+`}
+                tests={[
+                  {
+                    input: 'hasattr(planner, "restaurant_agent")',
+                    expected: 'True',
+                    description: 'Should have a restaurant_agent attribute'
+                  },
+                  {
+                    input: 'planner.restaurant_agent.name',
+                    expected: 'RestaurantAgent',
+                    description: 'Agent should be named RestaurantAgent'
+                  }
+                ]}
+                hints={[
+                  'Create SimpleAgent with name="RestaurantAgent"',
+                  'System prompt should mention cuisine and budget',
+                  'In plan_trip(), call agents sequentially',
+                  'Pass restaurant_response to planner_agent along with attractions'
+                ]}
+                solution={`from hello_agents import SimpleAgent, HelloAgentsLLM
+
+class TripPlannerAgent:
+    def __init__(self):
+        self.llm = HelloAgentsLLM()
+
+        self.attraction_agent = SimpleAgent(
+            name="AttractionSearchAgent",
+            llm=self.llm,
+            system_prompt="You are an attraction search expert. Search for attractions based on user preferences."
+        )
+
+        # Restaurant recommendation agent
+        self.restaurant_agent = SimpleAgent(
+            name="RestaurantAgent",
+            llm=self.llm,
+            system_prompt="""
+You are a restaurant recommendation expert.
+Recommend restaurants based on:
+- Cuisine type (e.g., French, Italian, Chinese)
+- Budget level (budget, medium, luxury)
+- Location proximity to attractions
+
+Provide restaurant names, cuisine types, price ranges, and descriptions.
+"""
+        )
+
+        self.planner_agent = SimpleAgent(
+            name="PlannerAgent",
+            llm=self.llm,
+            system_prompt="You are an itinerary planning expert. Integrate attractions and restaurants into a travel plan."
+        )
+
+    def plan_trip(self, city: str, cuisine: str, budget: str) -> str:
+        # Step 1: Get attractions
+        attraction_response = self.attraction_agent.run(
+            f"Search for popular attractions in {city}"
+        )
+
+        # Step 2: Get restaurant recommendations
+        restaurant_response = self.restaurant_agent.run(
+            f"Recommend {cuisine} restaurants in {city} with {budget} budget"
+        )
+
+        # Step 3: Generate integrated plan
+        planner_query = f"""
+Create a travel plan for {city} with:
+
+**Attractions:**
+{attraction_response}
+
+**Restaurants:**
+{restaurant_response}
+
+Include dining suggestions with nearby attractions.
+"""
+
+        final_plan = self.planner_agent.run(planner_query)
+        return final_plan
+
+# Test
+planner = TripPlannerAgent()
+result = planner.plan_trip(city="Paris", cuisine="French", budget="medium")
+print(result)
+`}
+                language="python"
+              />
+            </section>
+
+            {/* Quiz */}
+            <section>
+              <Quiz
+                chapterId={13}
+                title="Chapter 13 Travel Planner Mastery"
+                questions={[
+                  {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Why use multiple specialized agents instead of one complex agent?',
+                    options: [
+                      { id: 'a', text: 'To make the code longer', isCorrect: false },
+                      { id: 'b', text: 'Simpler prompts, parallel execution, easier debugging, better maintainability', isCorrect: true },
+                      { id: 'c', text: 'To use more LLM API calls', isCorrect: false },
+                      { id: 'd', text: 'Because one agent cannot call multiple tools', isCorrect: false }
+                    ],
+                    explanation: 'Multi-agent design decomposes complexity: each agent has a simple, focused role with a concise prompt, making the system easier to debug and maintain.',
+                    points: 15
+                  },
+                  {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'What is the advantage of using MCP (Model Context Protocol) over direct HTTP API calls?',
+                    options: [
+                      { id: 'a', text: 'MCP is faster than HTTP', isCorrect: false },
+                      { id: 'b', text: 'Standardized protocol, auto-discovery of tools, process-based communication, agent autonomy', isCorrect: true },
+                      { id: 'c', text: 'MCP requires no API keys', isCorrect: false },
+                      { id: 'd', text: 'MCP only works with Amap', isCorrect: false }
+                    ],
+                    explanation: 'MCP provides a standardized way for LLMs to discover and call tools. With auto_expand=True, one MCPTool gives the agent access to all 16 Amap tools automatically.',
+                    points: 15
+                  },
+                  {
+                    id: 'q3',
+                    type: 'multiple-choice',
+                    question: 'Why does the PlannerAgent not need any tools (MCP or otherwise)?',
+                    options: [
+                      { id: 'a', text: 'It only integrates information from other agents', isCorrect: true },
+                      { id: 'b', text: 'Tools are too slow for planning', isCorrect: false },
+                      { id: 'c', text: 'PlannerAgent uses a different framework', isCorrect: false },
+                      { id: 'd', text: 'It gets tools automatically', isCorrect: false }
+                    ],
+                    explanation: 'PlannerAgent receives pre-fetched data from AttractionSearchAgent, WeatherQueryAgent, and HotelAgent. Its job is pure information integration and itinerary generation—no external data fetching needed.',
+                    points: 15
+                  },
+                  {
+                    id: 'q4',
+                    type: 'multiple-choice',
+                    question: 'What is the benefit of sharing one MCPTool instance across multiple agents?',
+                    options: [
+                      { id: 'a', text: 'Better performance', isCorrect: false },
+                      { id: 'b', text: 'Only one MCP server process runs, reducing resource usage and API rate limit issues', isCorrect: true },
+                      { id: 'c', text: 'Agents can communicate directly', isCorrect: false },
+                      { id: 'd', text: 'It makes the code shorter', isCorrect: false }
+                    ],
+                    explanation: 'Sharing one MCPTool instance means only one amap-mcp-server process runs. All agent tool calls go through this single process, conserving memory/CPU and avoiding API rate limit violations.',
+                    points: 15
+                  },
+                  {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'In the travel planner, why is Pydantic used for data models on the backend?',
+                    options: [
+                      { id: 'a', text: 'To make Python code run faster', isCorrect: false },
+                      { id: 'b', text: 'Automatic data validation, type safety, IDE autocomplete, serialization to JSON', isCorrect: true },
+                      { id: 'c', text: 'Pydantic is required by FastAPI', isCorrect: false },
+                      { id: 'd', text: 'To avoid using dictionaries', isCorrect: false }
+                    ],
+                    explanation: 'Pydantic validates data types, provides IDE autocomplete, catches errors early, and seamlessly serializes to/from JSON for API responses—essential for robust full-stack apps.',
+                    points: 15
+                  },
+                  {
+                    id: 'q6',
+                    type: 'true-false',
+                    question: 'True or False: In front-end/backend separation architecture, the backend only returns JSON data, never HTML.',
+                    options: [
+                      { id: 'true', text: 'True', isCorrect: true },
+                      { id: 'false', text: 'False', isCorrect: false }
+                    ],
+                    explanation: 'True. In front-end/backend separation, the backend is a pure API server returning JSON. The frontend (Vue/React/etc.) fetches this data and renders HTML in the browser.',
+                    points: 10
+                  },
+                  {
+                    id: 'q7',
+                    type: 'multiple-choice',
+                    question: 'What happens when auto_expand=True in MCPTool?',
+                    options: [
+                      { id: 'a', text: 'The tool automatically installs MCP servers', isCorrect: false },
+                      { id: 'b', text: 'MCPTool queries the MCP server for available tools and creates individual Tool objects for each', isCorrect: true },
+                      { id: 'c', text: 'The agent can call tools without permission', isCorrect: false },
+                      { id: 'd', text: 'Tools run in parallel automatically', isCorrect: false }
+                    ],
+                    explanation: 'With auto_expand=True, MCPTool asks the MCP server "what tools do you provide?" and creates separate Tool objects for each (e.g., amap_maps_text_search, amap_maps_weather). The agent then sees 16 individual tools instead of one.',
+                    points: 15
+                  },
+                  {
+                    id: 'q8',
+                    type: 'true-false',
+                    question: 'True or False: The travel planner uses ReActAgent for tool calling.',
+                    options: [
+                      { id: 'true', text: 'True', isCorrect: false },
+                      { id: 'false', text: 'False', isCorrect: true }
+                    ],
+                    explanation: 'False. The travel planner uses SimpleAgent for each specialized task. Each agent calls at most one tool per run(), avoiding the multi-step reasoning overhead of ReActAgent.',
+                    points: 10
+                  }
+                ]}
+                passingScore={70}
+              />
+            </section>
+          </div>
+        )}
+
         {/* Interactive Components for Chapter 4 (Pilot) */}
         {chapterId === 4 && (
           <div className="mt-12 space-y-12">
@@ -779,51 +1275,39 @@ print(registry.execute_tool("weather", {"city": "Berlin"}))`}
                   {
                     id: '1',
                     type: 'input',
-                    data: {
-                      label: '📝 User Query',
-                      description: 'The initial question or task from the user'
-                    },
+                    label: '📝 User Query',
+                    description: 'The initial question or task from the user',
                     position: { x: 250, y: 0 }
                   },
                   {
                     id: '2',
-                    data: {
-                      label: '🤔 Reasoning',
-                      description: 'LLM analyzes the query and plans the next action using chain-of-thought reasoning'
-                    },
+                    label: '🤔 Reasoning',
+                    description: 'LLM analyzes the query and plans the next action using chain-of-thought reasoning',
                     position: { x: 250, y: 100 }
                   },
                   {
                     id: '3',
-                    data: {
-                      label: '⚡ Action Selection',
-                      description: 'Agent decides which tool to use or whether to provide final answer'
-                    },
+                    label: '⚡ Action Selection',
+                    description: 'Agent decides which tool to use or whether to provide final answer',
                     position: { x: 250, y: 200 }
                   },
                   {
                     id: '4',
-                    data: {
-                      label: '🛠️ Tool Execution',
-                      description: 'Execute the selected tool (search, calculator, API call, etc.)'
-                    },
+                    label: '🛠️ Tool Execution',
+                    description: 'Execute the selected tool (search, calculator, API call, etc.)',
                     position: { x: 100, y: 300 }
                   },
                   {
                     id: '5',
-                    data: {
-                      label: '📊 Observation',
-                      description: 'Receive and process the tool output or result'
-                    },
+                    label: '📊 Observation',
+                    description: 'Receive and process the tool output or result',
                     position: { x: 250, y: 400 }
                   },
                   {
                     id: '6',
                     type: 'output',
-                    data: {
-                      label: '✅ Final Answer',
-                      description: 'Agent provides the final response to the user'
-                    },
+                    label: '✅ Final Answer',
+                    description: 'Agent provides the final response to the user',
                     position: { x: 400, y: 300 }
                   }
                 ]}
