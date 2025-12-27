@@ -1,4 +1,7 @@
+'use client'
+
 import Link from 'next/link'
+import { useProgress } from '@/hooks/useProgress'
 
 const chapters = [
   { id: 1, title: 'Introduction to Agents', part: 'I' },
@@ -20,15 +23,36 @@ const chapters = [
 ]
 
 export default function ChaptersPage() {
+  // TODO: Get userId from auth context when SSO is integrated
+  const userId = typeof window !== 'undefined' ? localStorage.getItem('userId') : null
+  const { getChapterProgress, getOverallProgress, isLoading } = useProgress(userId || undefined)
+  const overallProgress = getOverallProgress()
+
   return (
     <main className="min-h-screen p-8">
       <div className="max-w-4xl mx-auto">
         <Link href="/" className="text-blue-600 hover:underline mb-4 inline-block">
           ← Back to Home
         </Link>
-        
+
         <h1 className="text-4xl font-bold mb-2">Course Chapters</h1>
-        <p className="text-gray-600 mb-8">Select a chapter to begin learning</p>
+        <p className="text-gray-600 mb-4">Select a chapter to begin learning</p>
+
+        {/* Overall Progress Bar */}
+        {!isLoading && userId && (
+          <div className="mb-8 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-sm font-semibold text-gray-700">Overall Course Progress</span>
+              <span className="text-sm font-bold text-blue-600">{overallProgress}%</span>
+            </div>
+            <div className="w-full bg-gray-200 rounded-full h-3">
+              <div
+                className="bg-gradient-to-r from-blue-500 to-purple-500 h-3 rounded-full transition-all duration-500"
+                style={{ width: `${overallProgress}%` }}
+              />
+            </div>
+          </div>
+        )}
 
         <div className="space-y-6">
           {['I', 'II', 'III', 'IV', 'V'].map(part => {
@@ -47,22 +71,60 @@ export default function ChaptersPage() {
                   Part {part}: {partTitles[part]}
                 </h2>
                 <div className="space-y-2">
-                  {partChapters.map(chapter => (
-                    <Link
-                      key={chapter.id}
-                      href={`/chapters/${chapter.id}`}
-                      className="block p-4 bg-white hover:bg-blue-50 rounded border border-gray-200 hover:border-blue-500 transition-all duration-200 hover:shadow-md"
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="text-gray-900">
-                          <span className="font-semibold text-gray-900">Chapter {chapter.id}</span>
-                          <span className="mx-2 text-gray-400">•</span>
-                          <span className="text-gray-700">{chapter.title}</span>
+                  {partChapters.map(chapter => {
+                    const chapterProgress = getChapterProgress(chapter.id.toString())
+                    const isCompleted = chapterProgress.completed
+                    const hasQuiz = chapterProgress.quizScore !== undefined
+                    const hasExercise = chapterProgress.exerciseCompleted
+
+                    return (
+                      <Link
+                        key={chapter.id}
+                        href={`/chapters/${chapter.id}`}
+                        className="block p-4 bg-white hover:bg-blue-50 rounded border border-gray-200 hover:border-blue-500 transition-all duration-200 hover:shadow-md"
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center gap-3 flex-1">
+                            <div className="text-gray-900 flex-1">
+                              <span className="font-semibold text-gray-900">Chapter {chapter.id}</span>
+                              <span className="mx-2 text-gray-400">•</span>
+                              <span className="text-gray-700">{chapter.title}</span>
+                            </div>
+
+                            {/* Progress Badges */}
+                            <div className="flex items-center gap-2">
+                              {isCompleted && (
+                                <span className="px-2 py-1 bg-green-100 text-green-700 text-xs font-medium rounded-full flex items-center gap-1">
+                                  ✓ Completed
+                                </span>
+                              )}
+                              {hasQuiz && (
+                                <span className="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">
+                                  Quiz: {chapterProgress.quizScore}%
+                                </span>
+                              )}
+                              {hasExercise && (
+                                <span className="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-medium rounded-full flex items-center gap-1">
+                                  ✓ Exercise
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                          <span className="text-blue-600">→</span>
                         </div>
-                        <span className="text-blue-600">→</span>
-                      </div>
-                    </Link>
-                  ))}
+
+                        {/* Progress Bar */}
+                        {!isLoading && userId && chapterProgress.percentage > 0 && (
+                          <div className="w-full bg-gray-200 rounded-full h-1.5">
+                            <div
+                              className="bg-blue-500 h-1.5 rounded-full transition-all duration-300"
+                              style={{ width: `${chapterProgress.percentage}%` }}
+                            />
+                          </div>
+                        )}
+                      </Link>
+                    )
+                  })}
                 </div>
               </div>
             )
