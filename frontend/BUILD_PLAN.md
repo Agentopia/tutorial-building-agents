@@ -155,7 +155,15 @@
 - [x] Local persistence via localStorage
 - [x] Supabase-ready backend sync
 
-### 3.7 Remaining Tasks ⏳
+### 3.7 Testing & Verification ✅
+- [x] **Test interactive components in Chapter 1** (2025-12-27)
+  - ✅ AgentFlowDiagram: Click-to-explore nodes, zoom/pan controls working
+  - ✅ Quiz System: Answer selection, navigation (1/5 → 2/5), progress tracking
+  - ✅ All React Flow diagrams functional
+- [x] **Fix duplicate chapter title** - Removed redundant heading
+- [x] **Fix demo launch buttons** - Added helpful feedback for non-running demos
+
+### 3.8 Remaining Tasks ⏳
 - [ ] Add interactive components to remaining chapters:
   - [x] Chapter 1 ✅
   - [ ] Chapter 2
@@ -173,7 +181,7 @@
   - [ ] Chapter 14
   - [ ] Chapter 15
   - [ ] Chapter 16
-- [ ] Test all interactive components end-to-end
+- [ ] Test all 16 chapters for interactive component functionality
 - [ ] Add more code playground exercises
 - [ ] Create chapter-specific quizzes for all chapters
 
