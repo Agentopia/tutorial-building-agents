@@ -776,6 +776,501 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
           </div>
         )}
 
+        {/* Interactive Components for Chapter 3 */}
+        {chapterId === 3 && (
+          <div className="mt-12 space-y-12">
+            {/* Separator */}
+            <div className="border-t pt-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold gradient-text mb-2">
+                  Interactive Learning Experience
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300">
+                  Understand LLM fundamentals through hands-on code and visualizations
+                </p>
+              </div>
+            </div>
+
+            {/* N-gram Language Model */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Bigram Language Model Calculator</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Calculate sentence probability using the Markov assumption. This code demonstrates how statistical
+                language models estimate P(sentence) by multiplying conditional probabilities.
+              </p>
+              <CodePlayground
+                language="python"
+                initialCode={`import collections
+
+# Example corpus from Chapter 3
+corpus = "datawhale agent learns datawhale agent works"
+tokens = corpus.split()
+total_tokens = len(tokens)
+
+# --- Step 1: Calculate P(datawhale) ---
+count_datawhale = tokens.count('datawhale')
+p_datawhale = count_datawhale / total_tokens
+print(f"Step 1: P(datawhale) = {count_datawhale}/{total_tokens} = {p_datawhale:.3f}")
+
+# --- Step 2: Calculate P(agent|datawhale) ---
+bigrams = list(zip(tokens, tokens[1:]))
+bigram_counts = collections.Counter(bigrams)
+count_datawhale_agent = bigram_counts[('datawhale', 'agent')]
+p_agent_given_datawhale = count_datawhale_agent / count_datawhale
+print(f"Step 2: P(agent|datawhale) = {count_datawhale_agent}/{count_datawhale} = {p_agent_given_datawhale:.3f}")
+
+# --- Step 3: Calculate P(learns|agent) ---
+count_agent_learns = bigram_counts[('agent', 'learns')]
+count_agent = tokens.count('agent')
+p_learns_given_agent = count_agent_learns / count_agent
+print(f"Step 3: P(learns|agent) = {count_agent_learns}/{count_agent} = {p_learns_given_agent:.3f}")
+
+# --- Finally: Multiply the probabilities ---
+p_sentence = p_datawhale * p_agent_given_datawhale * p_learns_given_agent
+print(f"\\nFinal: P('datawhale agent learns') ≈ {p_sentence:.3f}")`}
+                testCases={[
+                  {
+                    input: '',
+                    expectedOutput: '0.167',
+                    description: 'Verify probability calculation matches 0.167'
+                  }
+                ]}
+              />
+            </section>
+
+            {/* Word Embeddings Arithmetic */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Word Embedding Arithmetic: King - Man + Woman = Queen</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Word embeddings capture semantic relationships. This famous example shows how vector arithmetic
+                can perform semantic "translation": King - Man + Woman ≈ Queen.
+              </p>
+              <CodePlayground
+                language="python"
+                initialCode={`import numpy as np
+
+# Simplified 2D word vectors (in practice, these are 300-1000 dimensions)
+embeddings = {
+    "king": np.array([0.9, 0.8]),
+    "queen": np.array([0.9, 0.2]),
+    "man": np.array([0.7, 0.9]),
+    "woman": np.array([0.7, 0.3])
+}
+
+def cosine_similarity(vec1, vec2):
+    """Calculate cosine similarity between two vectors"""
+    dot_product = np.dot(vec1, vec2)
+    norm_product = np.linalg.norm(vec1) * np.linalg.norm(vec2)
+    return dot_product / norm_product
+
+# Semantic arithmetic: king - man + woman
+result_vec = embeddings["king"] - embeddings["man"] + embeddings["woman"]
+
+# Calculate similarity with "queen"
+sim = cosine_similarity(result_vec, embeddings["queen"])
+
+print(f"Result vector (king - man + woman): {result_vec}")
+print(f"Queen vector: {embeddings['queen']}")
+print(f"Cosine similarity: {sim:.4f}")
+print(f"\\nPerfect match! This shows embeddings capture abstract concepts like 'royalty' and 'gender'.")`}
+                testCases={[
+                  {
+                    input: '',
+                    expectedOutput: '1.0000',
+                    description: 'Verify cosine similarity is 1.0 (perfect match)'
+                  }
+                ]}
+              />
+            </section>
+
+            {/* Transformer Architecture Diagram */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Transformer Architecture: Encoder-Decoder</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                The Transformer model (2017) revolutionized NLP by replacing recurrence with attention.
+                Click nodes to understand each component's role in the architecture.
+              </p>
+              <AgentFlowDiagram
+                title="Transformer: Attention Is All You Need"
+                description="Encoder understands input, Decoder generates output, all powered by multi-head attention"
+                nodes={[
+                  {
+                    id: 'input',
+                    type: 'input',
+                    label: 'Input Tokens',
+                    description: 'Tokenized input sequence (e.g., ["Hello", "world", "!"])',
+                    position: { x: 100, y: 0 }
+                  },
+                  {
+                    id: 'embed-enc',
+                    label: 'Token Embedding',
+                    description: 'Convert tokens to dense vectors (e.g., 512 dimensions)',
+                    position: { x: 100, y: 100 }
+                  },
+                  {
+                    id: 'pos-enc',
+                    label: '+ Positional Encoding',
+                    description: 'Add position info via sine/cosine functions: PE(pos, 2i) = sin(pos/10000^(2i/d_model))',
+                    position: { x: 100, y: 200 }
+                  },
+                  {
+                    id: 'enc-layer',
+                    label: 'Encoder Layer ×N',
+                    description: 'Stack of N=6 identical layers. Each has: Multi-Head Self-Attention → Add&Norm → FFN → Add&Norm',
+                    position: { x: 100, y: 300 }
+                  },
+                  {
+                    id: 'self-attn-enc',
+                    label: 'Multi-Head Self-Attention',
+                    description: 'Each token attends to all tokens. Learns contextual relationships (e.g., "it" refers to "agent")',
+                    position: { x: 50, y: 420 }
+                  },
+                  {
+                    id: 'ffn-enc',
+                    label: 'Feed-Forward Network',
+                    description: 'FFN(x) = max(0, xW1+b1)W2+b2. Expands to 4x dimensions then shrinks back',
+                    position: { x: 150, y: 420 }
+                  },
+                  {
+                    id: 'enc-output',
+                    label: 'Encoder Output',
+                    description: 'Contextual representations for entire input sequence',
+                    position: { x: 100, y: 540 }
+                  },
+                  {
+                    id: 'dec-input',
+                    label: 'Output Tokens (shifted)',
+                    description: 'Decoder input: previous outputs shifted right (during training)',
+                    position: { x: 400, y: 0 }
+                  },
+                  {
+                    id: 'embed-dec',
+                    label: 'Token Embedding',
+                    description: 'Same embedding layer as encoder (weights shared)',
+                    position: { x: 400, y: 100 }
+                  },
+                  {
+                    id: 'pos-dec',
+                    label: '+ Positional Encoding',
+                    description: 'Same positional encoding as encoder',
+                    position: { x: 400, y: 200 }
+                  },
+                  {
+                    id: 'dec-layer',
+                    label: 'Decoder Layer ×N',
+                    description: 'Stack of N=6 layers. Each has: Masked Self-Attention → Add&Norm → Cross-Attention → Add&Norm → FFN → Add&Norm',
+                    position: { x: 400, y: 300 }
+                  },
+                  {
+                    id: 'masked-attn',
+                    label: 'Masked Self-Attention',
+                    description: 'Prevents attending to future tokens (autoregressive). Only looks at previous positions.',
+                    position: { x: 340, y: 420 }
+                  },
+                  {
+                    id: 'cross-attn',
+                    label: 'Cross-Attention',
+                    description: 'Decoder attends to encoder output. Query from decoder, Key & Value from encoder.',
+                    position: { x: 440, y: 420 }
+                  },
+                  {
+                    id: 'ffn-dec',
+                    label: 'Feed-Forward Network',
+                    description: 'Same FFN structure as encoder',
+                    position: { x: 400, y: 520 }
+                  },
+                  {
+                    id: 'linear',
+                    label: 'Linear Layer',
+                    description: 'Projects to vocabulary size (e.g., 50,000 dimensions)',
+                    position: { x: 400, y: 620 }
+                  },
+                  {
+                    id: 'softmax',
+                    type: 'output',
+                    label: 'Softmax → Probabilities',
+                    description: 'Convert logits to probability distribution over vocabulary',
+                    position: { x: 400, y: 720 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1', source: 'input', target: 'embed-enc', animated: true },
+                  { id: 'e2', source: 'embed-enc', target: 'pos-enc', animated: true },
+                  { id: 'e3', source: 'pos-enc', target: 'enc-layer', animated: true },
+                  { id: 'e4', source: 'enc-layer', target: 'self-attn-enc', label: 'Layer details', animated: true },
+                  { id: 'e5', source: 'enc-layer', target: 'ffn-enc', animated: true },
+                  { id: 'e6', source: 'ffn-enc', target: 'enc-output', animated: true },
+                  { id: 'e7', source: 'dec-input', target: 'embed-dec', animated: true },
+                  { id: 'e8', source: 'embed-dec', target: 'pos-dec', animated: true },
+                  { id: 'e9', source: 'pos-dec', target: 'dec-layer', animated: true },
+                  { id: 'e10', source: 'dec-layer', target: 'masked-attn', label: 'Layer details', animated: true },
+                  { id: 'e11', source: 'dec-layer', target: 'cross-attn', animated: true },
+                  { id: 'e12', source: 'enc-output', target: 'cross-attn', label: 'K, V from encoder', animated: true, style: { stroke: '#10b981' } },
+                  { id: 'e13', source: 'cross-attn', target: 'ffn-dec', animated: true },
+                  { id: 'e14', source: 'ffn-dec', target: 'linear', animated: true },
+                  { id: 'e15', source: 'linear', target: 'softmax', animated: true }
+                ]}
+                height={800}
+              />
+            </section>
+
+            {/* Attention Mechanism Flow */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Attention Mechanism: Query, Key, Value</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Self-attention allows each token to "attend" to all other tokens with learned weights.
+                The formula: Attention(Q,K,V) = softmax(QK^T/√d_k)V
+              </p>
+              <AgentFlowDiagram
+                title="How Self-Attention Works"
+                description="Example: Processing the word 'agent' in sentence 'The agent learns because it is intelligent'"
+                nodes={[
+                  {
+                    id: 'token',
+                    type: 'input',
+                    label: 'Token: "agent"',
+                    description: 'Current token embedding vector (512-d)',
+                    position: { x: 300, y: 0 }
+                  },
+                  {
+                    id: 'wq',
+                    label: 'Query (Q)',
+                    description: 'Q = Token × W^Q. Represents "What am I looking for?" Used to query other tokens.',
+                    position: { x: 100, y: 120 }
+                  },
+                  {
+                    id: 'wk',
+                    label: 'Key (K)',
+                    description: 'K = Token × W^K. Represents "What do I contain?" Indexed by queries from other tokens.',
+                    position: { x: 300, y: 120 }
+                  },
+                  {
+                    id: 'wv',
+                    label: 'Value (V)',
+                    description: 'V = Token × W^V. Represents "What information do I provide?" The actual content returned.',
+                    position: { x: 500, y: 120 }
+                  },
+                  {
+                    id: 'all-k',
+                    label: 'All Keys in Sentence',
+                    description: 'K vectors from ["The", "agent", "learns", "because", "it", "is", "intelligent"]',
+                    position: { x: 200, y: 250 }
+                  },
+                  {
+                    id: 'scores',
+                    label: 'Attention Scores',
+                    description: 'Score = Q·K^T / √d_k for each word. Higher score = more relevant. Example: Q_"it" has high score with K_"agent"',
+                    position: { x: 200, y: 370 }
+                  },
+                  {
+                    id: 'weights',
+                    label: 'Attention Weights',
+                    description: 'Weights = softmax(Scores). Sum to 1.0. Distribution: [0.05, 0.6, 0.1, 0.05, 0.1, 0.05, 0.05] (agent gets 60%!)',
+                    position: { x: 200, y: 490 }
+                  },
+                  {
+                    id: 'all-v',
+                    label: 'All Values in Sentence',
+                    description: 'V vectors from all tokens. Each contains semantic information.',
+                    position: { x: 450, y: 370 }
+                  },
+                  {
+                    id: 'weighted-sum',
+                    label: 'Weighted Sum',
+                    description: 'Output = Σ(weight_i × V_i). Combines information from all tokens, weighted by relevance.',
+                    position: { x: 350, y: 610 }
+                  },
+                  {
+                    id: 'output',
+                    type: 'output',
+                    label: 'Context-Aware Representation',
+                    description: 'New representation of "agent" incorporating global context. Now "knows" about "learns", "intelligent", etc.',
+                    position: { x: 350, y: 730 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1', source: 'token', target: 'wq', label: '×W^Q', animated: true },
+                  { id: 'e2', source: 'token', target: 'wk', label: '×W^K', animated: true },
+                  { id: 'e3', source: 'token', target: 'wv', label: '×W^V', animated: true },
+                  { id: 'e4', source: 'wq', target: 'scores', label: 'Q', animated: true },
+                  { id: 'e5', source: 'all-k', target: 'scores', label: 'K^T', animated: true },
+                  { id: 'e6', source: 'scores', target: 'weights', label: 'softmax(·/√d_k)', animated: true },
+                  { id: 'e7', source: 'wv', target: 'all-v', animated: true },
+                  { id: 'e8', source: 'weights', target: 'weighted-sum', label: 'α', animated: true },
+                  { id: 'e9', source: 'all-v', target: 'weighted-sum', label: 'V', animated: true },
+                  { id: 'e10', source: 'weighted-sum', target: 'output', animated: true }
+                ]}
+                height={800}
+              />
+            </section>
+
+            {/* BPE Tokenization */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Byte-Pair Encoding (BPE) Tokenization</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                BPE is the tokenization algorithm used by GPT models. It iteratively merges the most frequent
+                adjacent token pairs to build a vocabulary. This balances vocabulary size with semantic expression.
+              </p>
+              <CodePlayground
+                language="python"
+                initialCode={`import re, collections
+
+def get_stats(vocab):
+    """Count token pair frequencies"""
+    pairs = collections.defaultdict(int)
+    for word, freq in vocab.items():
+        symbols = word.split()
+        for i in range(len(symbols)-1):
+            pairs[symbols[i],symbols[i+1]] += freq
+    return pairs
+
+def merge_vocab(pair, v_in):
+    """Merge token pairs"""
+    v_out = {}
+    bigram = re.escape(' '.join(pair))
+    p = re.compile(r'(?<!\\S)' + bigram + r'(?!\\S)')
+    for word in v_in:
+        w_out = p.sub(''.join(pair), word)
+        v_out[w_out] = v_in[word]
+    return v_out
+
+# Mini corpus from Chapter 3: "hug", "pug", "pun", "bun"
+vocab = {'h u g </w>': 1, 'p u g </w>': 1, 'p u n </w>': 1, 'b u n </w>': 1}
+num_merges = 4
+
+print("Initial vocabulary:", list(vocab.keys()))
+print("=" * 50)
+
+for i in range(num_merges):
+    pairs = get_stats(vocab)
+    if not pairs:
+        break
+    best = max(pairs, key=pairs.get)
+    vocab = merge_vocab(best, vocab)
+    print(f"Merge {i+1}: {best} -> {''.join(best)}")
+    print(f"New vocab: {list(vocab.keys())}")
+    print("-" * 50)
+
+print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
+                testCases={[
+                  {
+                    input: '',
+                    expectedOutput: 'ug</w>',
+                    description: 'Verify BPE creates "ug</w>" token through merging'
+                  }
+                ]}
+              />
+            </section>
+
+            {/* Knowledge Check Quiz */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Knowledge Check: LLM Fundamentals</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
+                Test your understanding of language models, transformers, attention mechanisms, and tokenization.
+              </p>
+              <Quiz
+                questions={[
+                  {
+                    id: 'q1',
+                    question: 'What is the core limitation of N-gram language models that neural networks solve?',
+                    options: [
+                      { id: 'a', text: 'Computational complexity', isCorrect: false },
+                      { id: 'b', text: 'Data sparsity and poor generalization - cannot handle unseen word combinations', isCorrect: true },
+                      { id: 'c', text: 'Inability to process long sequences', isCorrect: false },
+                      { id: 'd', text: 'Lack of parallel processing', isCorrect: false }
+                    ],
+                    explanation: 'N-gram models treat words as discrete symbols. If a word sequence never appeared in training data, probability = 0. They cannot generalize to semantically similar words (e.g., "robot learns" vs "agent learns").',
+                    points: 10
+                  },
+                  {
+                    id: 'q2',
+                    question: 'In the attention mechanism formula Attention(Q,K,V) = softmax(QK^T/√d_k)V, what does the √d_k scaling factor prevent?',
+                    options: [
+                      { id: 'a', text: 'Attention weights from summing to more than 1', isCorrect: false },
+                      { id: 'b', text: 'Gradients from becoming too small (vanishing) due to large dot products', isCorrect: true },
+                      { id: 'c', text: 'Overfitting to training data', isCorrect: false },
+                      { id: 'd', text: 'Negative attention scores', isCorrect: false }
+                    ],
+                    explanation: 'QK^T produces dot products that grow with dimension d_k. Large values → softmax saturates → tiny gradients. Dividing by √d_k keeps values stable for effective training.',
+                    points: 15
+                  },
+                  {
+                    id: 'q3',
+                    question: 'What is the purpose of Multi-Head Attention (using h=8 heads instead of h=1)?',
+                    options: [
+                      { id: 'a', text: 'Reduce computational cost by parallelizing attention', isCorrect: false },
+                      { id: 'b', text: 'Allow the model to attend to different types of relationships simultaneously (e.g., syntax, semantics)', isCorrect: true },
+                      { id: 'c', text: 'Increase the vocabulary size the model can handle', isCorrect: false },
+                      { id: 'd', text: 'Enable longer context windows', isCorrect: false }
+                    ],
+                    explanation: 'Each head learns to focus on different aspects (subject-verb, anaphora, sentiment). h=8 heads = 8 "experts" examining the sentence from different perspectives. Final output concatenates all heads.',
+                    points: 15
+                  },
+                  {
+                    id: 'q4',
+                    question: 'Why does Transformer use Positional Encoding instead of position embeddings?',
+                    options: [
+                      { id: 'a', text: 'Self-attention is order-invariant - without position info, "agent learns" = "learns agent"', isCorrect: true },
+                      { id: 'b', text: 'To reduce model parameters', isCorrect: false },
+                      { id: 'c', text: 'To enable parallel processing', isCorrect: false },
+                      { id: 'd', text: 'To handle variable-length sequences', isCorrect: false }
+                    ],
+                    explanation: 'Self-attention computes relationships regardless of position. PE adds sine/cosine waves so tokens at different positions get unique vectors: PE(pos,2i)=sin(pos/10000^(2i/d_model)).',
+                    points: 15
+                  },
+                  {
+                    id: 'q5',
+                    question: 'In BPE tokenization, what determines which token pair to merge next?',
+                    options: [
+                      { id: 'a', text: 'The pair with the highest frequency in the corpus', isCorrect: true },
+                      { id: 'b', text: 'Random selection for diversity', isCorrect: false },
+                      { id: 'c', text: 'The pair with the longest combined length', isCorrect: false },
+                      { id: 'd', text: 'Semantic similarity between the tokens', isCorrect: false }
+                    ],
+                    explanation: 'BPE is greedy: iteratively merge the most frequent adjacent token pair. Example: if ("u","g") appears 2x and ("u","n") appears 2x, merge one, recount, repeat until vocabulary reaches target size.',
+                    points: 10
+                  },
+                  {
+                    id: 'q6',
+                    question: 'What is the role of the Feed-Forward Network (FFN) in each Transformer layer?',
+                    options: [
+                      { id: 'a', text: 'Aggregate information across the sequence', isCorrect: false },
+                      { id: 'b', text: 'Extract higher-order features from the attention output via non-linear transformation', isCorrect: true },
+                      { id: 'c', text: 'Generate the final output probabilities', isCorrect: false },
+                      { id: 'd', text: 'Normalize layer activations', isCorrect: false }
+                    ],
+                    explanation: 'FFN applies to each position independently: FFN(x) = max(0, xW1+b1)W2+b2. Expands to d_ff=4×d_model, then shrinks back. Extracts non-linear features after attention aggregation.',
+                    points: 10
+                  },
+                  {
+                    id: 'q7',
+                    question: 'True or False: In Decoder self-attention, "masking" prevents tokens from attending to future positions, ensuring autoregressive generation.',
+                    options: [
+                      { id: 'true', text: 'True', isCorrect: true },
+                      { id: 'false', text: 'False', isCorrect: false }
+                    ],
+                    explanation: 'TRUE! During training, decoder sees full target sequence. Masking ensures position i can only attend to positions ≤i (not future tokens). This mimics autoregressive inference where we generate left-to-right.',
+                    points: 10
+                  },
+                  {
+                    id: 'q8',
+                    question: 'Why are word embeddings better than one-hot encoding for neural language models?',
+                    options: [
+                      { id: 'a', text: 'One-hot vectors are too large (vocabulary size) and treat words as isolated symbols with no semantic relationships', isCorrect: true },
+                      { id: 'b', text: 'Word embeddings are faster to compute', isCorrect: false },
+                      { id: 'c', text: 'One-hot encoding requires more training data', isCorrect: false },
+                      { id: 'd', text: 'Embeddings enable character-level modeling', isCorrect: false }
+                    ],
+                    explanation: 'One-hot: [0,0,1,0,...] for "agent", [0,1,0,0,...] for "robot". No similarity! Embeddings: dense vectors where similar words are close (cosine similarity). Captures semantics + reduces dimensions.',
+                    points: 15
+                  }
+                ]}
+                passingScore={70}
+              />
+            </section>
+          </div>
+        )}
+
         {/* Interactive Components for Chapter 7 */}
         {chapterId === 7 && (
           <div className="mt-12 space-y-12">

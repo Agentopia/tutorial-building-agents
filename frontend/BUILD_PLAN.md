@@ -170,12 +170,19 @@
   - ✅ Modern LLM Agent Architecture: 10-node system showing Perceive→Think→Act loop
   - ✅ Knowledge Check Quiz: 8 questions (105 points, 70% passing) on AI history and paradigm shifts
   - ✅ Text color contrast fixes: Updated all headings and descriptions for better readability
+- [x] **Add Chapter 3 interactive components** (2025-12-27)
+  - ✅ Bigram Language Model Calculator: Code playground with step-by-step probability calculation
+  - ✅ Word Embedding Arithmetic: King - Man + Woman = Queen semantic demonstration
+  - ✅ Transformer Architecture Diagram: 16-node encoder-decoder visualization
+  - ✅ Attention Mechanism Flow: 10-node Q/K/V transformation with attention formula
+  - ✅ BPE Tokenization Demo: Interactive byte-pair encoding with iterative merging
+  - ✅ Knowledge Check Quiz: 8 questions (100 points, 70% passing) on LLM fundamentals
 
 ### 3.8 Remaining Tasks ⏳
 - [ ] Add interactive components to remaining chapters:
   - [x] Chapter 1 ✅
   - [x] Chapter 2 ✅
-  - [ ] Chapter 3
+  - [x] Chapter 3 ✅
   - [x] Chapter 4 ✅
   - [ ] Chapter 5
   - [ ] Chapter 6
@@ -247,9 +254,9 @@
 - Exercises: ✅ Complete (validation, hints, solutions)
 - Live Demos: ✅ Complete (trip planner, deep research, AI town)
 - Gamification: ✅ Complete (points, achievements, streaks)
-- Chapter Coverage: ⏳ 31% (5/16 chapters have interactive components)
+- Chapter Coverage: ⏳ 37% (6/16 chapters have interactive components)
 
-**Remaining:** Add interactive components to 11 more chapters
+**Remaining:** Add interactive components to 10 more chapters
 
 ### Phase 4: Advanced Features ⏳ 0%
 - SSO: ❌ Not Started
