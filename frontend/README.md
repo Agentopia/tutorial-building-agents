@@ -2,13 +2,17 @@
 
 Next.js 14 frontend for the Hello Agents tutorial, integrated with BixoryAI Training Portal.
 
-## ✅ Setup Complete
+## ✅ Current Status
+
+**Progress:** 40% Complete (Phase 1-2 done, Phase 3-4 planned)
+**See:** [BUILD_PLAN.md](BUILD_PLAN.md) for detailed tracking
 
 ### Installed
 - ✅ Next.js 14.2.18 (App Router)
 - ✅ React 18.3.1
 - ✅ TypeScript 5
 - ✅ Tailwind CSS 3.4
+- ✅ @supabase/supabase-js
 
 ### Directory Structure
 ```
@@ -16,16 +20,20 @@ frontend/
 ├── src/
 │   ├── app/
 │   │   ├── api/
-│   │   │   ├── manifest/route.ts      ✅ GET /api/manifest
-│   │   │   ├── health/route.ts        ✅ GET /api/health
-│   │   │   └── progress/sync/route.ts ✅ POST /api/progress/sync
-│   │   ├── learn/[slug]/              (to be implemented)
+│   │   │   ├── manifest/route.ts      ✅ Course metadata endpoint
+│   │   │   ├── health/route.ts        ✅ Health check
+│   │   │   └── progress/sync/route.ts ✅ Progress tracking
+│   │   ├── chapters/
+│   │   │   ├── page.tsx               ✅ Chapter list with progress
+│   │   │   └── [id]/page.tsx          ✅ Individual chapters
 │   │   ├── layout.tsx                 ✅ Root layout
 │   │   ├── page.tsx                   ✅ Homepage
 │   │   └── globals.css                ✅ Tailwind styles
-│   └── components/                    (to be implemented)
+│   └── hooks/
+│       └── useProgress.ts             ✅ Progress tracking hook
 │
-├── .env.local                         ✅ Environment config
+├── .env.local                         ✅ Supabase + Portal config
+├── BUILD_PLAN.md                      ✅ Development roadmap
 ├── package.json                       ✅ Port 3001
 └── tsconfig.json                      ✅ TypeScript config
 ```
@@ -57,50 +65,83 @@ curl -X POST http://localhost:3001/api/progress/sync \
   -d '{"userId":"123","chapterId":"1","progress":{"percentage":50,"completed":false}}'
 ```
 
-## 📋 Next Steps
+## 📋 Implementation Status
 
-### 1. Install Course SDK
-```bash
-npm install @bixoryai/course-sdk
-```
+### ✅ Completed (Phase 1-2)
+- [x] **Infrastructure Setup** - Next.js, TypeScript, Tailwind, Supabase
+- [x] **API Endpoints** - manifest, health, progress/sync
+- [x] **Database Integration** - Shared Supabase with training-portal
+- [x] **Progress Tracking** - useProgress hook with real-time sync
+- [x] **Chapter Pages** - List view and individual chapter viewer
+- [x] **Progress UI** - Overall bar, chapter bars, completion badges
+- [x] **Navigation** - Chapter list organized by parts, prev/next
 
-### 2. Implement Components
-- [ ] ChapterViewer - Display chapter content
-- [ ] NavigationSidebar - Chapter navigation
-- [ ] ProgressTracker - Track user progress
+### ⏳ Next Priority (Phase 3)
+1. **End-to-End Testing**
+   - [ ] Test progress tracking in standalone mode
+   - [ ] Verify Supabase data persistence
+   - [ ] Test with training-portal integration
 
-### 3. Configure Supabase
-Update `.env.local` with actual Supabase credentials:
-- `SUPABASE_URL`
-- `SUPABASE_ANON_KEY`
-- `PORTAL_SSO_SECRET`
-- `COURSE_API_KEY`
+2. **Interactive Code Playgrounds**
+   - [ ] Evaluate WebContainers vs Pyodide
+   - [ ] Build code editor component
+   - [ ] Add "Run Code" functionality to code examples
 
-### 4. Implement Progress Tracking
-Uncomment Supabase code in `src/app/api/progress/sync/route.ts`
+3. **Interactive Diagrams**
+   - [ ] Agent architecture visualizations
+   - [ ] ReAct/Plan-Solve flow diagrams
+   - [ ] Communication protocol diagrams
 
-### 5. Add Chapter Pages
-Create dynamic routes in `src/app/learn/[slug]/page.tsx`
+4. **Quiz & Assessment System**
+   - [ ] Multiple choice quizzes
+   - [ ] Code challenges
+   - [ ] Score tracking and validation
 
-### 6. Test with Training Portal
-```bash
-# Terminal 1: training-portal
-cd ../../BixoryAI/training-portal
-npm run dev  # Port 8888
+### 🔮 Future (Phase 4)
+- [ ] SSO Integration with training-portal
+- [ ] Real-time cross-device sync
+- [ ] Live demos (trip planner, deep research, AI town)
+- [ ] Analytics dashboard
+- [ ] Accessibility improvements
 
-# Terminal 2: hello-agents
-cd frontend
-npm run dev  # Port 3001
-```
+**See [BUILD_PLAN.md](BUILD_PLAN.md) for complete roadmap and detailed tracking**
 
-## 📚 Integration
+## 📚 Integration Status
 
 This frontend integrates with BixoryAI Training Portal following spec v1.0.0.
 
-See `../INTEGRATION.md` for complete integration details.
+**Current Integration:** ✅ **Complete** - Ready for testing
+- ✅ Course registered in training-portal database (course-hello-agents)
+- ✅ All 16 chapters ingested with markdown content (Option 2: Copy Approach)
+- ✅ Shared Supabase database (localhost:54321/54322)
+- ✅ Progress tracking synced between hello-agents and training-portal
+- ✅ MarkdownRenderer component renders chapter content in portal
+- ✅ Full learning player at /learn/hello-agents in training-portal
+
+**Integration Method:** Both approaches supported
+- **Training-Portal View:** Renders markdown content directly from database
+- **Standalone View:** Uses local markdown files with progress sync
+
+**Testing Flow:**
+```bash
+# Terminal 1: Training Portal
+cd ../../BixoryAI/training-portal
+npm run dev  # http://localhost:8888
+
+# Terminal 2: Hello-Agents
+cd frontend
+npm run dev  # http://localhost:3001
+
+# Access:
+# - Standalone: http://localhost:3001/chapters
+# - Portal: http://localhost:8888/courses/hello-agents
+# - Learning: http://localhost:8888/learn/hello-agents
+```
 
 ## 🔗 Resources
 
-- [Integration Guide](C:/Coding/BixoryAI/training-portal/docs/INTEGRATION_GUIDE.md)
-- [Training Portal](https://github.com/bixoryai/training-portal)
-- [Course SDK](C:/Coding/BixoryAI/training-portal/packages/course-sdk)
+- **Build Plan:** [BUILD_PLAN.md](BUILD_PLAN.md)
+- **Integration Status:** [../INTEGRATION_STATUS.md](../INTEGRATION_STATUS.md)
+- **Integration Guide:** [../INTEGRATION.md](../INTEGRATION.md)
+- **Portal Guide:** [C:/Coding/BixoryAI/training-portal/docs/INTEGRATION_GUIDE.md](C:/Coding/BixoryAI/training-portal/docs/INTEGRATION_GUIDE.md)
+- **Course Metadata:** [../integration.yml](../integration.yml)
