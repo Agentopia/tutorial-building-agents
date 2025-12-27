@@ -1846,7 +1846,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                       { id: 'c', text: 'MCP only works with open-source platforms, not commercial ones', isCorrect: false },
                       { id: 'd', text: 'Without MCP, agents cannot call any external APIs', isCorrect: false }
                     ],
-                    explanation: 'Section 5.3.2 explains MCP as the "new standard" for agent tool invocation. Unlike REST APIs, MCP supports tool auto-expansion, standardized discovery, and bidirectional communication via SSE/JSON-RPC. Coze's plugin store is rich, but lacking MCP limits extensibility.',
+                    explanation: 'Section 5.3.2 explains MCP as the "new standard" for agent tool invocation. Unlike REST APIs, MCP supports tool auto-expansion, standardized discovery, and bidirectional communication via SSE/JSON-RPC. Coze\'s plugin store is rich, but lacking MCP limits extensibility.',
                     points: 15
                   },
                   {
