@@ -51,13 +51,13 @@ export default function ChaptersPage() {
                     <Link
                       key={chapter.id}
                       href={`/chapters/${chapter.id}`}
-                      className="block p-4 bg-gray-50 hover:bg-blue-50 rounded border hover:border-blue-500 transition"
+                      className="block p-4 bg-white hover:bg-blue-50 rounded border border-gray-200 hover:border-blue-500 transition-all duration-200 hover:shadow-md"
                     >
                       <div className="flex items-center justify-between">
-                        <div>
-                          <span className="font-semibold">Chapter {chapter.id}</span>
-                          <span className="mx-2">•</span>
-                          <span>{chapter.title}</span>
+                        <div className="text-gray-900">
+                          <span className="font-semibold text-gray-900">Chapter {chapter.id}</span>
+                          <span className="mx-2 text-gray-400">•</span>
+                          <span className="text-gray-700">{chapter.title}</span>
                         </div>
                         <span className="text-blue-600">→</span>
                       </div>
