@@ -93,6 +93,206 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
           <MarkdownRenderer content={content} />
         </article>
 
+        {/* Interactive Components for Chapter 1 */}
+        {chapterId === 1 && (
+          <div className="mt-12 space-y-12">
+            {/* Separator */}
+            <div className="border-t pt-12">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold gradient-text mb-2">
+                  Interactive Learning Experience
+                </h2>
+                <p className="text-gray-600 dark:text-gray-400">
+                  Visualize concepts and test your understanding
+                </p>
+              </div>
+            </div>
+
+            {/* Agent-Environment Interaction Diagram */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4">Agent-Environment Interaction Loop</h3>
+              <AgentFlowDiagram
+                title="How Agents Interact with Their Environment"
+                description="Click on nodes to learn more about each component"
+                nodes={[
+                  {
+                    id: '1',
+                    type: 'input',
+                    data: {
+                      label: '🌍 Environment',
+                      description: 'The external world in which the agent operates (roads, markets, game boards, etc.)'
+                    },
+                    position: { x: 250, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    data: {
+                      label: '👁️ Sensors',
+                      description: 'Perceive environmental state (cameras, microphones, APIs, data streams)'
+                    },
+                    position: { x: 100, y: 100 }
+                  },
+                  {
+                    id: '3',
+                    data: {
+                      label: '🤖 Agent',
+                      description: 'Processes perceptions and makes autonomous decisions to achieve goals'
+                    },
+                    position: { x: 250, y: 200 }
+                  },
+                  {
+                    id: '4',
+                    data: {
+                      label: '🦾 Actuators',
+                      description: 'Execute actions to change environment (robotic arms, code execution, API calls)'
+                    },
+                    position: { x: 400, y: 100 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', label: 'Perceive', animated: true },
+                  { id: 'e2-3', source: '2', target: '3', label: 'Process', animated: true },
+                  { id: 'e3-4', source: '3', target: '4', label: 'Act', animated: true },
+                  { id: 'e4-1', source: '4', target: '1', label: 'Change', animated: true }
+                ]}
+                height={350}
+              />
+            </section>
+
+            {/* Agent Evolution Timeline */}
+            <section>
+              <h3 className="text-2xl font-semibold mb-4">Evolution of Traditional Agents</h3>
+              <AgentFlowDiagram
+                title="From Simple to Complex Agent Architectures"
+                description="The progression from reactive agents to learning agents"
+                nodes={[
+                  {
+                    id: '1',
+                    data: {
+                      label: '1️⃣ Simple Reflex',
+                      description: 'Condition-action rules. Example: Thermostat (if temp > threshold, activate cooling)'
+                    },
+                    position: { x: 50, y: 0 }
+                  },
+                  {
+                    id: '2',
+                    data: {
+                      label: '2️⃣ Model-Based',
+                      description: 'Internal world model + memory. Example: Autonomous car tracking vehicles in tunnel'
+                    },
+                    position: { x: 50, y: 100 }
+                  },
+                  {
+                    id: '3',
+                    data: {
+                      label: '3️⃣ Goal-Based',
+                      description: 'Plans actions to achieve specific goals. Example: GPS navigation finding optimal route'
+                    },
+                    position: { x: 50, y: 200 }
+                  },
+                  {
+                    id: '4',
+                    data: {
+                      label: '4️⃣ Utility-Based',
+                      description: 'Maximizes satisfaction across multiple goals. Example: Route that is fast, cheap, and avoids traffic'
+                    },
+                    position: { x: 50, y: 300 }
+                  },
+                  {
+                    id: '5',
+                    data: {
+                      label: '5️⃣ Learning Agent',
+                      description: 'Learns from experience via reinforcement. Example: AlphaGo Zero learning chess strategies'
+                    },
+                    position: { x: 50, y: 400 }
+                  }
+                ]}
+                edges={[
+                  { id: 'e1-2', source: '1', target: '2', label: '+ Memory', animated: true },
+                  { id: 'e2-3', source: '2', target: '3', label: '+ Planning', animated: true },
+                  { id: 'e3-4', source: '3', target: '4', label: '+ Utility', animated: true },
+                  { id: 'e4-5', source: '4', target: '5', label: '+ Learning', animated: true }
+                ]}
+                height={500}
+              />
+            </section>
+
+            {/* Quiz */}
+            <section>
+              <Quiz
+                chapterId={1}
+                title="Chapter 1 Knowledge Check"
+                questions={[
+                  {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'What are the four fundamental elements that define an agent?',
+                    options: [
+                      { id: 'a', text: 'Environment, Sensors, Actuators, Autonomy', isCorrect: true },
+                      { id: 'b', text: 'Input, Processing, Output, Storage', isCorrect: false },
+                      { id: 'c', text: 'Perception, Action, Memory, Learning', isCorrect: false },
+                      { id: 'd', text: 'Hardware, Software, Network, Database', isCorrect: false }
+                    ],
+                    explanation: 'An agent perceives its Environment through Sensors, and autonomously takes Actions through Actuators. These four elements form the foundation of all agent behavior.',
+                    points: 10
+                  },
+                  {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'Which type of traditional agent has an internal world model to track aspects of the environment that cannot be directly perceived?',
+                    options: [
+                      { id: 'a', text: 'Simple Reflex Agent', isCorrect: false },
+                      { id: 'b', text: 'Model-Based Reflex Agent', isCorrect: true },
+                      { id: 'c', text: 'Goal-Based Agent', isCorrect: false },
+                      { id: 'd', text: 'Utility-Based Agent', isCorrect: false }
+                    ],
+                    explanation: 'Model-Based Reflex Agents maintain an internal world model to understand aspects of the environment not directly visible, like a car tracking vehicles in a tunnel.',
+                    points: 10
+                  },
+                  {
+                    id: 'q3',
+                    type: 'multiple-choice',
+                    question: 'What is the main advantage of LLM-driven agents over traditional agents?',
+                    options: [
+                      { id: 'a', text: 'They are faster and more deterministic', isCorrect: false },
+                      { id: 'b', text: 'They can handle complex, ambiguous natural language instructions', isCorrect: true },
+                      { id: 'c', text: 'They require less computational resources', isCorrect: false },
+                      { id: 'd', text: 'They follow strict rule-based logic', isCorrect: false }
+                    ],
+                    explanation: 'LLM agents can process high-level, ambiguous, context-rich natural language instructions and dynamically plan, use tools, and adjust based on feedback.',
+                    points: 15
+                  },
+                  {
+                    id: 'q4',
+                    type: 'multiple-choice',
+                    question: 'In Symbolic AI, how is knowledge represented?',
+                    options: [
+                      { id: 'a', text: 'As statistical patterns in neural networks', isCorrect: false },
+                      { id: 'b', text: 'As human-readable symbols and logical rules', isCorrect: true },
+                      { id: 'c', text: 'As learned weights and biases', isCorrect: false },
+                      { id: 'd', text: 'As probability distributions', isCorrect: false }
+                    ],
+                    explanation: 'Symbolic AI represents knowledge as explicit symbols (words, concepts) operated on by logical rules, making it transparent but fragile to edge cases.',
+                    points: 15
+                  },
+                  {
+                    id: 'q5',
+                    type: 'true-false',
+                    question: 'True or False: A simple reflex agent can remember past states and plan for future goals.',
+                    options: [
+                      { id: 'true', text: 'True', isCorrect: false },
+                      { id: 'false', text: 'False', isCorrect: true }
+                    ],
+                    explanation: 'False. Simple reflex agents have no memory or predictive capability. They only react to current perceptions using condition-action rules.',
+                    points: 10
+                  }
+                ]}
+                passingScore={70}
+              />
+            </section>
+          </div>
+        )}
+
         {/* Interactive Components for Chapter 4 (Pilot) */}
         {chapterId === 4 && (
           <div className="mt-12 space-y-12">
