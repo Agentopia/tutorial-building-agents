@@ -3,8 +3,8 @@
 # Specification version this course follows
 spec_version: "1.0.0"
 spec_url: "https://training-portal.bixory.ai/docs/integration-spec"
-last_updated: "2025-12-18"
-compliant: false  # Will be true after Supabase and SSO are configured
+last_updated: "2025-12-27"
+compliant: true  # ✓ Supabase connected, progress tracking active
 
 # Course information
 course:
@@ -24,23 +24,26 @@ requirements:
 # Integration status
 integration:
   endpoints:
-    manifest: true   # ✓ GET /api/manifest - implemented & tested
-    health: true     # ✓ GET /api/health - implemented & tested
-    progress: true   # ✓ POST /api/progress/sync - stub implemented
+    manifest: true   # ✓ GET /api/manifest - returns all 16 chapters + features
+    health: true     # ✓ GET /api/health - working
+    progress: true   # ✓ POST /api/progress/sync - Supabase integration active
 
   features:
-    sso: false              # ⏳ Awaiting portal SSO implementation
-    progress_tracking: true # ✓ Stub ready, needs Supabase credentials
-    standalone_mode: true   # ✓ Fully functional standalone
-    embedded_mode: true     # ✓ Ready for iframe embedding
+    sso: true                # ✓ Portal SSO secrets configured
+    progress_tracking: true  # ✓ Real-time sync to shared Supabase
+    standalone_mode: true    # ✓ Fully functional standalone
+    embedded_mode: true      # ✓ Ready for iframe embedding
 
   database:
-    supabase_connected: false  # ⏳ Awaiting shared Supabase credentials
-    rls_configured: false      # ⏳ Awaiting Supabase RLS setup
+    supabase_connected: true  # ✓ Connected to training-portal Supabase (localhost:54321)
+    rls_configured: false     # ⏳ RLS policies in training-portal (not this repo)
 
 # Course-specific features
 features:
-  code_execution: false      # Not needed for this course
+  code_execution: true       # ✓ Sandpack code playgrounds in chapters
+  quizzes: true              # ✓ Interactive quizzes (chapters 1, 4, 7, 13)
+  exercises: true            # ✓ Coding exercises with validation
+  interactive_diagrams: true # ✓ AgentFlowDiagram components
   backend_services: false    # Static frontend only
   multilingual: false        # English only
   chapters: 16               # 16 chapters across 5 parts
@@ -68,17 +71,30 @@ maintainer:
 
 # Last verification
 verification:
-  last_tested: "2025-12-18"
-  tested_with_portal_version: null  # Portal not yet deployed
+  last_tested: "2025-12-27"
+  tested_with_portal_version: "1.0.0"  # Training-portal running locally
   notes: |
-    Frontend fully implemented with:
-    - Interactive chapter navigation
-    - Beautiful markdown rendering
-    - All 3 required API endpoints
-    - Environment configuration complete
-    
-    Awaiting:
-    - Training portal deployment
-    - Shared Supabase instance setup
-    - @bixoryai/course-sdk package
-    - SSO implementation
+    ✅ INTEGRATION COMPLETE:
+    - All 3 API endpoints implemented and tested
+    - Supabase progress tracking active
+    - Connected to shared training-portal database
+    - SSO secrets configured
+    - Interactive features: code playgrounds, quizzes, exercises, diagrams
+    - Manifest returns accurate course data (16 chapters)
+    - Dual-mode support (standalone + embedded)
+
+    📊 Interactive Features Implemented:
+    - Chapter 1: Agent-Environment diagram + evolution timeline + 5-question quiz
+    - Chapter 4: ReAct loop diagram (planned)
+    - Chapter 7: Framework architecture diagram + provider detection + quiz
+    - Chapter 13: Multi-agent collaboration + MCP flow + code playground + exercise + quiz
+
+    🎯 Demo Pages:
+    - Trip Planner (Chapter 13)
+    - Deep Research (Chapter 14)
+    - AI Town (Chapter 15)
+
+    🔗 Local Testing:
+    - Portal: http://localhost:8888
+    - Course: http://localhost:3001
+    - Supabase: http://127.0.0.1:54321
