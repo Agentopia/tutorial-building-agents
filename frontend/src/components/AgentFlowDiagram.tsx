@@ -120,11 +120,11 @@ export default function AgentFlowDiagram({
     <div className="my-8">
       {/* Header */}
       <div className="mb-4">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-1">
+        <h3 className="text-xl font-semibold text-gray-900 mb-1">
           {title}
         </h3>
         {description && (
-          <p className="text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-sm text-gray-700">
             {description}
           </p>
         )}
@@ -132,7 +132,7 @@ export default function AgentFlowDiagram({
 
       {/* Flow Diagram */}
       <div
-        className="border-2 border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden bg-white dark:bg-gray-900 shadow-lg"
+        className="border-2 border-gray-200 rounded-xl overflow-hidden bg-white shadow-lg"
         style={{ height }}
       >
         <ReactFlow
@@ -145,9 +145,9 @@ export default function AgentFlowDiagram({
           defaultViewport={{ x: 0, y: 0, zoom: 1 }}
         >
           <Background color="#6366f1" gap={16} size={1} />
-          <Controls className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg" />
+          <Controls className="bg-white border border-gray-200 rounded-lg" />
           <MiniMap
-            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg"
+            className="bg-white border border-gray-200 rounded-lg"
             nodeColor={() => 'rgb(99, 102, 241)'}
             maskColor="rgba(0, 0, 0, 0.1)"
           />
@@ -168,7 +168,7 @@ export default function AgentFlowDiagram({
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-md w-full p-6"
+              className="bg-white rounded-xl shadow-2xl max-w-md w-full p-6"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="flex items-start justify-between mb-4">
@@ -177,22 +177,22 @@ export default function AgentFlowDiagram({
                     <Info className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                    <h3 className="text-lg font-semibold text-gray-900">
                       {selectedNode.label}
                     </h3>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                    <p className="text-xs text-gray-500">
                       Component Details
                     </p>
                   </div>
                 </div>
                 <button
                   onClick={() => setSelectedNode(null)}
-                  className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300"
+                  className="text-gray-400 hover:text-gray-600"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
-              <div className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+              <div className="text-sm text-gray-700 leading-relaxed">
                 {selectedNode.description}
               </div>
             </motion.div>
@@ -201,7 +201,7 @@ export default function AgentFlowDiagram({
       </AnimatePresence>
 
       {/* Instructions */}
-      <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg text-sm text-blue-800 dark:text-blue-200">
+      <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-800">
         💡 <strong>Tip:</strong> Click on nodes to see detailed explanations. Use the controls to zoom and pan around the diagram.
       </div>
     </div>

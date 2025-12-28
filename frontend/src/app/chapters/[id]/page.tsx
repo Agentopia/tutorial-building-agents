@@ -67,9 +67,9 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
   if (!content) {
     return (
-      <main className="min-h-screen p-8">
-        <div className="max-w-4xl mx-auto">
-          <h1>Chapter {chapterId} content not found</h1>
+      <main className="min-h-screen p-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-8">
+          <h1 className="text-gray-900 mb-4">Chapter {chapterId} content not found</h1>
           <Link href="/chapters" className="text-blue-600 hover:underline">
             ← Back to Chapters
           </Link>
@@ -100,7 +100,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                 <h2 className="text-3xl font-bold gradient-text mb-2">
                   Interactive Learning Experience
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600">
                   Visualize concepts and test your understanding
                 </p>
               </div>
@@ -108,7 +108,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
             {/* Agent-Environment Interaction Diagram */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">Agent-Environment Interaction Loop</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Agent-Environment Interaction Loop</h3>
               <AgentFlowDiagram
                 title="How Agents Interact with Their Environment"
                 description="Click on nodes to learn more about each component"
@@ -151,7 +151,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
             {/* Agent Evolution Timeline */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">Evolution of Traditional Agents</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Evolution of Traditional Agents</h3>
               <AgentFlowDiagram
                 title="From Simple to Complex Agent Architectures"
                 description="The progression from reactive agents to learning agents"
@@ -282,7 +282,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                 <h2 className="text-3xl font-bold gradient-text mb-2">
                   Interactive Learning Experience
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600">
                   Explore the evolution of AI agents through history
                 </p>
               </div>
@@ -290,8 +290,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
             {/* Historical Timeline Diagram */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">AI Agent Evolution Timeline (1950s-2024)</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">AI Agent Evolution Timeline (1950s-2024)</h3>
+              <p className="text-gray-700 mb-6">
                 Click on nodes to learn about major milestones in agent development across three paradigms: Symbolism, Connectionism, and Behaviorism.
               </p>
               <AgentFlowDiagram
@@ -400,8 +400,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
             {/* ELIZA Interactive Demo */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">ELIZA Chatbot Demo (1966)</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">ELIZA Chatbot Demo (1966)</h3>
+              <p className="text-gray-700 mb-6">
                 Experience the pioneering chatbot that used pattern matching and pronoun swapping.
                 Notice how it creates an illusion of understanding without real comprehension.
               </p>
@@ -410,8 +410,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
             {/* Society of Mind Diagram */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Society of Mind: Building a Block Tower</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Society of Mind: Building a Block Tower</h3>
+              <p className="text-gray-700 mb-6">
                 Minsky's theory shows how complex intelligence emerges from collaboration of simple "mindless" agents.
                 Click nodes to see how each agency contributes to the emergent behavior.
               </p>
@@ -507,8 +507,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
             {/* Reinforcement Learning Loop */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Reinforcement Learning: Agent-Environment Loop</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Reinforcement Learning: Agent-Environment Loop</h3>
+              <p className="text-gray-700 mb-6">
                 RL agents learn optimal behavior through trial and error. Example: AlphaGo learned to play Go
                 by playing millions of games against itself, receiving rewards for wins.
               </p>
@@ -567,8 +567,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                 ]}
                 height={400}
               />
-              <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-                <p className="text-sm text-blue-900 dark:text-blue-100">
+              <div className="mt-4 p-4 bg-blue-50  border border-blue-200  rounded-lg">
+                <p className="text-sm text-blue-900">
                   <strong>💡 Key Insight:</strong> Agent's goal is to maximize <strong>cumulative reward</strong> (Return),
                   not just immediate reward. This requires "foresight" - sometimes sacrificing current gains for greater future rewards.
                 </p>
@@ -577,8 +577,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
             {/* LLM Agent Architecture */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Modern LLM Agent Architecture</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Modern LLM Agent Architecture</h3>
+              <p className="text-gray-700 mb-6">
                 Today's agents integrate all three paradigms: Symbolic (tool use, planning) +
                 Neural (LLM reasoning) + Behavioral (RLHF training). This is the culmination of 70 years of AI research.
               </p>
@@ -669,8 +669,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
             {/* Knowledge Check Quiz */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Knowledge Check: History of Agents</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Knowledge Check: History of Agents</h3>
+              <p className="text-gray-700 mb-6">
                 Test your understanding of agent evolution, paradigm shifts, and historical milestones.
               </p>
               <Quiz
@@ -795,7 +795,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                 <h2 className="text-3xl font-bold gradient-text mb-2">
                   Interactive Learning Experience
                 </h2>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-gray-700">
                   Understand LLM fundamentals through hands-on code and visualizations
                 </p>
               </div>
@@ -803,8 +803,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
             {/* N-gram Language Model */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Bigram Language Model Calculator</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Bigram Language Model Calculator</h3>
+              <p className="text-gray-700 mb-6">
                 Calculate sentence probability using the Markov assumption. This code demonstrates how statistical
                 language models estimate P(sentence) by multiplying conditional probabilities.
               </p>
@@ -843,8 +843,8 @@ print(f"\\nFinal: P('datawhale agent learns') ≈ {p_sentence:.3f}")`}
 
             {/* Word Embeddings Arithmetic */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Word Embedding Arithmetic: King - Man + Woman = Queen</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Word Embedding Arithmetic: King - Man + Woman = Queen</h3>
+              <p className="text-gray-700 mb-6">
                 Word embeddings capture semantic relationships. This famous example shows how vector arithmetic
                 can perform semantic "translation": King - Man + Woman ≈ Queen.
               </p>
@@ -881,8 +881,8 @@ print(f"\\nPerfect match! This shows embeddings capture abstract concepts like '
 
             {/* Transformer Architecture Diagram */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Transformer Architecture: Encoder-Decoder</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Transformer Architecture: Encoder-Decoder</h3>
+              <p className="text-gray-700 mb-6">
                 The Transformer model (2017) revolutionized NLP by replacing recurrence with attention.
                 Click nodes to understand each component's role in the architecture.
               </p>
@@ -1012,8 +1012,8 @@ print(f"\\nPerfect match! This shows embeddings capture abstract concepts like '
 
             {/* Attention Mechanism Flow */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Attention Mechanism: Query, Key, Value</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Attention Mechanism: Query, Key, Value</h3>
+              <p className="text-gray-700 mb-6">
                 Self-attention allows each token to "attend" to all other tokens with learned weights.
                 The formula: Attention(Q,K,V) = softmax(QK^T/√d_k)V
               </p>
@@ -1102,8 +1102,8 @@ print(f"\\nPerfect match! This shows embeddings capture abstract concepts like '
 
             {/* BPE Tokenization */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Byte-Pair Encoding (BPE) Tokenization</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Byte-Pair Encoding (BPE) Tokenization</h3>
+              <p className="text-gray-700 mb-6">
                 BPE is the tokenization algorithm used by GPT models. It iteratively merges the most frequent
                 adjacent token pairs to build a vocabulary. This balances vocabulary size with semantic expression.
               </p>
@@ -1153,8 +1153,8 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Knowledge Check Quiz */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Knowledge Check: LLM Fundamentals</h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Knowledge Check: LLM Fundamentals</h3>
+              <p className="text-gray-700 mb-6">
                 Test your understanding of language models, transformers, attention mechanisms, and tokenization.
               </p>
               <Quiz
@@ -1279,7 +1279,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                 <h2 className="text-3xl font-bold gradient-text mb-2">
                   Interactive Learning Experience
                 </h2>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-gray-700">
                   Master low-code platforms through visual workflows and platform comparisons
                 </p>
               </div>
@@ -1287,10 +1287,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Section 1: Platform Decision Helper */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 Platform Selection Decision Tree
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 Choose the right low-code platform based on your project requirements, team capabilities, and deployment needs.
                 This decision tree guides you through key selection criteria: technical background, use case complexity, data security requirements, and integration needs.
               </p>
@@ -1394,10 +1394,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Section 2: Coze Daily AI Brief Workflow */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 Coze: Daily AI Brief Workflow Architecture
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 Multi-source information aggregation using Coze plugins (Section 5.2.2).
                 This workflow demonstrates how Coze's plugin ecosystem enables zero-code integration of RSS feeds, GitHub repositories, and arXiv papers into a structured AI brief.
               </p>
@@ -1489,10 +1489,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Section 3: Dify Multi-Agent Architecture */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 Dify: Super Agent Personal Assistant Architecture
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 Multi-agent system with intelligent question classification (Section 5.3.2).
                 The question classifier routes user requests to specialized sub-agents: Daily Assistant, Copywriting Optimizer, Multimodal Generator, Data Analyst, and MCP Tool Integration.
               </p>
@@ -1576,10 +1576,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Section 4: n8n Email Agent Workflow */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 n8n: Intelligent Email Assistant Workflow
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 Automated email processing with AI decision-making (Section 5.4).
                 Gmail Trigger → AI Agent (with Memory + Tools) → Automated Reply.
                 The AI Agent can search the web (SerpAPI), query private knowledge (Simple Vector Store), and remember conversation history (Simple Memory).
@@ -1662,10 +1662,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Section 5: MCP Protocol Explanation */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 MCP (Model Context Protocol) Architecture
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 How MCP enables standardized agent-to-tool communication (Section 5.3.2).
                 MCP is the "new standard" for agent tool invocation, providing a unified protocol for LLMs to discover and call external services.
                 Unlike traditional REST APIs, MCP supports bidirectional communication and tool auto-expansion.
@@ -1746,89 +1746,89 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Section 6: Platform Comparison Table */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 Platform Comparison: Coze vs Dify vs n8n
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 Side-by-side comparison of the three major low-code platforms.
                 Use this table to quickly assess which platform best fits your project requirements based on technical background, use cases, deployment needs, and ecosystem support.
               </p>
               <div className="overflow-x-auto">
-                <table className="min-w-full border-collapse border border-gray-300 dark:border-gray-700">
+                <table className="min-w-full border-collapse border border-gray-300 ">
                   <thead className="bg-gray-100 dark:bg-gray-800">
                     <tr>
-                      <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">Dimension</th>
-                      <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">Coze (ByteDance)</th>
-                      <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">Dify (Open Source)</th>
-                      <th className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-left text-sm font-semibold text-gray-900 dark:text-gray-100">n8n (Open Source)</th>
+                      <th className="border border-gray-300  px-4 py-3 text-left text-sm font-semibold text-gray-900">Dimension</th>
+                      <th className="border border-gray-300  px-4 py-3 text-left text-sm font-semibold text-gray-900">Coze (ByteDance)</th>
+                      <th className="border border-gray-300  px-4 py-3 text-left text-sm font-semibold text-gray-900">Dify (Open Source)</th>
+                      <th className="border border-gray-300  px-4 py-3 text-left text-sm font-semibold text-gray-900">n8n (Open Source)</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white dark:bg-gray-900">
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Core Positioning</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Zero-code AI agent builder</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Full-stack LLM app dev platform (BaaS + LLMOps)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Workflow automation + AI integration</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">Core Positioning</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">Zero-code AI agent builder</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">Full-stack LLM app dev platform (BaaS + LLMOps)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">Workflow automation + AI integration</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Target Users</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Non-technical: Product managers, operations, creators</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Developers + enterprises building scalable AI apps</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Technical teams needing business automation + AI</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">Target Users</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">Non-technical: Product managers, operations, creators</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">Developers + enterprises building scalable AI apps</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">Technical teams needing business automation + AI</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Learning Curve</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⭐ Easy (drag-and-drop, no code)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⭐⭐ Medium (some technical background needed)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⭐⭐⭐ Steep (workflow logic + coding for customization)</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">Learning Curve</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">⭐ Easy (drag-and-drop, no code)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">⭐⭐ Medium (some technical background needed)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">⭐⭐⭐ Steep (workflow logic + coding for customization)</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Plugin Ecosystem</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🔥 Rich plugin store (RSS, GitHub, arXiv, social media)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🔥🔥 8,677+ plugins (Google, Azure, Notion, DuckDuckGo)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🔥🔥🔥 500+ nodes (Gmail, Slack, databases, APIs)</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">Plugin Ecosystem</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">🔥 Rich plugin store (RSS, GitHub, arXiv, social media)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">🔥🔥 8,677+ plugins (Google, Azure, Notion, DuckDuckGo)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">🔥🔥🔥 500+ nodes (Gmail, Slack, databases, APIs)</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">MCP Support</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">❌ Not supported (major limitation)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ Full MCP support (SSE mode, ModelScope market)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ Supported via MCP nodes</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">MCP Support</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">❌ Not supported (major limitation)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">✅ Full MCP support (SSE mode, ModelScope market)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">✅ Supported via MCP nodes</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Deployment</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">☁️ Cloud-only (SaaS)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">☁️🏠 Cloud SaaS or self-hosted (Docker Compose)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🏠 Self-hosted (private deployment for data security)</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">Deployment</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">☁️ Cloud-only (SaaS)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">☁️🏠 Cloud SaaS or self-hosted (Docker Compose)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">🏠 Self-hosted (private deployment for data security)</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Multi-Platform Publishing</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ One-click: WeChat, Feishu, Doubao, Coze Store</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⚠️ API endpoints (manual integration)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⚠️ Webhook/API integration required</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">Multi-Platform Publishing</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">✅ One-click: WeChat, Feishu, Doubao, Coze Store</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">⚠️ API endpoints (manual integration)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">⚠️ Webhook/API integration required</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Workflow Import/Export</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">⚠️ ZIP file (paid version only, not JSON)</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ JSON export/import</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">✅ JSON export/import (version control friendly)</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">Workflow Import/Export</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">⚠️ ZIP file (paid version only, not JSON)</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">✅ JSON export/import</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">✅ JSON export/import (version control friendly)</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Best For</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🎯 Rapid prototyping, non-technical teams, multi-platform bots</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🎯 Enterprise AI apps, RAG pipelines, complex workflows</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">🎯 Business automation + AI, connecting existing systems</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">Best For</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">🎯 Rapid prototyping, non-technical teams, multi-platform bots</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">🎯 Enterprise AI apps, RAG pipelines, complex workflows</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">🎯 Business automation + AI, connecting existing systems</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 font-medium text-gray-900 dark:text-gray-100">Main Limitations</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">No MCP, complex plugin config, no JSON export</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Steep learning curve, performance in high concurrency</td>
-                      <td className="border border-gray-300 dark:border-gray-700 px-4 py-3 text-gray-700 dark:text-gray-300">Non-persistent memory/storage, version control challenges</td>
+                      <td className="border border-gray-300  px-4 py-3 font-medium text-gray-900">Main Limitations</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">No MCP, complex plugin config, no JSON export</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">Steep learning curve, performance in high concurrency</td>
+                      <td className="border border-gray-300  px-4 py-3 text-gray-700">Non-persistent memory/storage, version control challenges</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                <p className="text-sm text-blue-800 dark:text-blue-200">
+              <div className="mt-6 p-4 bg-blue-50  rounded-lg border border-blue-200 ">
+                <p className="text-sm text-blue-800">
                   <strong>💡 Selection Guide:</strong>
                   <br/>• <strong>Rapid prototype + no coding</strong> → Coze
                   <br/>• <strong>Enterprise AI app + complex logic</strong> → Dify
@@ -1840,7 +1840,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Section 7: Knowledge Check Quiz */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 Knowledge Check: Low-Code Platforms Mastery
               </h3>
               <Quiz
@@ -1967,7 +1967,7 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                 <h2 className="text-3xl font-bold gradient-text mb-2">
                   Interactive Learning Experience
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600">
                   Explore agent frameworks through interactive visualizations
                 </p>
               </div>
@@ -1975,14 +1975,14 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Framework Comparison Table */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 Agent Framework Comparison Matrix
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 Compare four cutting-edge agent frameworks across architecture, collaboration patterns, and use cases.
               </p>
               <div className="overflow-x-auto">
-                <table className="min-w-full border border-gray-200 dark:border-gray-700 rounded-lg">
+                <table className="min-w-full border border-gray-200  rounded-lg">
                   <thead className="bg-gradient-to-r from-purple-500 to-pink-500 text-white">
                     <tr>
                       <th className="px-6 py-3 text-left text-sm font-semibold">Dimension</th>
@@ -1994,53 +1994,53 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
                   </thead>
                   <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                     <tr>
-                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Core Philosophy</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Collaboration through conversation</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Message-driven platform</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Role-playing autonomous collaboration</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Graph-based state machines</td>
+                      <td className="px-6 py-4 font-medium text-gray-900">Core Philosophy</td>
+                      <td className="px-6 py-4 text-gray-700">Collaboration through conversation</td>
+                      <td className="px-6 py-4 text-gray-700">Message-driven platform</td>
+                      <td className="px-6 py-4 text-gray-700">Role-playing autonomous collaboration</td>
+                      <td className="px-6 py-4 text-gray-700">Graph-based state machines</td>
                     </tr>
                     <tr className="bg-gray-50 dark:bg-gray-900">
-                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Architecture</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Async-first, layered (core + agentchat)</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Engineering-first, modular layers</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Inception prompting + role setup</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">StateGraph with nodes & edges</td>
+                      <td className="px-6 py-4 font-medium text-gray-900">Architecture</td>
+                      <td className="px-6 py-4 text-gray-700">Async-first, layered (core + agentchat)</td>
+                      <td className="px-6 py-4 text-gray-700">Engineering-first, modular layers</td>
+                      <td className="px-6 py-4 text-gray-700">Inception prompting + role setup</td>
+                      <td className="px-6 py-4 text-gray-700">StateGraph with nodes & edges</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Collaboration Pattern</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Round-robin group chat</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">MsgHub message passing</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">AI User ↔ AI Assistant dialogue</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Conditional edge routing</td>
+                      <td className="px-6 py-4 font-medium text-gray-900">Collaboration Pattern</td>
+                      <td className="px-6 py-4 text-gray-700">Round-robin group chat</td>
+                      <td className="px-6 py-4 text-gray-700">MsgHub message passing</td>
+                      <td className="px-6 py-4 text-gray-700">AI User ↔ AI Assistant dialogue</td>
+                      <td className="px-6 py-4 text-gray-700">Conditional edge routing</td>
                     </tr>
                     <tr className="bg-gray-50 dark:bg-gray-900">
-                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Key Components</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">AssistantAgent, UserProxyAgent, Team</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Msg, AgentBase, MsgHub, Pipeline</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">RolePlaying, ChatAgent</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">StateGraph, Node functions, Edges</td>
+                      <td className="px-6 py-4 font-medium text-gray-900">Key Components</td>
+                      <td className="px-6 py-4 text-gray-700">AssistantAgent, UserProxyAgent, Team</td>
+                      <td className="px-6 py-4 text-gray-700">Msg, AgentBase, MsgHub, Pipeline</td>
+                      <td className="px-6 py-4 text-gray-700">RolePlaying, ChatAgent</td>
+                      <td className="px-6 py-4 text-gray-700">StateGraph, Node functions, Edges</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Best For</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Software development teams, fixed workflows</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Large-scale production systems, distributed deployment</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Creative tasks, cross-domain collaboration</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Iterative workflows, reflection, complex logic</td>
+                      <td className="px-6 py-4 font-medium text-gray-900">Best For</td>
+                      <td className="px-6 py-4 text-gray-700">Software development teams, fixed workflows</td>
+                      <td className="px-6 py-4 text-gray-700">Large-scale production systems, distributed deployment</td>
+                      <td className="px-6 py-4 text-gray-700">Creative tasks, cross-domain collaboration</td>
+                      <td className="px-6 py-4 text-gray-700">Iterative workflows, reflection, complex logic</td>
                     </tr>
                     <tr className="bg-gray-50 dark:bg-gray-900">
-                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Strengths</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Clear turn-taking, easy debugging</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Enterprise-grade, fault recovery, observability</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Minimal human intervention, autonomous</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Native loop support, flexible branching</td>
+                      <td className="px-6 py-4 font-medium text-gray-900">Strengths</td>
+                      <td className="px-6 py-4 text-gray-700">Clear turn-taking, easy debugging</td>
+                      <td className="px-6 py-4 text-gray-700">Enterprise-grade, fault recovery, observability</td>
+                      <td className="px-6 py-4 text-gray-700">Minimal human intervention, autonomous</td>
+                      <td className="px-6 py-4 text-gray-700">Native loop support, flexible branching</td>
                     </tr>
                     <tr>
-                      <td className="px-6 py-4 font-medium text-gray-900 dark:text-gray-100">Typical Use Case</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Bitcoin price tracker (PM → Engineer → Reviewer → Tester)</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Multi-agent customer service, distributed AI systems</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Psychology e-book (Psychologist ↔ Writer)</td>
-                      <td className="px-6 py-4 text-gray-700 dark:text-gray-300">Research agent with planning → execution → reflection loop</td>
+                      <td className="px-6 py-4 font-medium text-gray-900">Typical Use Case</td>
+                      <td className="px-6 py-4 text-gray-700">Bitcoin price tracker (PM → Engineer → Reviewer → Tester)</td>
+                      <td className="px-6 py-4 text-gray-700">Multi-agent customer service, distributed AI systems</td>
+                      <td className="px-6 py-4 text-gray-700">Psychology e-book (Psychologist ↔ Writer)</td>
+                      <td className="px-6 py-4 text-gray-700">Research agent with planning → execution → reflection loop</td>
                     </tr>
                   </tbody>
                 </table>
@@ -2049,10 +2049,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* AutoGen Round-Robin Flow */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 AutoGen: Round-Robin Group Chat Workflow
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 AutoGen coordinates multi-agent collaboration through sequential conversation turns,
                 simulating a software development team.
               </p>
@@ -2099,10 +2099,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* AgentScope Message Hub */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 AgentScope: Message-Driven Architecture
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 AgentScope uses MsgHub as a central message router, enabling asynchronous, location-transparent
                 communication between distributed agents.
               </p>
@@ -2157,10 +2157,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* CAMEL Role-Playing */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 CAMEL: Autonomous Role-Playing Collaboration
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 CAMEL enables two agents to autonomously collaborate through inception prompting,
                 where each agent stays in character to achieve a common goal.
               </p>
@@ -2211,10 +2211,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* LangGraph State Machine */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 LangGraph: Graph-Based Workflow with Cycles
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 LangGraph models agent workflows as directed graphs with conditional edges,
                 enabling iterative processes like planning, execution, and reflection loops.
               </p>
@@ -2268,10 +2268,10 @@ print("\\nFinal: Unseen word 'bug' tokenizes as: ['b', 'ug']")`}
 
             {/* Code Playground */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 Framework Code Comparison: AutoGen vs LangGraph
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 Experience the syntax differences between conversation-driven (AutoGen) and graph-driven (LangGraph) approaches.
               </p>
               <CodePlayground
@@ -2359,10 +2359,10 @@ print("LangGraph: Graph-driven, conditional loops")`}
 
             {/* Knowledge Check Quiz */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                 Knowledge Check: Agent Framework Mastery
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 mb-6">
                 Test your understanding of framework architectures, collaboration patterns, and use case selection.
               </p>
               <Quiz
@@ -2489,7 +2489,7 @@ print("LangGraph: Graph-driven, conditional loops")`}
                 <h2 className="text-3xl font-bold gradient-text mb-2">
                   Interactive Learning Experience
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600">
                   Master framework architecture and hands-on implementation
                 </p>
               </div>
@@ -2497,7 +2497,7 @@ print("LangGraph: Graph-driven, conditional loops")`}
 
             {/* HelloAgents Framework Architecture */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">HelloAgents Framework Architecture</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">HelloAgents Framework Architecture</h3>
               <AgentFlowDiagram
                 title="Three-Layer Framework Design"
                 description="Click nodes to explore each layer's responsibility"
@@ -2541,7 +2541,7 @@ print("LangGraph: Graph-driven, conditional loops")`}
 
             {/* Provider Auto-Detection Flow */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">LLM Provider Auto-Detection Mechanism</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">LLM Provider Auto-Detection Mechanism</h3>
               <AgentFlowDiagram
                 title="How HelloAgentsLLM Chooses the Right Provider"
                 description="The intelligent provider selection process"
@@ -2584,7 +2584,7 @@ print("LangGraph: Graph-driven, conditional loops")`}
 
             {/* Code Playground */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">Try It: Create Your First Agent with HelloAgents</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Try It: Create Your First Agent with HelloAgents</h3>
               <CodePlayground
                 title="Building a SimpleAgent with Tool Support"
                 description="Experience the HelloAgents framework API"
@@ -2934,7 +2934,7 @@ print(registry.execute_tool("weather", {"city": "Berlin"}))`}
                 <h2 className="text-3xl font-bold gradient-text mb-2">
                   Interactive Learning Experience
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600">
                   Build a complete multi-agent travel planner from scratch
                 </p>
               </div>
@@ -2942,7 +2942,7 @@ print(registry.execute_tool("weather", {"city": "Berlin"}))`}
 
             {/* Multi-Agent Collaboration Flow */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">Multi-Agent Collaboration Architecture</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Multi-Agent Collaboration Architecture</h3>
               <AgentFlowDiagram
                 title="Four Specialized Agents Working Together"
                 description="Click nodes to see each agent's responsibility"
@@ -3001,7 +3001,7 @@ print(registry.execute_tool("weather", {"city": "Berlin"}))`}
 
             {/* MCP Integration Flow */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">MCP (Model Context Protocol) Integration</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">MCP (Model Context Protocol) Integration</h3>
               <AgentFlowDiagram
                 title="How Agents Call External APIs Through MCP"
                 description="The MCP protocol enables seamless tool integration"
@@ -3051,7 +3051,7 @@ print(registry.execute_tool("weather", {"city": "Berlin"}))`}
 
             {/* Code Playground */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">Try It: Build a Simple Multi-Agent System</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Try It: Build a Simple Multi-Agent System</h3>
               <CodePlayground
                 title="Coordinating Multiple Agents"
                 description="Learn the pattern for multi-agent collaboration"
@@ -3464,7 +3464,7 @@ print(result)
                 <h2 className="text-3xl font-bold gradient-text mb-2">
                   Interactive Learning Experience
                 </h2>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="text-gray-600">
                   Practice what you've learned with hands-on exercises and visualizations
                 </p>
               </div>
@@ -3472,7 +3472,7 @@ print(result)
 
             {/* ReAct Agent Flow Diagram */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">ReAct Agent Architecture</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">ReAct Agent Architecture</h3>
               <AgentFlowDiagram
                 title="ReAct Agent Loop"
                 description="Click on nodes to learn more about each component"
@@ -3530,7 +3530,7 @@ print(result)
 
             {/* Code Playground */}
             <section>
-              <h3 className="text-2xl font-semibold mb-4">Try It Yourself: ReAct Agent</h3>
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">Try It Yourself: ReAct Agent</h3>
               <CodePlayground
                 title="Simple ReAct Implementation"
                 description="A minimal ReAct agent that can use a calculator tool"
