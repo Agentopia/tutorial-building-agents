@@ -17,6 +17,7 @@ const SlideView = dynamic(() => import('@/components/SlideView'), { ssr: false }
 import { chapter1Slides } from '@/data/chapter1Slides'
 import { chapter2Slides } from '@/data/chapter2Slides'
 import { chapter3Slides } from '@/data/chapter3Slides'
+import { chapter4Slides } from '@/data/chapter4Slides'
 
 const chapterTitles: { [key: number]: string } = {
   1: 'Introduction to Agents',
@@ -95,6 +96,10 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
   if (chapterId === 3) {
     return <SlideView slides={chapter3Slides} chapterId={3} chapterTitle={title} />
+  }
+
+  if (chapterId === 4) {
+    return <SlideView slides={chapter4Slides} chapterId={4} chapterTitle={title} />
   }
 
   return (
