@@ -4,8 +4,8 @@ Modern, interactive tutorial platform for learning AI agents from scratch. Built
 
 ## ✅ Current Status
 
-**Progress:** 72% Complete (Phases 1-3 complete, Phase 4 planned)
-**Latest:** Slide-based tutorial format implemented for Chapter 1 (2025-12-27)
+**Progress:** 73% Complete (Phases 1-3 complete, Phase 4 planned)
+**Latest:** Slide-based tutorial format implemented for Chapters 1-2 (2025-12-27)
 **See:** [BUILD_PLAN.md](BUILD_PLAN.md) for detailed tracking
 
 ### Tech Stack
@@ -94,7 +94,7 @@ npm run lint    # Run ESLint
 ### Quick Tour
 1. **Homepage** (`/`) - Course overview and introduction
 2. **Chapter List** (`/chapters`) - All 16 chapters with progress tracking
-3. **Chapter View** (`/chapters/1`) - Slide-based tutorial (Chapter 1 uses new slide format!)
+3. **Chapter View** (`/chapters/1` or `/chapters/2`) - Slide-based tutorial (Chapters 1-2 use new slide format!)
 4. **Live Demos** (`/demos`) - Full-stack agent applications
 
 ## 🧪 Test Endpoints
@@ -130,10 +130,10 @@ curl -X POST http://localhost:3001/api/progress/sync \
 ### ✅ Phase 3: Interactive Learning (85% COMPLETE)
 - [x] **Slide-Based Tutorial Format** 🎯 NEW!
   - [x] SlideView component with navigation & animations
-  - [x] Chapter 1 converted to 16 curated slides
+  - [x] Chapters 1-2 converted to slide-based tutorials (32 total slides)
   - [x] Keyboard shortcuts (Arrow keys) + click navigation
   - [x] Progress bar & dot navigation
-  - [ ] Chapters 2-16 pending conversion (estimated 30-45 hours)
+  - [ ] Chapters 3-16 pending conversion (estimated 28-42 hours)
 
 - [x] **Code Playgrounds**
   - [x] Sandpack integration for in-browser execution
@@ -174,8 +174,8 @@ curl -X POST http://localhost:3001/api/progress/sync \
 
 ### ⏳ Phase 4: Advanced Features (PLANNED)
 **Priority 1: Slide-Based Format Rollout**
-- [ ] Convert Chapters 2-16 to slide-based tutorials (15 chapters × 2-3 hours)
-- [ ] ~200-250 total slides across course
+- [ ] Convert Chapters 3-16 to slide-based tutorials (14 chapters × 2-3 hours)
+- [ ] ~200-220 total slides across course (32 already complete)
 - [ ] Consistent slide templates and visual design
 
 **Priority 2: Backend Integration**
@@ -203,7 +203,9 @@ Transform dense technical content into engaging, PPT-style presentations:
 - **Keyboard navigation** (← → arrows) for power users
 - **Mobile-responsive** design for learning on the go
 
-**Example:** Chapter 1 condensed from 643 lines of markdown → 16 focused slides
+**Examples:**
+- Chapter 1: 643 lines of markdown → 16 focused slides
+- Chapter 2: 563 lines of markdown → 16 focused slides
 
 ### 💻 Interactive Code Playgrounds
 Learn by doing with in-browser code execution:

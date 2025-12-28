@@ -15,6 +15,7 @@ const SlideView = dynamic(() => import('@/components/SlideView'), { ssr: false }
 
 // Import slide data
 import { chapter1Slides } from '@/data/chapter1Slides'
+import { chapter2Slides } from '@/data/chapter2Slides'
 
 const chapterTitles: { [key: number]: string } = {
   1: 'Introduction to Agents',
@@ -82,9 +83,13 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
     )
   }
 
-  // Use slide-based format for Chapter 1
+  // Use slide-based format for Chapters 1-2
   if (chapterId === 1) {
     return <SlideView slides={chapter1Slides} chapterId={1} chapterTitle={title} />
+  }
+
+  if (chapterId === 2) {
+    return <SlideView slides={chapter2Slides} chapterId={2} chapterTitle={title} />
   }
 
   return (
