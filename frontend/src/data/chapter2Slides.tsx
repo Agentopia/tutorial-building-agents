@@ -15,17 +15,17 @@ export const chapter2Slides: Slide[] = [
         <h1 className="text-5xl font-bold gradient-text">
           History of Agents
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl">
+        <p className="text-xl text-black max-w-2xl">
           From symbolic systems to modern LLM agents: A journey through AI paradigms
         </p>
         <div className="flex gap-4 mt-8">
           <div className="px-6 py-3 bg-blue-100 rounded-lg">
-            <div className="text-sm text-gray-600">Era</div>
-            <div className="text-lg font-semibold text-gray-900">1950s - 2024</div>
+            <div className="text-sm text-black">Era</div>
+            <div className="text-lg font-semibold text-black">1950s - 2024</div>
           </div>
           <div className="px-6 py-3 bg-purple-100 rounded-lg">
-            <div className="text-sm text-gray-600">Paradigms</div>
-            <div className="text-lg font-semibold text-gray-900">3 Major Shifts</div>
+            <div className="text-sm text-black">Paradigms</div>
+            <div className="text-lg font-semibold text-black">3 Major Shifts</div>
           </div>
         </div>
       </div>
@@ -39,8 +39,8 @@ export const chapter2Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">What You'll Learn</h2>
-        <p className="text-lg text-gray-700">
+        <h2 className="text-3xl font-bold text-black">What You'll Learn</h2>
+        <p className="text-lg text-black">
           Understand the evolution of AI agents through three major paradigms:
         </p>
 
@@ -49,8 +49,8 @@ export const chapter2Slides: Slide[] = [
             <div className="flex items-start gap-4">
               <div className="text-3xl">🧮</div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Symbolism Era</h3>
-                <p className="text-gray-700">Expert systems, MYCIN, SHRDLU - Logic and rules</p>
+                <h3 className="text-xl font-semibold text-black mb-2">Symbolism Era</h3>
+                <p className="text-black">Expert systems, MYCIN, SHRDLU - Logic and rules</p>
               </div>
             </div>
           </div>
@@ -59,8 +59,8 @@ export const chapter2Slides: Slide[] = [
             <div className="flex items-start gap-4">
               <div className="text-3xl">🧠</div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Connectionism & Behaviorism</h3>
-                <p className="text-gray-700">Neural networks, reinforcement learning - Learning from data</p>
+                <h3 className="text-xl font-semibold text-black mb-2">Connectionism & Behaviorism</h3>
+                <p className="text-black">Neural networks, reinforcement learning - Learning from data</p>
               </div>
             </div>
           </div>
@@ -69,8 +69,8 @@ export const chapter2Slides: Slide[] = [
             <div className="flex items-start gap-4">
               <div className="text-3xl">🤖</div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Modern LLM Agents</h3>
-                <p className="text-gray-700">Transformers, GPT, ChatGPT - Integration of all paradigms</p>
+                <h3 className="text-xl font-semibold text-black mb-2">Modern LLM Agents</h3>
+                <p className="text-black">Transformers, GPT, ChatGPT - Integration of all paradigms</p>
               </div>
             </div>
           </div>
@@ -79,8 +79,8 @@ export const chapter2Slides: Slide[] = [
             <div className="flex items-start gap-4">
               <div className="text-3xl">🎯</div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Problem-Driven Evolution</h3>
-                <p className="text-gray-700">How each paradigm solved limitations of the previous one</p>
+                <h3 className="text-xl font-semibold text-black mb-2">Problem-Driven Evolution</h3>
+                <p className="text-black">How each paradigm solved limitations of the previous one</p>
               </div>
             </div>
           </div>
@@ -96,8 +96,8 @@ export const chapter2Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Evolution Through Paradigm Shifts</h2>
-        <p className="text-lg text-gray-700">
+        <h2 className="text-3xl font-bold text-black">Evolution Through Paradigm Shifts</h2>
+        <p className="text-lg text-black">
           Each paradigm emerged to solve fundamental limitations of its predecessor:
         </p>
 
@@ -105,28 +105,28 @@ export const chapter2Slides: Slide[] = [
           <div className="p-6 bg-white border-2 border-blue-200 rounded-xl">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold">1</div>
-              <h3 className="text-xl font-semibold text-gray-900">Symbolism (1956-1980s)</h3>
+              <h3 className="text-xl font-semibold text-black">Symbolism (1956-1980s)</h3>
             </div>
-            <p className="text-gray-700 ml-11"><strong>Core Idea:</strong> Intelligence = Symbol manipulation + Logic</p>
-            <p className="text-gray-600 ml-11 mt-2"><strong>Limitation:</strong> Knowledge acquisition bottleneck, brittleness</p>
+            <p className="text-black ml-11"><strong>Core Idea:</strong> Intelligence = Symbol manipulation + Logic</p>
+            <p className="text-black ml-11 mt-2"><strong>Limitation:</strong> Knowledge acquisition bottleneck, brittleness</p>
           </div>
 
           <div className="p-6 bg-white border-2 border-purple-200 rounded-xl">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold">2</div>
-              <h3 className="text-xl font-semibold text-gray-900">Connectionism + Behaviorism (1986-2017)</h3>
+              <h3 className="text-xl font-semibold text-black">Connectionism + Behaviorism (1986-2017)</h3>
             </div>
-            <p className="text-gray-700 ml-11"><strong>Core Idea:</strong> Learning from data (neural networks + RL)</p>
-            <p className="text-gray-600 ml-11 mt-2"><strong>Limitation:</strong> Required massive labeled data, struggled with reasoning</p>
+            <p className="text-black ml-11"><strong>Core Idea:</strong> Learning from data (neural networks + RL)</p>
+            <p className="text-black ml-11 mt-2"><strong>Limitation:</strong> Required massive labeled data, struggled with reasoning</p>
           </div>
 
           <div className="p-6 bg-white border-2 border-green-200 rounded-xl">
             <div className="flex items-center gap-3 mb-3">
               <div className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">3</div>
-              <h3 className="text-xl font-semibold text-gray-900">Large Language Models (2017-Present)</h3>
+              <h3 className="text-xl font-semibold text-black">Large Language Models (2017-Present)</h3>
             </div>
-            <p className="text-gray-700 ml-11"><strong>Core Idea:</strong> Emergent capabilities from scale + pre-training</p>
-            <p className="text-gray-600 ml-11 mt-2"><strong>Innovation:</strong> Combines symbolic reasoning (tool use) + neural learning + RL (RLHF)</p>
+            <p className="text-black ml-11"><strong>Core Idea:</strong> Emergent capabilities from scale + pre-training</p>
+            <p className="text-black ml-11 mt-2"><strong>Innovation:</strong> Combines symbolic reasoning (tool use) + neural learning + RL (RLHF)</p>
           </div>
         </div>
       </div>
@@ -140,36 +140,36 @@ export const chapter2Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Foundation of Symbolism</h2>
+        <h2 className="text-3xl font-bold text-black">Foundation of Symbolism</h2>
 
         <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-6">
-          <p className="text-lg text-gray-800 font-semibold mb-2">
+          <p className="text-lg text-black font-semibold mb-2">
             "The essence of intelligence is the computation and processing of symbols."
           </p>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-black">
             — Allen Newell & Herbert Simon (1976, Turing Award winners)
           </p>
         </div>
 
         <div className="grid grid-cols-2 gap-6">
           <div className="p-6 bg-white border-2 border-green-200 rounded-xl">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">✅ Sufficiency</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-semibold text-black mb-3">✅ Sufficiency</h3>
+            <p className="text-black">
               Any physical symbol system has <strong>sufficient means</strong> to produce general intelligent behavior.
             </p>
           </div>
 
           <div className="p-6 bg-white border-2 border-purple-200 rounded-xl">
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">🎯 Necessity</h3>
-            <p className="text-gray-700">
+            <h3 className="text-lg font-semibold text-black mb-3">🎯 Necessity</h3>
+            <p className="text-black">
               Any system capable of general intelligence must <strong>essentially be</strong> a physical symbol system.
             </p>
           </div>
         </div>
 
         <div className="mt-6 p-6 bg-gray-50 rounded-xl">
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Impact</h3>
-          <ul className="space-y-2 text-gray-700">
+          <h3 className="text-lg font-semibold text-black mb-3">Impact</h3>
+          <ul className="space-y-2 text-black">
             <li className="flex items-start gap-2">
               <span className="text-blue-600 mt-1">•</span>
               <span>Transformed vague philosophical problem into concrete engineering task</span>
@@ -195,46 +195,46 @@ export const chapter2Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">MYCIN Medical Diagnosis System (1970s)</h2>
+        <h2 className="text-3xl font-bold text-black">MYCIN Medical Diagnosis System (1970s)</h2>
 
         <div className="grid grid-cols-2 gap-6">
           <div className="space-y-4">
             <div className="p-4 bg-blue-50 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">🎯 Purpose</h3>
-              <p className="text-gray-700 text-sm">Diagnose bacterial blood infections and recommend antibiotic treatment</p>
+              <h3 className="font-semibold text-black mb-2">🎯 Purpose</h3>
+              <p className="text-black text-sm">Diagnose bacterial blood infections and recommend antibiotic treatment</p>
             </div>
 
             <div className="p-4 bg-purple-50 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">📚 Knowledge Base</h3>
-              <p className="text-gray-700 text-sm">~600 IF-THEN rules from medical experts</p>
+              <h3 className="font-semibold text-black mb-2">📚 Knowledge Base</h3>
+              <p className="text-black text-sm">~600 IF-THEN rules from medical experts</p>
             </div>
 
             <div className="p-4 bg-green-50 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">🧠 Reasoning</h3>
-              <p className="text-gray-700 text-sm">Backward chaining: Start from goal, derive needed evidence</p>
+              <h3 className="font-semibold text-black mb-2">🧠 Reasoning</h3>
+              <p className="text-black text-sm">Backward chaining: Start from goal, derive needed evidence</p>
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="p-4 bg-orange-50 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">🎲 Innovation</h3>
-              <p className="text-gray-700 text-sm"><strong>Certainty Factor (CF):</strong> Handle uncertainty with values between -1 and 1</p>
+              <h3 className="font-semibold text-black mb-2">🎲 Innovation</h3>
+              <p className="text-black text-sm"><strong>Certainty Factor (CF):</strong> Handle uncertainty with values between -1 and 1</p>
             </div>
 
             <div className="p-4 bg-red-50 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">📊 Results</h3>
-              <p className="text-gray-700 text-sm">Performance exceeded non-specialist doctors, matched human experts</p>
+              <h3 className="font-semibold text-black mb-2">📊 Results</h3>
+              <p className="text-black text-sm">Performance exceeded non-specialist doctors, matched human experts</p>
             </div>
 
             <div className="p-4 bg-yellow-50 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-2">💡 Significance</h3>
-              <p className="text-gray-700 text-sm">Proved machines could exhibit intelligence in complex professional domains</p>
+              <h3 className="font-semibold text-black mb-2">💡 Significance</h3>
+              <p className="text-black text-sm">Proved machines could exhibit intelligence in complex professional domains</p>
             </div>
           </div>
         </div>
 
         <div className="mt-6 p-6 bg-gray-100 border-l-4 border-gray-600 rounded-lg">
-          <p className="text-gray-800">
+          <p className="text-black">
             <strong>Key Takeaway:</strong> Symbolic AI achieved impressive results in narrow, well-defined domains through careful knowledge engineering.
           </p>
         </div>
@@ -249,33 +249,33 @@ export const chapter2Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">SHRDLU Blocks World (1968-1970)</h2>
-        <p className="text-gray-700">
+        <h2 className="text-3xl font-bold text-black">SHRDLU Blocks World (1968-1970)</h2>
+        <p className="text-black">
           Terry Winograd's breakthrough: First system to integrate multiple AI modules into a unified agent
         </p>
 
         <div className="grid grid-cols-3 gap-4">
           <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
             <div className="text-3xl mb-3">💬</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Natural Language</h3>
-            <p className="text-sm text-gray-700">Parse complex English sentences with references and context</p>
+            <h3 className="text-lg font-semibold text-black mb-2">Natural Language</h3>
+            <p className="text-sm text-black">Parse complex English sentences with references and context</p>
           </div>
 
           <div className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
             <div className="text-3xl mb-3">🎯</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Planning & Action</h3>
-            <p className="text-sm text-gray-700">Autonomously plan multi-step actions to achieve goals</p>
+            <h3 className="text-lg font-semibold text-black mb-2">Planning & Action</h3>
+            <p className="text-sm text-black">Autonomously plan multi-step actions to achieve goals</p>
           </div>
 
           <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
             <div className="text-3xl mb-3">🧠</div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Memory & Q&A</h3>
-            <p className="text-sm text-gray-700">Remember state and explain behavior reasoning</p>
+            <h3 className="text-lg font-semibold text-black mb-2">Memory & Q&A</h3>
+            <p className="text-sm text-black">Remember state and explain behavior reasoning</p>
           </div>
         </div>
 
         <div className="bg-blue-50 border-2 border-blue-300 rounded-xl p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Example Interaction:</h3>
+          <h3 className="text-lg font-semibold text-black mb-3">Example Interaction:</h3>
           <div className="space-y-2 font-mono text-sm">
             <div><strong className="text-blue-600">User:</strong> Pick up a big red block.</div>
             <div><strong className="text-green-600">SHRDLU:</strong> OK. <span className="text-gray-500">[executes action]</span></div>
@@ -287,7 +287,7 @@ export const chapter2Slides: Slide[] = [
         </div>
 
         <div className="bg-yellow-50 border-l-4 border-yellow-600 p-4 rounded">
-          <p className="text-gray-800">
+          <p className="text-black">
             <strong>⚠️ Limitation:</strong> Brilliant in the "blocks world," but capabilities didn't transfer to the real world. Revealed the brittleness of symbolic systems.
           </p>
         </div>
@@ -302,40 +302,40 @@ export const chapter2Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Fundamental Challenges of Symbolic AI</h2>
-        <p className="text-gray-700">
+        <h2 className="text-3xl font-bold text-black">Fundamental Challenges of Symbolic AI</h2>
+        <p className="text-black">
           By the 1980s, symbolism encountered insurmountable limitations:
         </p>
 
         <div className="space-y-4">
           <div className="p-6 bg-red-50 border-l-4 border-red-600 rounded-xl">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">1. Knowledge Acquisition Bottleneck</h3>
-            <div className="space-y-2 text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-3">1. Knowledge Acquisition Bottleneck</h3>
+            <div className="space-y-2 text-black">
               <p><strong>Problem:</strong> Manual encoding of expert knowledge is costly, time-consuming, and doesn't scale</p>
               <p><strong>Example:</strong> Cyc project attempted to encode all human common sense — decades of effort with limited results</p>
-              <p className="text-sm text-gray-600 mt-2">💡 Much expert knowledge is <em>tacit and intuitive</em>, impossible to express as explicit rules</p>
+              <p className="text-sm text-black mt-2">💡 Much expert knowledge is <em>tacit and intuitive</em>, impossible to express as explicit rules</p>
             </div>
           </div>
 
           <div className="p-6 bg-orange-50 border-l-4 border-orange-600 rounded-xl">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">2. Common Sense Problem</h3>
-            <div className="space-y-2 text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-3">2. Common Sense Problem</h3>
+            <div className="space-y-2 text-black">
               <p><strong>Problem:</strong> Humans rely on vast background knowledge (e.g., "water is wet," "ropes pull, not push")</p>
               <p><strong>Challenge:</strong> Symbolic systems know nothing unless explicitly encoded — an impossible task</p>
             </div>
           </div>
 
           <div className="p-6 bg-yellow-50 border-l-4 border-yellow-600 rounded-xl">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">3. Frame Problem</h3>
-            <div className="space-y-2 text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-3">3. Frame Problem</h3>
+            <div className="space-y-2 text-black">
               <p><strong>Problem:</strong> In a dynamic world, how do you efficiently determine what <em>hasn't changed</em> after an action?</p>
               <p><strong>Issue:</strong> Explicitly declaring all invariants is computationally infeasible, yet humans do it effortlessly</p>
             </div>
           </div>
 
           <div className="p-6 bg-purple-50 border-l-4 border-purple-600 rounded-xl">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">4. Brittleness</h3>
-            <div className="space-y-2 text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-3">4. Brittleness</h3>
+            <div className="space-y-2 text-black">
               <p><strong>Problem:</strong> Symbolic systems completely fail when encountering anything outside their rules</p>
               <p><strong>Contrast:</strong> Humans flexibly adapt to new situations — symbolic systems cannot</p>
             </div>
@@ -356,14 +356,14 @@ export const chapter2Slides: Slide[] = [
     type: 'interactive',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">ELIZA Chatbot Demo (1966)</h2>
-        <p className="text-gray-700">
+        <h2 className="text-3xl font-bold text-black">ELIZA Chatbot Demo (1966)</h2>
+        <p className="text-black">
           Experience Joseph Weizenbaum's pioneering chatbot that used simple pattern matching to create an illusion of understanding.
         </p>
 
         <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded mb-6">
-          <h3 className="font-semibold text-gray-900 mb-2">💡 How ELIZA Works:</h3>
-          <ul className="space-y-1 text-sm text-gray-700">
+          <h3 className="font-semibold text-black mb-2">💡 How ELIZA Works:</h3>
+          <ul className="space-y-1 text-sm text-black">
             <li><strong>1.</strong> Identify keywords (e.g., "mother", "sad", "need")</li>
             <li><strong>2.</strong> Match patterns using wildcards (e.g., "I need *")</li>
             <li><strong>3.</strong> Transform pronouns (I → you, my → your)</li>
@@ -374,7 +374,7 @@ export const chapter2Slides: Slide[] = [
         <ElizaChatbot />
 
         <div className="bg-yellow-50 border-l-4 border-yellow-600 p-4 rounded mt-6">
-          <p className="text-gray-800">
+          <p className="text-black">
             <strong>⚠️ The "ELIZA Effect":</strong> People developed emotional attachments to ELIZA despite it having no real understanding. This demonstrated the power — and danger — of anthropomorphizing machines.
           </p>
         </div>
@@ -389,35 +389,35 @@ export const chapter2Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Intelligence as Collaboration (1986)</h2>
+        <h2 className="text-3xl font-bold text-black">Intelligence as Collaboration (1986)</h2>
 
         <div className="bg-purple-50 border-l-4 border-purple-600 p-6 my-6">
-          <p className="text-lg text-gray-800 font-semibold mb-2">
+          <p className="text-lg text-black font-semibold mb-2">
             "Intelligence emerges from the collaboration of simple, mindless agents."
           </p>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-black">
             — Marvin Minsky (1986)
           </p>
         </div>
 
         <div className="grid grid-cols-2 gap-6">
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">🔄 Paradigm Shift</h3>
+            <h3 className="text-lg font-semibold text-black mb-3">🔄 Paradigm Shift</h3>
             <div className="space-y-3">
               <div className="p-4 bg-red-50 rounded-lg">
-                <p className="text-sm font-semibold text-gray-900">❌ Old View:</p>
-                <p className="text-sm text-gray-700">Intelligence is a single, monolithic entity</p>
+                <p className="text-sm font-semibold text-black">❌ Old View:</p>
+                <p className="text-sm text-black">Intelligence is a single, monolithic entity</p>
               </div>
               <div className="p-4 bg-green-50 rounded-lg">
-                <p className="text-sm font-semibold text-gray-900">✅ New View:</p>
-                <p className="text-sm text-gray-700">Intelligence emerges from many simple agents working together</p>
+                <p className="text-sm font-semibold text-black">✅ New View:</p>
+                <p className="text-sm text-black">Intelligence emerges from many simple agents working together</p>
               </div>
             </div>
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-3">🎯 Key Concepts</h3>
-            <ul className="space-y-2 text-sm text-gray-700">
+            <h3 className="text-lg font-semibold text-black mb-3">🎯 Key Concepts</h3>
+            <ul className="space-y-2 text-sm text-black">
               <li className="flex items-start gap-2">
                 <span className="text-purple-600 font-bold mt-0.5">•</span>
                 <span><strong>Agencies:</strong> Specialized groups of agents (e.g., "Builder", "Grasper")</span>
@@ -435,8 +435,8 @@ export const chapter2Slides: Slide[] = [
         </div>
 
         <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl border-2 border-purple-200">
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">💡 Impact on Multi-Agent Systems</h3>
-          <p className="text-gray-700">
+          <h3 className="text-lg font-semibold text-black mb-3">💡 Impact on Multi-Agent Systems</h3>
+          <p className="text-black">
             Minsky's theory laid the foundation for modern multi-agent systems research, showing that complex problems can be solved through coordination of simpler components. This idea directly influenced AutoGen, LangGraph, and other multi-agent frameworks.
           </p>
         </div>
@@ -451,8 +451,8 @@ export const chapter2Slides: Slide[] = [
     type: 'visual',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Building a Block Tower: Emergence Through Collaboration</h2>
-        <p className="text-gray-700 mb-6">
+        <h2 className="text-3xl font-bold text-black">Building a Block Tower: Emergence Through Collaboration</h2>
+        <p className="text-black mb-6">
           No single agent understands "building a tower" — intelligence emerges from their interaction. Click nodes to see how each agency contributes.
         </p>
 
@@ -550,8 +550,8 @@ export const chapter2Slides: Slide[] = [
     type: 'visual',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">From 1956 to 2024: The Journey to Modern Agents</h2>
-        <p className="text-gray-700 mb-6">
+        <h2 className="text-3xl font-bold text-black">From 1956 to 2024: The Journey to Modern Agents</h2>
+        <p className="text-black mb-6">
           Trace major milestones across three paradigms: Symbolism → Connectionism → Behaviorism → Integration
         </p>
 
@@ -668,12 +668,12 @@ export const chapter2Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">From Symbolic Rules to Data-Driven Learning</h2>
+        <h2 className="text-3xl font-bold text-black">From Symbolic Rules to Data-Driven Learning</h2>
 
         <div className="space-y-4">
           <div className="p-6 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl border-l-4 border-purple-600">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">🧠 Connectionism (1986+)</h3>
-            <div className="space-y-2 text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-3">🧠 Connectionism (1986+)</h3>
+            <div className="space-y-2 text-black">
               <p><strong>Core Idea:</strong> Learn representations from data using neural networks</p>
               <p><strong>Breakthrough:</strong> Backpropagation algorithm revived neural network research</p>
               <p><strong>Success:</strong> AlexNet (2012) - Deep learning dominates computer vision</p>
@@ -683,8 +683,8 @@ export const chapter2Slides: Slide[] = [
           </div>
 
           <div className="p-6 bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl border-l-4 border-orange-600">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">🎮 Behaviorism / Reinforcement Learning (1990s+)</h3>
-            <div className="space-y-2 text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-3">🎮 Behaviorism / Reinforcement Learning (1990s+)</h3>
+            <div className="space-y-2 text-black">
               <p><strong>Core Idea:</strong> Learn from interaction with environment through trial-and-error</p>
               <p><strong>Breakthrough:</strong> Deep Q-Networks (DQN) - Combine neural networks with RL</p>
               <p><strong>Success:</strong> AlphaGo (2016) defeats world Go champion</p>
@@ -694,8 +694,8 @@ export const chapter2Slides: Slide[] = [
           </div>
 
           <div className="p-6 bg-gradient-to-r from-green-50 to-green-100 rounded-xl border-l-4 border-green-600">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">🤖 Large Language Models (2017+)</h3>
-            <div className="space-y-2 text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-3">🤖 Large Language Models (2017+)</h3>
+            <div className="space-y-2 text-black">
               <p><strong>Core Idea:</strong> Pre-train on massive text data, gain emergent capabilities from scale</p>
               <p><strong>Breakthrough:</strong> Transformer architecture (2017) + Generative pre-training (2018)</p>
               <p><strong>Success:</strong> GPT-3 (2020) shows in-context learning, few-shot reasoning</p>
@@ -715,8 +715,8 @@ export const chapter2Slides: Slide[] = [
     type: 'visual',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Reinforcement Learning: Agent-Environment Loop</h2>
-        <p className="text-gray-700 mb-6">
+        <h2 className="text-3xl font-bold text-black">Reinforcement Learning: Agent-Environment Loop</h2>
+        <p className="text-black mb-6">
           RL agents learn optimal behavior through trial and error. Example: AlphaGo learned to play Go
           by playing millions of games against itself, receiving rewards for wins.
         </p>
@@ -794,8 +794,8 @@ export const chapter2Slides: Slide[] = [
     type: 'visual',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Integration of All Three Paradigms</h2>
-        <p className="text-gray-700 mb-6">
+        <h2 className="text-3xl font-bold text-black">Integration of All Three Paradigms</h2>
+        <p className="text-black mb-6">
           Today's agents integrate all three paradigms: Symbolic (tool use, planning) +
           Neural (LLM reasoning) + Behavioral (RLHF training). This is the culmination of 70 years of AI research.
         </p>
@@ -894,8 +894,8 @@ export const chapter2Slides: Slide[] = [
     type: 'interactive',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Test Your Understanding</h2>
-        <p className="text-gray-700 mb-4">
+        <h2 className="text-3xl font-bold text-black">Test Your Understanding</h2>
+        <p className="text-black mb-4">
           Assess your mastery of agent evolution, paradigm shifts, and historical milestones.
         </p>
 
@@ -1021,7 +1021,7 @@ export const chapter2Slides: Slide[] = [
       <div className="flex flex-col items-center justify-center h-full space-y-8">
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold gradient-text">Journey Complete! 🎉</h1>
-          <p className="text-xl text-gray-700 max-w-3xl">
+          <p className="text-xl text-black max-w-3xl">
             You've traced the evolution of AI agents from 1956 to 2024
           </p>
         </div>
@@ -1029,29 +1029,29 @@ export const chapter2Slides: Slide[] = [
         <div className="grid grid-cols-3 gap-6 max-w-5xl">
           <div className="p-6 bg-blue-50 rounded-xl text-center">
             <div className="text-4xl mb-3">🧮</div>
-            <h3 className="font-semibold text-gray-900 mb-2">Symbolism Era</h3>
-            <p className="text-sm text-gray-700">Logic, rules, expert systems</p>
-            <p className="text-xs text-gray-600 mt-2">MYCIN, SHRDLU, ELIZA</p>
+            <h3 className="font-semibold text-black mb-2">Symbolism Era</h3>
+            <p className="text-sm text-black">Logic, rules, expert systems</p>
+            <p className="text-xs text-black mt-2">MYCIN, SHRDLU, ELIZA</p>
           </div>
 
           <div className="p-6 bg-purple-50 rounded-xl text-center">
             <div className="text-4xl mb-3">🧠</div>
-            <h3 className="font-semibold text-gray-900 mb-2">Learning Era</h3>
-            <p className="text-sm text-gray-700">Neural networks, RL</p>
-            <p className="text-xs text-gray-600 mt-2">AlexNet, AlphaGo, DQN</p>
+            <h3 className="font-semibold text-black mb-2">Learning Era</h3>
+            <p className="text-sm text-black">Neural networks, RL</p>
+            <p className="text-xs text-black mt-2">AlexNet, AlphaGo, DQN</p>
           </div>
 
           <div className="p-6 bg-green-50 rounded-xl text-center">
             <div className="text-4xl mb-3">🤖</div>
-            <h3 className="font-semibold text-gray-900 mb-2">Integration Era</h3>
-            <p className="text-sm text-gray-700">LLMs + tools + memory</p>
-            <p className="text-xs text-gray-600 mt-2">GPT-4, Modern Agents</p>
+            <h3 className="font-semibold text-black mb-2">Integration Era</h3>
+            <p className="text-sm text-black">LLMs + tools + memory</p>
+            <p className="text-xs text-black mt-2">GPT-4, Modern Agents</p>
           </div>
         </div>
 
         <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl max-w-3xl border-2 border-purple-200">
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">🎯 Key Takeaways</h3>
-          <ul className="space-y-2 text-sm text-gray-700">
+          <h3 className="text-lg font-semibold text-black mb-3">🎯 Key Takeaways</h3>
+          <ul className="space-y-2 text-sm text-black">
             <li className="flex items-start gap-2">
               <span className="text-blue-600 font-bold mt-0.5">1.</span>
               <span><strong>Paradigm Shifts:</strong> Each era solved limitations of the previous one</span>
@@ -1072,8 +1072,8 @@ export const chapter2Slides: Slide[] = [
         </div>
 
         <div className="text-center">
-          <p className="text-gray-600">
-            Next up: <strong className="text-gray-900">Chapter 3 - LLM Fundamentals</strong>
+          <p className="text-black">
+            Next up: <strong className="text-black">Chapter 3 - LLM Fundamentals</strong>
           </p>
         </div>
       </div>

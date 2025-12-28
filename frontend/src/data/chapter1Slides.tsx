@@ -11,14 +11,14 @@ export const chapter1Slides: Slide[] = [
     content: (
       <div className="flex flex-col items-center justify-center h-full text-center space-y-6">
         <div className="text-6xl mb-4">🤖</div>
-        <h1 className="text-5xl font-bold text-gray-900 mb-4">
+        <h1 className="text-5xl font-bold text-black mb-4">
           Chapter 1
         </h1>
-        <h2 className="text-3xl font-semibold text-gray-700">
+        <h2 className="text-3xl font-semibold text-black">
           Introduction to Agents
         </h2>
         <div className="mt-8 max-w-2xl">
-          <p className="text-lg text-gray-600 leading-relaxed">
+          <p className="text-lg text-black leading-relaxed">
             Welcome to the world of agents! Let's explore what makes AI agents intelligent,
             how they work, and how to build one yourself.
           </p>
@@ -34,33 +34,33 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">What You'll Learn</h2>
+        <h2 className="text-3xl font-bold text-black">What You'll Learn</h2>
         <div className="grid md:grid-cols-2 gap-6 mt-8">
           <div className="p-6 bg-blue-50 rounded-lg border border-blue-200">
             <div className="text-3xl mb-3">🎯</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">What is an Agent?</h3>
-            <p className="text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-2">What is an Agent?</h3>
+            <p className="text-black">
               Understand the definition, core elements, and evolution from traditional to LLM-driven agents
             </p>
           </div>
           <div className="p-6 bg-green-50 rounded-lg border border-green-200">
             <div className="text-3xl mb-3">⚙️</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">How Agents Work</h3>
-            <p className="text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-2">How Agents Work</h3>
+            <p className="text-black">
               Explore the perceive-think-act loop and agent-environment interaction
             </p>
           </div>
           <div className="p-6 bg-purple-50 rounded-lg border border-purple-200">
             <div className="text-3xl mb-3">💻</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Build an Agent</h3>
-            <p className="text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-2">Build an Agent</h3>
+            <p className="text-black">
               Create your first intelligent travel assistant using Python and LLMs
             </p>
           </div>
           <div className="p-6 bg-orange-50 rounded-lg border border-orange-200">
             <div className="text-3xl mb-3">🤝</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Collaboration Modes</h3>
-            <p className="text-gray-700">
+            <h3 className="text-xl font-semibold text-black mb-2">Collaboration Modes</h3>
+            <p className="text-black">
               Discover how agents work as tools and autonomous collaborators
             </p>
           </div>
@@ -76,32 +76,32 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">What is an Agent?</h2>
+        <h2 className="text-3xl font-bold text-black">What is an Agent?</h2>
         <div className="bg-blue-50 border-l-4 border-blue-600 p-6 my-6">
-          <p className="text-lg text-gray-800 leading-relaxed">
+          <p className="text-lg text-black leading-relaxed">
             An <strong>agent</strong> is any entity that can perceive its <strong>Environment</strong> through <strong>Sensors</strong>,
             and <strong>autonomously</strong> take <strong>Actions</strong> through <strong>Actuators</strong> to achieve specific goals.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-4 mt-8">
           <div className="p-4 bg-white border border-gray-200 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">🌍 Environment</h4>
-            <p className="text-sm text-gray-600">The external world where the agent operates</p>
+            <h4 className="font-semibold text-black mb-2">🌍 Environment</h4>
+            <p className="text-sm text-black">The external world where the agent operates</p>
             <p className="text-xs text-gray-500 mt-2">Examples: roads, markets, web</p>
           </div>
           <div className="p-4 bg-white border border-gray-200 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">👁️ Sensors</h4>
-            <p className="text-sm text-gray-600">How the agent perceives the environment</p>
+            <h4 className="font-semibold text-black mb-2">👁️ Sensors</h4>
+            <p className="text-sm text-black">How the agent perceives the environment</p>
             <p className="text-xs text-gray-500 mt-2">Examples: cameras, APIs, data streams</p>
           </div>
           <div className="p-4 bg-white border border-gray-200 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">🎬 Actuators</h4>
-            <p className="text-sm text-gray-600">Tools to influence the environment</p>
+            <h4 className="font-semibold text-black mb-2">🎬 Actuators</h4>
+            <p className="text-sm text-black">Tools to influence the environment</p>
             <p className="text-xs text-gray-500 mt-2">Examples: robotic arms, code execution</p>
           </div>
           <div className="p-4 bg-white border border-gray-200 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">🧠 Autonomy</h4>
-            <p className="text-sm text-gray-600">Independent decision-making capability</p>
+            <h4 className="font-semibold text-black mb-2">🧠 Autonomy</h4>
+            <p className="text-sm text-black">Independent decision-making capability</p>
             <p className="text-xs text-gray-500 mt-2">Not just following preset rules</p>
           </div>
         </div>
@@ -116,8 +116,8 @@ export const chapter1Slides: Slide[] = [
     type: 'visual',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">How Agents Interact with Their Environment</h2>
-        <p className="text-lg text-gray-700">
+        <h2 className="text-3xl font-bold text-black">How Agents Interact with Their Environment</h2>
+        <p className="text-lg text-black">
           The agent-environment loop is the fundamental pattern of all agent behavior:
         </p>
         <AgentFlowDiagram
@@ -172,8 +172,8 @@ export const chapter1Slides: Slide[] = [
     type: 'visual',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">From Simple to Complex</h2>
-        <p className="text-lg text-gray-700 mb-6">
+        <h2 className="text-3xl font-bold text-black">From Simple to Complex</h2>
+        <p className="text-lg text-black mb-6">
           Traditional agents evolved through five stages, each adding new capabilities:
         </p>
         <AgentFlowDiagram
@@ -235,9 +235,9 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">The LLM Revolution</h2>
+        <h2 className="text-3xl font-bold text-black">The LLM Revolution</h2>
         <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-6 my-6">
-          <p className="text-lg text-gray-800 leading-relaxed">
+          <p className="text-lg text-black leading-relaxed">
             Large Language Models like GPT fundamentally changed how we build agents —
             from <strong>explicit programming</strong> to <strong>emergent capabilities</strong>.
           </p>
@@ -245,22 +245,22 @@ export const chapter1Slides: Slide[] = [
         <div className="grid md:grid-cols-3 gap-4 mt-8">
           <div className="p-4 bg-white border-2 border-blue-200 rounded-lg">
             <div className="text-2xl mb-2">🎯</div>
-            <h4 className="font-semibold text-gray-900 mb-2">Planning & Reasoning</h4>
-            <p className="text-sm text-gray-600">
+            <h4 className="font-semibold text-black mb-2">Planning & Reasoning</h4>
+            <p className="text-sm text-black">
               Decompose "plan a trip" into subtasks: preferences → info → itinerary → booking
             </p>
           </div>
           <div className="p-4 bg-white border-2 border-green-200 rounded-lg">
             <div className="text-2xl mb-2">🛠️</div>
-            <h4 className="font-semibold text-gray-900 mb-2">Tool Use</h4>
-            <p className="text-sm text-gray-600">
+            <h4 className="font-semibold text-black mb-2">Tool Use</h4>
+            <p className="text-sm text-black">
               Call weather API, analyze "rain forecast", recommend indoor activities
             </p>
           </div>
           <div className="p-4 bg-white border-2 border-orange-200 rounded-lg">
             <div className="text-2xl mb-2">🔄</div>
-            <h4 className="font-semibold text-gray-900 mb-2">Dynamic Adjustment</h4>
-            <p className="text-sm text-gray-600">
+            <h4 className="font-semibold text-black mb-2">Dynamic Adjustment</h4>
+            <p className="text-sm text-black">
               User says "hotel too expensive" → re-search with new budget constraint
             </p>
           </div>
@@ -281,7 +281,7 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">What Changed?</h2>
+        <h2 className="text-3xl font-bold text-black">What Changed?</h2>
         <div className="overflow-x-auto mt-6">
           <table className="min-w-full border border-gray-200 rounded-lg">
             <thead className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white">
@@ -293,29 +293,29 @@ export const chapter1Slides: Slide[] = [
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               <tr>
-                <td className="px-6 py-4 font-medium text-gray-900">Core Engine</td>
-                <td className="px-6 py-4 text-gray-700">Rule-based / explicit algorithms</td>
-                <td className="px-6 py-4 text-gray-700">Pre-trained neural networks (GPT, etc.)</td>
+                <td className="px-6 py-4 font-medium text-black">Core Engine</td>
+                <td className="px-6 py-4 text-black">Rule-based / explicit algorithms</td>
+                <td className="px-6 py-4 text-black">Pre-trained neural networks (GPT, etc.)</td>
               </tr>
               <tr>
-                <td className="px-6 py-4 font-medium text-gray-900">Knowledge Source</td>
-                <td className="px-6 py-4 text-gray-700">Manually coded rules & databases</td>
-                <td className="px-6 py-4 text-gray-700">Learned from massive text data</td>
+                <td className="px-6 py-4 font-medium text-black">Knowledge Source</td>
+                <td className="px-6 py-4 text-black">Manually coded rules & databases</td>
+                <td className="px-6 py-4 text-black">Learned from massive text data</td>
               </tr>
               <tr>
-                <td className="px-6 py-4 font-medium text-gray-900">Interaction</td>
-                <td className="px-6 py-4 text-gray-700">Structured commands</td>
-                <td className="px-6 py-4 text-gray-700">Natural language conversations</td>
+                <td className="px-6 py-4 font-medium text-black">Interaction</td>
+                <td className="px-6 py-4 text-black">Structured commands</td>
+                <td className="px-6 py-4 text-black">Natural language conversations</td>
               </tr>
               <tr>
-                <td className="px-6 py-4 font-medium text-gray-900">Flexibility</td>
-                <td className="px-6 py-4 text-gray-700">Limited to predefined scenarios</td>
-                <td className="px-6 py-4 text-gray-700">Handles ambiguous, open-ended tasks</td>
+                <td className="px-6 py-4 font-medium text-black">Flexibility</td>
+                <td className="px-6 py-4 text-black">Limited to predefined scenarios</td>
+                <td className="px-6 py-4 text-black">Handles ambiguous, open-ended tasks</td>
               </tr>
               <tr>
-                <td className="px-6 py-4 font-medium text-gray-900">Behavior</td>
-                <td className="px-6 py-4 text-gray-700">Deterministic & bounded</td>
-                <td className="px-6 py-4 text-gray-700">Emergent capabilities & generalization</td>
+                <td className="px-6 py-4 font-medium text-black">Behavior</td>
+                <td className="px-6 py-4 text-black">Deterministic & bounded</td>
+                <td className="px-6 py-4 text-black">Emergent capabilities & generalization</td>
               </tr>
             </tbody>
           </table>
@@ -331,28 +331,28 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Three Ways to Classify Agents</h2>
+        <h2 className="text-3xl font-bold text-black">Three Ways to Classify Agents</h2>
         <div className="grid gap-6 mt-8">
           <div className="p-6 bg-blue-50 border-l-4 border-blue-600">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">1. By Internal Architecture</h3>
-            <p className="text-gray-700 mb-2">From simple to complex decision-making:</p>
-            <p className="text-sm text-gray-600">
+            <h3 className="text-xl font-semibold text-black mb-3">1. By Internal Architecture</h3>
+            <p className="text-black mb-2">From simple to complex decision-making:</p>
+            <p className="text-sm text-black">
               Reactive → Model-Based → Goal-Based → Utility-Based → Learning
             </p>
           </div>
           <div className="p-6 bg-green-50 border-l-4 border-green-600">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">2. By Time & Reactivity</h3>
-            <p className="text-gray-700 mb-2">Speed vs. optimality trade-off:</p>
-            <div className="text-sm text-gray-600 space-y-1">
+            <h3 className="text-xl font-semibold text-black mb-3">2. By Time & Reactivity</h3>
+            <p className="text-black mb-2">Speed vs. optimality trade-off:</p>
+            <div className="text-sm text-black space-y-1">
               <p><strong>Reactive:</strong> Fast responses, no planning (airbag system)</p>
               <p><strong>Deliberative:</strong> Slow planning, optimal solutions (chess player)</p>
               <p><strong>Hybrid:</strong> Both modes combined (modern LLM agents)</p>
             </div>
           </div>
           <div className="p-6 bg-purple-50 border-l-4 border-purple-600">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">3. By Knowledge Representation</h3>
-            <p className="text-gray-700 mb-2">How knowledge is stored:</p>
-            <div className="text-sm text-gray-600 space-y-1">
+            <h3 className="text-xl font-semibold text-black mb-3">3. By Knowledge Representation</h3>
+            <p className="text-black mb-2">How knowledge is stored:</p>
+            <div className="text-sm text-black space-y-1">
               <p><strong>Symbolic:</strong> Explicit rules & logic (transparent, fragile)</p>
               <p><strong>Sub-symbolic:</strong> Neural patterns (powerful, opaque)</p>
               <p><strong>Neuro-symbolic:</strong> Both combined (LLM agents)</p>
@@ -370,34 +370,34 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Defining Agent Tasks: PEAS</h2>
-        <p className="text-lg text-gray-700">
+        <h2 className="text-3xl font-bold text-black">Defining Agent Tasks: PEAS</h2>
+        <p className="text-lg text-black">
           The PEAS model precisely describes an agent's task environment:
         </p>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           <div className="p-6 bg-blue-50 border border-blue-200 rounded-lg">
             <div className="text-3xl mb-3">📊</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Performance</h3>
-            <p className="text-gray-700 mb-2">How to measure success?</p>
-            <p className="text-sm text-gray-600">Example: User satisfaction, itinerary quality, response time</p>
+            <h3 className="text-xl font-semibold text-black mb-2">Performance</h3>
+            <p className="text-black mb-2">How to measure success?</p>
+            <p className="text-sm text-black">Example: User satisfaction, itinerary quality, response time</p>
           </div>
           <div className="p-6 bg-green-50 border border-green-200 rounded-lg">
             <div className="text-3xl mb-3">🌍</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Environment</h3>
-            <p className="text-gray-700 mb-2">Where does the agent operate?</p>
-            <p className="text-sm text-gray-600">Example: Web APIs, databases, user chat interface</p>
+            <h3 className="text-xl font-semibold text-black mb-2">Environment</h3>
+            <p className="text-black mb-2">Where does the agent operate?</p>
+            <p className="text-sm text-black">Example: Web APIs, databases, user chat interface</p>
           </div>
           <div className="p-6 bg-purple-50 border border-purple-200 rounded-lg">
             <div className="text-3xl mb-3">🎬</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Actuators</h3>
-            <p className="text-gray-700 mb-2">What can the agent do?</p>
-            <p className="text-sm text-gray-600">Example: Display messages, call APIs, book tickets</p>
+            <h3 className="text-xl font-semibold text-black mb-2">Actuators</h3>
+            <p className="text-black mb-2">What can the agent do?</p>
+            <p className="text-sm text-black">Example: Display messages, call APIs, book tickets</p>
           </div>
           <div className="p-6 bg-orange-50 border border-orange-200 rounded-lg">
             <div className="text-3xl mb-3">👁️</div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Sensors</h3>
-            <p className="text-gray-700 mb-2">What can the agent perceive?</p>
-            <p className="text-sm text-gray-600">Example: User input, API responses, database queries</p>
+            <h3 className="text-xl font-semibold text-black mb-2">Sensors</h3>
+            <p className="text-black mb-2">What can the agent perceive?</p>
+            <p className="text-sm text-black">Example: User input, API responses, database queries</p>
           </div>
         </div>
       </div>
@@ -411,8 +411,8 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">The Agent Loop</h2>
-        <p className="text-lg text-gray-700">
+        <h2 className="text-3xl font-bold text-black">The Agent Loop</h2>
+        <p className="text-lg text-black">
           Agents work through a continuous cycle of four stages:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
@@ -421,8 +421,8 @@ export const chapter1Slides: Slide[] = [
               1
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">👁️ Perception</h4>
-              <p className="text-gray-700">
+              <h4 className="text-lg font-semibold text-black mb-2">👁️ Perception</h4>
+              <p className="text-black">
                 Receive observations from the environment via sensors (APIs, user input)
               </p>
             </div>
@@ -432,8 +432,8 @@ export const chapter1Slides: Slide[] = [
               2
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">🧠 Thought</h4>
-              <p className="text-gray-700">
+              <h4 className="text-lg font-semibold text-black mb-2">🧠 Thought</h4>
+              <p className="text-black">
                 Process information through LLM reasoning: plan next steps, select tools
               </p>
             </div>
@@ -443,8 +443,8 @@ export const chapter1Slides: Slide[] = [
               3
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">🎬 Action</h4>
-              <p className="text-gray-700">
+              <h4 className="text-lg font-semibold text-black mb-2">🎬 Action</h4>
+              <p className="text-black">
                 Execute decisions by calling tools/APIs to influence the environment
               </p>
             </div>
@@ -454,8 +454,8 @@ export const chapter1Slides: Slide[] = [
               4
             </div>
             <div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">🔄 Observe</h4>
-              <p className="text-gray-700">
+              <h4 className="text-lg font-semibold text-black mb-2">🔄 Observe</h4>
+              <p className="text-black">
                 Environment changes, producing new observations → loop continues
               </p>
             </div>
@@ -472,8 +472,8 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Thought-Action-Observation</h2>
-        <p className="text-lg text-gray-700">
+        <h2 className="text-3xl font-bold text-black">Thought-Action-Observation</h2>
+        <p className="text-lg text-black">
           A structured format for LLM agents to communicate with the environment:
         </p>
         <div className="bg-gray-900 text-gray-100 p-6 rounded-lg font-mono text-sm mt-6">
@@ -501,16 +501,16 @@ export const chapter1Slides: Slide[] = [
         </div>
         <div className="mt-6 grid md:grid-cols-3 gap-4">
           <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Thought</h4>
-            <p className="text-sm text-gray-600">LLM's internal reasoning process</p>
+            <h4 className="font-semibold text-black mb-2">Thought</h4>
+            <p className="text-sm text-black">LLM's internal reasoning process</p>
           </div>
           <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Action</h4>
-            <p className="text-sm text-gray-600">Function call to external tool</p>
+            <h4 className="font-semibold text-black mb-2">Action</h4>
+            <p className="text-sm text-black">Function call to external tool</p>
           </div>
           <div className="p-4 bg-orange-50 border border-orange-200 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">Observation</h4>
-            <p className="text-sm text-gray-600">Tool result in natural language</p>
+            <h4 className="font-semibold text-black mb-2">Observation</h4>
+            <p className="text-sm text-black">Tool result in natural language</p>
           </div>
         </div>
       </div>
@@ -524,12 +524,12 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Ready to Code?</h2>
+        <h2 className="text-3xl font-bold text-black">Ready to Code?</h2>
         <div className="bg-gradient-to-r from-blue-50 to-cyan-50 border-l-4 border-blue-600 p-6">
-          <p className="text-lg text-gray-800 mb-3">
+          <p className="text-lg text-black mb-3">
             <strong>Goal:</strong> Build an intelligent travel assistant that:
           </p>
-          <ol className="list-decimal list-inside space-y-2 text-gray-700">
+          <ol className="list-decimal list-inside space-y-2 text-black">
             <li>Checks weather for a city</li>
             <li>Recommends tourist attractions based on weather</li>
             <li>Runs autonomously in a Thought-Action-Observation loop</li>
@@ -562,14 +562,14 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Two Paths to Automation</h2>
+        <h2 className="text-3xl font-bold text-black">Two Paths to Automation</h2>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           <div className="p-6 bg-blue-50 border-2 border-blue-300 rounded-lg">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">⚙️ Workflow</h3>
-            <p className="text-gray-700 mb-4">
+            <h3 className="text-xl font-semibold text-black mb-4">⚙️ Workflow</h3>
+            <p className="text-black mb-4">
               <strong>Pre-defined, structured orchestration</strong>
             </p>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-black">
               <li>✓ Precise, deterministic flowchart</li>
               <li>✓ Every step explicitly coded</li>
               <li>✓ Reliable for known scenarios</li>
@@ -577,7 +577,7 @@ export const chapter1Slides: Slide[] = [
               <li>✗ No autonomous reasoning</li>
             </ul>
             <div className="mt-4 p-3 bg-white rounded border border-blue-200">
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-black">
                 <strong>Example:</strong> Expense approval process:<br/>
                 If amount &lt; $500 → Manager<br/>
                 If amount ≥ $500 → CFO → Finance
@@ -585,11 +585,11 @@ export const chapter1Slides: Slide[] = [
             </div>
           </div>
           <div className="p-6 bg-green-50 border-2 border-green-300 rounded-lg">
-            <h3 className="text-xl font-semibold text-gray-900 mb-4">🤖 Agent</h3>
-            <p className="text-gray-700 mb-4">
+            <h3 className="text-xl font-semibold text-black mb-4">🤖 Agent</h3>
+            <p className="text-black mb-4">
               <strong>Autonomous, goal-oriented system</strong>
             </p>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-black">
               <li>✓ Dynamic reasoning & planning</li>
               <li>✓ Adapts to new situations</li>
               <li>✓ Tool selection on demand</li>
@@ -597,7 +597,7 @@ export const chapter1Slides: Slide[] = [
               <li>✗ Requires LLM infrastructure</li>
             </ul>
             <div className="mt-4 p-3 bg-white rounded border border-green-200">
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-black">
                 <strong>Example:</strong> Travel assistant:<br/>
                 If weather = sunny → outdoor spots<br/>
                 If weather = rainy → indoor museums<br/>
@@ -617,49 +617,49 @@ export const chapter1Slides: Slide[] = [
     type: 'content',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Two Interaction Modes</h2>
+        <h2 className="text-3xl font-bold text-black">Two Interaction Modes</h2>
         <div className="grid gap-6 mt-6">
           <div className="p-6 bg-purple-50 border-l-4 border-purple-600">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">🛠️ As Developer Tools</h3>
-            <p className="text-gray-700 mb-4">
+            <h3 className="text-xl font-semibold text-black mb-3">🛠️ As Developer Tools</h3>
+            <p className="text-black mb-4">
               AI-powered assistants deeply integrated into workflows
             </p>
             <div className="grid md:grid-cols-4 gap-3">
               <div className="p-3 bg-white rounded border border-purple-200">
-                <p className="font-semibold text-sm text-gray-900">GitHub Copilot</p>
-                <p className="text-xs text-gray-600 mt-1">Code completion</p>
+                <p className="font-semibold text-sm text-black">GitHub Copilot</p>
+                <p className="text-xs text-black mt-1">Code completion</p>
               </div>
               <div className="p-3 bg-white rounded border border-purple-200">
-                <p className="font-semibold text-sm text-gray-900">Claude Code</p>
-                <p className="text-xs text-gray-600 mt-1">Terminal coding</p>
+                <p className="font-semibold text-sm text-black">Claude Code</p>
+                <p className="text-xs text-black mt-1">Terminal coding</p>
               </div>
               <div className="p-3 bg-white rounded border border-purple-200">
-                <p className="font-semibold text-sm text-gray-900">Cursor</p>
-                <p className="text-xs text-gray-600 mt-1">AI-native editor</p>
+                <p className="font-semibold text-sm text-black">Cursor</p>
+                <p className="text-xs text-black mt-1">AI-native editor</p>
               </div>
               <div className="p-3 bg-white rounded border border-purple-200">
-                <p className="font-semibold text-sm text-gray-900">Trae</p>
-                <p className="text-xs text-gray-600 mt-1">Code optimization</p>
+                <p className="font-semibold text-sm text-black">Trae</p>
+                <p className="text-xs text-black mt-1">Code optimization</p>
               </div>
             </div>
           </div>
           <div className="p-6 bg-cyan-50 border-l-4 border-cyan-600">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">🤝 As Autonomous Collaborators</h3>
-            <p className="text-gray-700 mb-4">
+            <h3 className="text-xl font-semibold text-black mb-3">🤝 As Autonomous Collaborators</h3>
+            <p className="text-black mb-4">
               Delegate high-level goals, agent plans & executes independently
             </p>
             <div className="grid md:grid-cols-3 gap-3">
               <div className="p-3 bg-white rounded border border-cyan-200">
-                <p className="font-semibold text-sm text-gray-900">Single-Agent Loop</p>
-                <p className="text-xs text-gray-600 mt-1">AgentGPT, BabyAGI</p>
+                <p className="font-semibold text-sm text-black">Single-Agent Loop</p>
+                <p className="text-xs text-black mt-1">AgentGPT, BabyAGI</p>
               </div>
               <div className="p-3 bg-white rounded border border-cyan-200">
-                <p className="font-semibold text-sm text-gray-900">Multi-Agent Teams</p>
-                <p className="text-xs text-gray-600 mt-1">MetaGPT, CrewAI, AutoGen</p>
+                <p className="font-semibold text-sm text-black">Multi-Agent Teams</p>
+                <p className="text-xs text-black mt-1">MetaGPT, CrewAI, AutoGen</p>
               </div>
               <div className="p-3 bg-white rounded border border-cyan-200">
-                <p className="font-semibold text-sm text-gray-900">Graph-Based Control</p>
-                <p className="text-xs text-gray-600 mt-1">LangGraph, AgentScope</p>
+                <p className="font-semibold text-sm text-black">Graph-Based Control</p>
+                <p className="text-xs text-black mt-1">LangGraph, AgentScope</p>
               </div>
             </div>
           </div>
@@ -675,7 +675,7 @@ export const chapter1Slides: Slide[] = [
     type: 'interactive',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">Test Your Understanding</h2>
+        <h2 className="text-3xl font-bold text-black">Test Your Understanding</h2>
         <Quiz
           chapterId={1}
           title="Chapter 1 Assessment"
@@ -759,36 +759,36 @@ export const chapter1Slides: Slide[] = [
     type: 'summary',
     content: (
       <div className="space-y-6">
-        <h2 className="text-3xl font-bold text-gray-900">What We Learned</h2>
+        <h2 className="text-3xl font-bold text-black">What We Learned</h2>
         <div className="grid gap-4 mt-8">
           <div className="p-5 bg-blue-50 border-l-4 border-blue-600 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">🎯 Agent Definition</h4>
-            <p className="text-gray-700">
+            <h4 className="font-semibold text-black mb-2">🎯 Agent Definition</h4>
+            <p className="text-black">
               Agents perceive environments, make autonomous decisions, and take actions to achieve goals
             </p>
           </div>
           <div className="p-5 bg-green-50 border-l-4 border-green-600 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">📈 Agent Evolution</h4>
-            <p className="text-gray-700">
+            <h4 className="font-semibold text-black mb-2">📈 Agent Evolution</h4>
+            <p className="text-black">
               From simple reflex agents to LLM-driven agents with emergent reasoning capabilities
             </p>
           </div>
           <div className="p-5 bg-purple-50 border-l-4 border-purple-600 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">⚙️ Operating Mechanism</h4>
-            <p className="text-gray-700">
+            <h4 className="font-semibold text-black mb-2">⚙️ Operating Mechanism</h4>
+            <p className="text-black">
               The Thought-Action-Observation loop enables continuous interaction with environments
             </p>
           </div>
           <div className="p-5 bg-orange-50 border-l-4 border-orange-600 rounded-lg">
-            <h4 className="font-semibold text-gray-900 mb-2">🤝 Collaboration Modes</h4>
-            <p className="text-gray-700">
+            <h4 className="font-semibold text-black mb-2">🤝 Collaboration Modes</h4>
+            <p className="text-black">
               Agents work as developer tools (Copilot) or autonomous collaborators (CrewAI, MetaGPT)
             </p>
           </div>
         </div>
         <div className="mt-8 text-center p-6 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-lg border border-blue-300">
-          <p className="text-xl font-semibold text-gray-900 mb-2">🎓 Next Chapter</p>
-          <p className="text-gray-700">
+          <p className="text-xl font-semibold text-black mb-2">🎓 Next Chapter</p>
+          <p className="text-black">
             Chapter 2: History of Agents — Trace the evolution from 1950s symbolic AI to modern LLM agents
           </p>
         </div>
