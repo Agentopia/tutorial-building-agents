@@ -91,7 +91,7 @@ export default function SlideView({ slides, chapterId, chapterTitle, onSlideChan
                 <Home className="w-5 h-5" />
               </Link>
               <div>
-                <h1 className="text-lg font-semibold text-gray-900">
+                <h1 className="text-lg font-semibold text-black">
                   Chapter {chapterId}: {chapterTitle}
                 </h1>
                 <p className="text-sm text-gray-500">
