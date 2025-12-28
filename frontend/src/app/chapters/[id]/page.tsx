@@ -19,7 +19,11 @@ import { chapter2Slides } from '@/data/chapter2Slides'
 import { chapter3Slides } from '@/data/chapter3Slides'
 import { chapter4Slides } from '@/data/chapter4Slides'
 import { chapter5Slides } from '@/data/chapter5Slides'
-import { chapter6Slides } from '@/data/chapter6Slides'
+// TODO: Fix syntax errors in chapter6Slides.tsx and chapter7Slides.tsx
+// Error: "Unexpected token `div`. Expected jsx identifier" in complex content slides
+// Temporarily disabled until syntax issue is resolved
+// import { chapter6Slides } from '@/data/chapter6Slides'
+// import { chapter7Slides } from '@/data/chapter7Slides'
 
 const chapterTitles: { [key: number]: string } = {
   1: 'Introduction to Agents',
@@ -108,9 +112,15 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
     return <SlideView slides={chapter5Slides} chapterId={5} chapterTitle={title} />
   }
 
-  if (chapterId === 6) {
-    return <SlideView slides={chapter6Slides} chapterId={6} chapterTitle={title} />
-  }
+  // TODO: Re-enable when syntax errors are fixed
+  // if (chapterId === 6) {
+  //   return <SlideView slides={chapter6Slides} chapterId={6} chapterTitle={title} />
+  // }
+
+  // TODO: Re-enable when syntax errors are fixed
+  // if (chapterId === 7) {
+  //   return <SlideView slides={chapter7Slides} chapterId={7} chapterTitle={title} />
+  // }
 
   return (
     <main className="min-h-screen p-8 bg-gray-50">

@@ -245,8 +245,8 @@
 - [x] Chapter 3: Fundamentals of Large Language Models ✅ (18 slides, completed 2025-12-28)
 - [x] Chapter 4: Building Classic Agent Paradigms ✅ (20 slides, completed 2025-12-28)
 - [x] Chapter 5: Building Agents with Low-Code Platforms ✅ (16 slides, completed 2025-12-28)
-- [x] Chapter 6: Framework Development Practice ✅ (16 slides, completed 2025-12-28)
-- [ ] Chapter 7: Building Your Agent Framework (Target: ~18-20 slides)
+- [~] Chapter 6: Framework Development Practice ⚠️ (16 slides created, SYNTAX ERROR - temporarily disabled)
+- [~] Chapter 7: Building Your Agent Framework ⚠️ (18 slides created, SYNTAX ERROR - temporarily disabled)
 - [ ] Chapter 8: Memory and Retrieval (Target: ~14-16 slides)
 - [ ] Chapter 9: Context Engineering (Target: ~12-15 slides)
 - [ ] Chapter 10: Agent Communication Protocols (Target: ~15-18 slides)
@@ -275,6 +275,9 @@
 - Slide N: Next chapter preview
 
 **Estimated Effort:** ~2-3 hours per chapter (reading, curation, integration, testing)
+
+**Known Issues:**
+- **Chapter 6 & 7 Syntax Errors (2025-12-28):** Both chapters have "Unexpected token `div`. Expected jsx identifier" compilation errors in complex content slides. Slides were created successfully but are temporarily disabled in routing until the JSX parsing issue is resolved. Error occurs in slides with deeply nested div structures (LangGraph slide in Ch6, Multi-Source Search slide in Ch7). Investigation ongoing.
 
 ---
 

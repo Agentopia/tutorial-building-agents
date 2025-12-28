@@ -94,8 +94,10 @@ npm run lint    # Run ESLint
 ### Quick Tour
 1. **Homepage** (`/`) - Course overview and introduction
 2. **Chapter List** (`/chapters`) - All 16 chapters with progress tracking
-3. **Chapter View** (`/chapters/1`, `/chapters/2`, `/chapters/3`, `/chapters/4`, `/chapters/5`, `/chapters/6`) - Slide-based tutorial (Chapters 1-6 use new slide format!)
+3. **Chapter View** (`/chapters/1` through `/chapters/5`) - Slide-based tutorial (Chapters 1-5 fully working!)
 4. **Live Demos** (`/demos`) - Full-stack agent applications
+
+**Note:** Chapters 6-7 are temporarily in markdown mode due to slide syntax errors being debugged.
 
 ## 🧪 Test Endpoints
 
@@ -130,10 +132,12 @@ curl -X POST http://localhost:3001/api/progress/sync \
 ### ✅ Phase 3: Interactive Learning (85% COMPLETE)
 - [x] **Slide-Based Tutorial Format** 🎯 NEW!
   - [x] SlideView component with navigation & animations
-  - [x] Chapters 1-6 converted to slide-based tutorials (102 total slides)
+  - [x] Chapters 1-5 converted to slide-based tutorials (86 total slides, fully working)
+  - [x] Chapters 6-7 slides created (34 slides) but temporarily disabled due to syntax errors
   - [x] Keyboard shortcuts (Arrow keys) + click navigation
   - [x] Progress bar & dot navigation
-  - [ ] Chapters 7-16 pending conversion (estimated 18-30 hours)
+  - [ ] Chapters 8-16 pending conversion (estimated 18-27 hours)
+  - [~] Known Issue: Chapters 6-7 have JSX parsing errors in complex content slides
 
 - [x] **Code Playgrounds**
   - [x] Sandpack integration for in-browser execution
@@ -169,13 +173,16 @@ curl -X POST http://localhost:3001/api/progress/sync \
   - [x] AI Town (Chapter 15) - Multi-agent simulation
 
 **Chapter Coverage:**
-- ✅ Chapters 1-7, 13: Full interactive components
+- ✅ Chapters 1-5: Full interactive components + working slides
+- ⚠️ Chapters 6-7: Interactive components complete, slides created but disabled (syntax errors)
+- ✅ Chapter 13: Full interactive components
 - ⏳ Chapters 8-12, 14-16: Interactive components pending
 
 ### ⏳ Phase 4: Advanced Features (PLANNED)
 **Priority 1: Slide-Based Format Rollout**
-- [ ] Convert Chapters 7-16 to slide-based tutorials (10 chapters × 2-3 hours)
-- [ ] ~200-220 total slides across course (102 already complete)
+- [ ] Fix Chapters 6-7 syntax errors (JSX parsing issues in complex slides)
+- [ ] Convert Chapters 8-16 to slide-based tutorials (9 chapters × 2-3 hours)
+- [ ] ~200-220 total slides across course (86 working, 34 pending fixes)
 - [ ] Consistent slide templates and visual design
 
 **Priority 2: Backend Integration**
