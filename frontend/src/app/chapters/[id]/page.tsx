@@ -19,6 +19,7 @@ import { chapter2Slides } from '@/data/chapter2Slides'
 import { chapter3Slides } from '@/data/chapter3Slides'
 import { chapter4Slides } from '@/data/chapter4Slides'
 import { chapter5Slides } from '@/data/chapter5Slides'
+import { chapter6Slides } from '@/data/chapter6Slides'
 
 const chapterTitles: { [key: number]: string } = {
   1: 'Introduction to Agents',
@@ -105,6 +106,10 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
 
   if (chapterId === 5) {
     return <SlideView slides={chapter5Slides} chapterId={5} chapterTitle={title} />
+  }
+
+  if (chapterId === 6) {
+    return <SlideView slides={chapter6Slides} chapterId={6} chapterTitle={title} />
   }
 
   return (
