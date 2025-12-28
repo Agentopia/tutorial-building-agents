@@ -4,8 +4,8 @@ Modern, interactive tutorial platform for learning AI agents from scratch. Built
 
 ## ✅ Current Status
 
-**Progress:** 74% Complete (Phases 1-3 complete, Phase 4 planned)
-**Latest:** Slide-based tutorial format implemented for Chapters 1-3 (2025-12-28)
+**Progress:** 76% Complete (Phases 1-3 complete, Phase 4 planned)
+**Latest:** Slide-based tutorial format implemented for Chapters 1-5 (2025-12-28)
 **See:** [BUILD_PLAN.md](BUILD_PLAN.md) for detailed tracking
 
 ### Tech Stack
@@ -94,7 +94,7 @@ npm run lint    # Run ESLint
 ### Quick Tour
 1. **Homepage** (`/`) - Course overview and introduction
 2. **Chapter List** (`/chapters`) - All 16 chapters with progress tracking
-3. **Chapter View** (`/chapters/1`, `/chapters/2`, `/chapters/3`) - Slide-based tutorial (Chapters 1-3 use new slide format!)
+3. **Chapter View** (`/chapters/1`, `/chapters/2`, `/chapters/3`, `/chapters/4`, `/chapters/5`) - Slide-based tutorial (Chapters 1-5 use new slide format!)
 4. **Live Demos** (`/demos`) - Full-stack agent applications
 
 ## 🧪 Test Endpoints
@@ -130,10 +130,10 @@ curl -X POST http://localhost:3001/api/progress/sync \
 ### ✅ Phase 3: Interactive Learning (85% COMPLETE)
 - [x] **Slide-Based Tutorial Format** 🎯 NEW!
   - [x] SlideView component with navigation & animations
-  - [x] Chapters 1-3 converted to slide-based tutorials (50 total slides)
+  - [x] Chapters 1-5 converted to slide-based tutorials (86 total slides)
   - [x] Keyboard shortcuts (Arrow keys) + click navigation
   - [x] Progress bar & dot navigation
-  - [ ] Chapters 4-16 pending conversion (estimated 26-39 hours)
+  - [ ] Chapters 6-16 pending conversion (estimated 21-33 hours)
 
 - [x] **Code Playgrounds**
   - [x] Sandpack integration for in-browser execution
@@ -174,8 +174,8 @@ curl -X POST http://localhost:3001/api/progress/sync \
 
 ### ⏳ Phase 4: Advanced Features (PLANNED)
 **Priority 1: Slide-Based Format Rollout**
-- [ ] Convert Chapters 4-16 to slide-based tutorials (13 chapters × 2-3 hours)
-- [ ] ~200-220 total slides across course (50 already complete)
+- [ ] Convert Chapters 6-16 to slide-based tutorials (11 chapters × 2-3 hours)
+- [ ] ~200-220 total slides across course (86 already complete)
 - [ ] Consistent slide templates and visual design
 
 **Priority 2: Backend Integration**
