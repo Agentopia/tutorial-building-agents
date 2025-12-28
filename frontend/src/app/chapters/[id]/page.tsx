@@ -11,6 +11,10 @@ const CodePlayground = dynamic(() => import('@/components/CodePlayground'), { ss
 const Exercise = dynamic(() => import('@/components/Exercise'), { ssr: false })
 const Quiz = dynamic(() => import('@/components/Quiz'), { ssr: false })
 const ElizaChatbot = dynamic(() => import('@/components/ElizaChatbot'), { ssr: false })
+const SlideView = dynamic(() => import('@/components/SlideView'), { ssr: false })
+
+// Import slide data
+import { chapter1Slides } from '@/data/chapter1Slides'
 
 const chapterTitles: { [key: number]: string } = {
   1: 'Introduction to Agents',
@@ -78,6 +82,11 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
     )
   }
 
+  // Use slide-based format for Chapter 1
+  if (chapterId === 1) {
+    return <SlideView slides={chapter1Slides} chapterId={1} chapterTitle={title} />
+  }
+
   return (
     <main className="min-h-screen p-8 bg-gray-50">
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-sm p-8">
@@ -91,8 +100,10 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
           <MarkdownRenderer content={content} />
         </article>
 
-        {/* Interactive Components for Chapter 1 */}
-        {chapterId === 1 && (
+        {/* Note: Chapter 1 uses slide-based format (see SlideView above) */}
+
+        {/* Interactive Components for Chapter 2 */}
+        {chapterId === 2 && (
           <div className="mt-12 space-y-12">
             {/* Separator */}
             <div className="border-t pt-12">
