@@ -8,7 +8,7 @@ export const chapter7Slides: Slide[] = [
   {
     id: 'ch7-slide-1',
     title: 'Chapter 7: Building Your Agent Framework',
-    type: 'title',
+    type: 'intro',
     content: (
       <div className="flex flex-col justify-center items-center h-full bg-gradient-to-br from-purple-50 via-pink-50 to-red-50 p-12">
         <div className="text-7xl mb-8">🏗️</div>
@@ -314,23 +314,41 @@ export const chapter7Slides: Slide[] = [
   {
     id: 'ch7-slide-5',
     title: 'Framework Architecture',
-    type: 'diagram',
+    type: 'visual',
     content: (
       <div className="flex flex-col h-full p-8 bg-gradient-to-br from-blue-50 to-cyan-50">
         <h2 className="text-4xl font-bold mb-6 text-blue-600">HelloAgents Layered Architecture</h2>
         <AgentFlowDiagram
+          title="HelloAgents Architecture"
           nodes={[
-            // Core Layer
-            { id: '1', type: 'agent', position: { x: 50, y: 50 }, data: { label: '🧠 Core Layer', description: 'HelloAgentsLLM: Multi-provider LLM client with auto-detection\nMessage: Unified message format (user/assistant/system/tool)\nConfig: Centralized configuration management\nAgent: Abstract base class for all agents' } },
-
-            // Agent Layer
-            { id: '2', type: 'agent', position: { x: 50, y: 200 }, data: { label: '🤖 Agent Layer', description: 'SimpleAgent: Basic conversation with optional tool calling\nReActAgent: Reasoning + Acting paradigm\nReflectionAgent: Self-reflection and iterative improvement\nPlanAndSolveAgent: Plan decomposition + step-by-step execution' } },
-
-            // Tool Layer
-            { id: '3', type: 'agent', position: { x: 50, y: 350 }, data: { label: '🛠️ Tool Layer', description: 'ToolRegistry: Centralized tool management\nBaseTool: Abstract base for all tools\nCalculatorTool: Mathematical calculations\nSearchTool: Multi-source web search (Tavily, SerpAPI)\nToolChain: Sequential tool execution\nAsyncExecutor: Parallel tool execution' } },
-
-            // User Application
-            { id: '4', type: 'process', position: { x: 400, y: 200 }, data: { label: '👤 Your Application', description: 'Import HelloAgents components\nCustomize agents and tools\nBuild production-ready AI systems' } },
+            {
+              id: '1',
+              type: 'input',
+              label: '🧠 Core Layer',
+              description: 'HelloAgentsLLM: Multi-provider LLM client with auto-detection | Message: Unified message format (user/assistant/system/tool) | Config: Centralized configuration management | Agent: Abstract base class for all agents',
+              position: { x: 50, y: 50 }
+            },
+            {
+              id: '2',
+              type: 'default',
+              label: '🤖 Agent Layer',
+              description: 'SimpleAgent: Basic conversation with optional tool calling | ReActAgent: Reasoning + Acting paradigm | ReflectionAgent: Self-reflection and iterative improvement | PlanAndSolveAgent: Plan decomposition + step-by-step execution',
+              position: { x: 50, y: 200 }
+            },
+            {
+              id: '3',
+              type: 'default',
+              label: '🛠️ Tool Layer',
+              description: 'ToolRegistry: Centralized tool management | BaseTool: Abstract base for all tools | CalculatorTool: Mathematical calculations | SearchTool: Multi-source web search (Tavily, SerpAPI) | ToolChain: Sequential tool execution | AsyncExecutor: Parallel tool execution',
+              position: { x: 50, y: 350 }
+            },
+            {
+              id: '4',
+              type: 'output',
+              label: '👤 Your Application',
+              description: 'Import HelloAgents components | Customize agents and tools | Build production-ready AI systems',
+              position: { x: 400, y: 200 }
+            },
           ]}
           edges={[
             { id: 'e1-2', source: '1', target: '2', label: 'Inherits & Uses', animated: true },
@@ -422,10 +440,8 @@ export const chapter7Slides: Slide[] = [
     type: 'interactive',
     content: (
       <CodePlayground
-        template="vanilla"
-        files={{
-          '/hello_agents_llm.py': {
-            code: `# HelloAgentsLLM: Multi-Provider LLM Client
+        language="python"
+        initialCode={`# HelloAgentsLLM: Multi-Provider LLM Client
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
@@ -504,9 +520,8 @@ llm3 = HelloAgentsLLM(provider="ollama", model="llama3")  # Local model
 
 messages = [{"role": "user", "content": "Hello!"}]
 response = llm1.invoke(messages)
-print(response)`,
-          },
-        }}
+print(response)`}
+        editable={false}
       />
     ),
   },
@@ -833,32 +848,62 @@ print(response)`,
   {
     id: 'ch7-slide-11',
     title: 'ReActAgent Workflow',
-    type: 'diagram',
+    type: 'visual',
     content: (
       <div className="flex flex-col h-full p-8 bg-gradient-to-br from-orange-50 to-red-50">
         <h2 className="text-4xl font-bold mb-6 text-orange-600">ReActAgent: Thought-Action Loop</h2>
         <AgentFlowDiagram
+          title="ReActAgent Workflow"
           nodes={[
-            // Input
-            { id: '1', type: 'process', position: { x: 50, y: 50 }, data: { label: '📥 User Question', description: 'User asks: "What is the current population of Tokyo and how does it compare to New York?"' } },
-
-            // Thought
-            { id: '2', type: 'agent', position: { x: 50, y: 150 }, data: { label: '🤔 Thought', description: 'LLM analyzes: "I need to search for the population of Tokyo first, then search for New York, and finally compare the two numbers."' } },
-
-            // Action
-            { id: '3', type: 'tool', position: { x: 50, y: 250 }, data: { label: '⚡ Action', description: 'Two formats:\n1. tool_name[params] - Call a tool\n2. Finish[answer] - Done thinking\n\nExample: search[Tokyo population]' } },
-
-            // Tool Execution
-            { id: '4', type: 'process', position: { x: 400, y: 250 }, data: { label: '🛠️ ToolRegistry', description: 'Execute tool and return result' } },
-
-            // Observation
-            { id: '5', type: 'agent', position: { x: 50, y: 350 }, data: { label: '👀 Observation', description: 'Tool result: "Tokyo has approximately 14 million people in the city proper, 37.4 million in the Greater Tokyo Area."' } },
-
-            // Decision Point
-            { id: '6', type: 'process', position: { x: 50, y: 450 }, data: { label: '❓ Decision', description: 'Check action type:\n• tool_name[params] → Continue loop\n• Finish[answer] → Return result\n• Max steps reached → Return error' } },
-
-            // Output
-            { id: '7', type: 'agent', position: { x: 400, y: 450 }, data: { label: '📤 Final Answer', description: 'After N iterations:\nFinish[Tokyo has 37.4M people (Greater Tokyo Area) vs New York with 19.5M (Metro Area). Tokyo is roughly twice as populous.]' } },
+            {
+              id: '1',
+              type: 'input',
+              label: '📥 User Question',
+              description: 'User asks: "What is the current population of Tokyo and how does it compare to New York?"',
+              position: { x: 50, y: 50 }
+            },
+            {
+              id: '2',
+              type: 'default',
+              label: '🤔 Thought',
+              description: 'LLM analyzes: "I need to search for the population of Tokyo first, then search for New York, and finally compare the two numbers."',
+              position: { x: 50, y: 150 }
+            },
+            {
+              id: '3',
+              type: 'default',
+              label: '⚡ Action',
+              description: 'Two formats: 1. tool_name[params] - Call a tool | 2. Finish[answer] - Done thinking | Example: search[Tokyo population]',
+              position: { x: 50, y: 250 }
+            },
+            {
+              id: '4',
+              type: 'default',
+              label: '🛠️ ToolRegistry',
+              description: 'Execute tool and return result',
+              position: { x: 400, y: 250 }
+            },
+            {
+              id: '5',
+              type: 'default',
+              label: '👀 Observation',
+              description: 'Tool result: "Tokyo has approximately 14 million people in the city proper, 37.4 million in the Greater Tokyo Area."',
+              position: { x: 50, y: 350 }
+            },
+            {
+              id: '6',
+              type: 'default',
+              label: '❓ Decision',
+              description: 'Check action type: • tool_name[params] → Continue loop | • Finish[answer] → Return result | • Max steps reached → Return error',
+              position: { x: 50, y: 450 }
+            },
+            {
+              id: '7',
+              type: 'output',
+              label: '📤 Final Answer',
+              description: 'After N iterations: Finish[Tokyo has 37.4M people (Greater Tokyo Area) vs New York with 19.5M (Metro Area). Tokyo is roughly twice as populous.]',
+              position: { x: 400, y: 450 }
+            },
           ]}
           edges={[
             { id: 'e1-2', source: '1', target: '2', label: 'Start', animated: true },
@@ -887,10 +932,8 @@ print(response)`,
     type: 'interactive',
     content: (
       <CodePlayground
-        template="vanilla"
-        files={{
-          '/react_agent.py': {
-            code: `# ReActAgent: Reasoning + Acting Paradigm
+        language="python"
+        initialCode={`# ReActAgent: Reasoning + Acting Paradigm
 from hello_agents import ReActAgent, HelloAgentsLLM, ToolRegistry
 from hello_agents.tools import CalculatorTool, SearchTool
 
@@ -1010,9 +1053,8 @@ tools.register_tool(CalculatorTool())
 
 agent = MyReActAgent(name="ReAct Assistant", llm=llm, tool_registry=tools)
 result = agent.run("What is the population of Tokyo times 2?")
-print(f"\\nFinal: {result}")`,
-          },
-        }}
+print(f"\\nFinal: {result}")`}
+        editable={false}
       />
     ),
   },
@@ -1229,10 +1271,8 @@ print(f"\\nFinal: {result}")`,
     type: 'interactive',
     content: (
       <CodePlayground
-        template="vanilla"
-        files={{
-          '/calculator_tool.py': {
-            code: `# Custom Calculator Tool Example
+        language="python"
+        initialCode={`# Custom Calculator Tool Example
 import ast
 import operator
 import math
@@ -1333,9 +1373,8 @@ agent = SimpleAgent(
 
 # Agent will automatically detect and use calculator
 response = agent.run("What is sqrt(16) + 2 * 3?")
-print(f"\\nAgent Response: {response}")`,
-          },
-        }}
+print(f"\\nAgent Response: {response}")`}
+        editable={false}
       />
     ),
   },
@@ -1466,98 +1505,116 @@ print(f"\\nAgent Response: {response}")`,
   {
     id: 'ch7-slide-18',
     title: 'Chapter 7 Assessment',
-    type: 'quiz',
+    type: 'interactive',
     content: (
       <Quiz
+        chapterId={7}
+        title="Chapter 7 Assessment"
         questions={[
           {
+            id: 'q1',
+            type: 'multiple-choice',
             question: "What are the 4 core design principles of the HelloAgents framework?",
             options: [
-              "Lightweight & Teaching-Friendly, Standard API Based, Progressive Learning Path, Everything is a Tool",
-              "High Performance, Cloud Native, Microservices, Event-Driven",
-              "Object-Oriented, Functional, Reactive, Declarative",
-              "MVC Architecture, Repository Pattern, Factory Pattern, Singleton Pattern"
+              { id: 'a', text: "Lightweight & Teaching-Friendly, Standard API Based, Progressive Learning Path, Everything is a Tool", isCorrect: true },
+              { id: 'b', text: "High Performance, Cloud Native, Microservices, Event-Driven", isCorrect: false },
+              { id: 'c', text: "Object-Oriented, Functional, Reactive, Declarative", isCorrect: false },
+              { id: 'd', text: "MVC Architecture, Repository Pattern, Factory Pattern, Singleton Pattern", isCorrect: false },
             ],
-            correctAnswer: 0,
-            explanation: "HelloAgents is designed around 4 principles: (1) Lightweight with minimal dependencies and complete readability, (2) Built on OpenAI API standard for compatibility, (3) Progressive learning with version-controlled pip packages, (4) 'Everything is a Tool' philosophy unifying Memory, RAG, MCP as tools."
+            explanation: "HelloAgents is designed around 4 principles: (1) Lightweight with minimal dependencies and complete readability, (2) Built on OpenAI API standard for compatibility, (3) Progressive learning with version-controlled pip packages, (4) 'Everything is a Tool' philosophy unifying Memory, RAG, MCP as tools.",
+            points: 12,
           },
           {
+            id: 'q2',
+            type: 'multiple-choice',
             question: "How does HelloAgentsLLM's auto-detection mechanism work?",
             options: [
-              "Only checks LLM_API_KEY environment variable",
-              "Prioritizes: specific provider env vars → parse base_url domain/port → analyze API key format → default to 'auto'",
-              "Randomly selects from available providers",
-              "Always defaults to OpenAI regardless of configuration"
+              { id: 'a', text: "Only checks LLM_API_KEY environment variable", isCorrect: false },
+              { id: 'b', text: "Prioritizes: specific provider env vars → parse base_url domain/port → analyze API key format → default to 'auto'", isCorrect: true },
+              { id: 'c', text: "Randomly selects from available providers", isCorrect: false },
+              { id: 'd', text: "Always defaults to OpenAI regardless of configuration", isCorrect: false },
             ],
-            correctAnswer: 1,
-            explanation: "The auto-detection follows a 4-step priority: (1) Check specific provider environment variables (OPENAI_API_KEY, MODELSCOPE_API_KEY, etc.), (2) Parse LLM_BASE_URL for domain patterns (api-inference.modelscope.cn) or ports (:11434 for Ollama, :8000 for VLLM), (3) Analyze LLM_API_KEY format as auxiliary check, (4) Default to 'auto' with generic configuration."
+            explanation: "The auto-detection follows a 4-step priority: (1) Check specific provider environment variables (OPENAI_API_KEY, MODELSCOPE_API_KEY, etc.), (2) Parse LLM_BASE_URL for domain patterns (api-inference.modelscope.cn) or ports (:11434 for Ollama, :8000 for VLLM), (3) Analyze LLM_API_KEY format as auxiliary check, (4) Default to 'auto' with generic configuration.",
+            points: 13,
           },
           {
+            id: 'q3',
+            type: 'multiple-choice',
             question: "What are the roles defined in the Message class using Literal typing?",
             options: [
-              "sender, receiver, timestamp, content",
-              "user, assistant, system, tool",
-              "input, output, error, log",
-              "client, server, middleware, cache"
+              { id: 'a', text: "sender, receiver, timestamp, content", isCorrect: false },
+              { id: 'b', text: "user, assistant, system, tool", isCorrect: true },
+              { id: 'c', text: "input, output, error, log", isCorrect: false },
+              { id: 'd', text: "client, server, middleware, cache", isCorrect: false },
             ],
-            correctAnswer: 1,
-            explanation: "The Message class uses Literal['user', 'assistant', 'system', 'tool'] for the role field, directly corresponding to OpenAI API specification. This provides type safety and ensures compatibility with standard LLM APIs."
+            explanation: "The Message class uses Literal['user', 'assistant', 'system', 'tool'] for the role field, directly corresponding to OpenAI API specification. This provides type safety and ensures compatibility with standard LLM APIs.",
+            points: 12,
           },
           {
+            id: 'q4',
+            type: 'multiple-choice',
             question: "In ReActAgent, what are the two valid Action formats?",
             options: [
-              "START[task] and END[result]",
-              "tool_name[parameters] and Finish[final answer]",
-              "SEARCH[query] and CALCULATE[expression]",
-              "THINK[reasoning] and ACT[action]"
+              { id: 'a', text: "START[task] and END[result]", isCorrect: false },
+              { id: 'b', text: "tool_name[parameters] and Finish[final answer]", isCorrect: true },
+              { id: 'c', text: "SEARCH[query] and CALCULATE[expression]", isCorrect: false },
+              { id: 'd', text: "THINK[reasoning] and ACT[action]", isCorrect: false },
             ],
-            correctAnswer: 1,
-            explanation: "ReActAgent supports two Action formats: (1) tool_name[parameters] - calls a registered tool (e.g., search[Python programming], calculator[2+3*4]), (2) Finish[final answer] - indicates the agent has enough information and provides the final answer, terminating the Thought-Action loop."
+            explanation: "ReActAgent supports two Action formats: (1) tool_name[parameters] - calls a registered tool (e.g., search[Python programming], calculator[2+3*4]), (2) Finish[final answer] - indicates the agent has enough information and provides the final answer, terminating the Thought-Action loop.",
+            points: 13,
           },
           {
+            id: 'q5',
+            type: 'multiple-choice',
             question: "What is the difference between ToolRegistry.register_tool() and register_function()?",
             options: [
-              "No difference - they are aliases for the same method",
-              "register_tool() for Tool objects with full parameter definitions; register_function() for simple functions",
-              "register_tool() is synchronous; register_function() is asynchronous",
-              "register_tool() is deprecated; only use register_function()"
+              { id: 'a', text: "No difference - they are aliases for the same method", isCorrect: false },
+              { id: 'b', text: "register_tool() for Tool objects with full parameter definitions; register_function() for simple functions", isCorrect: true },
+              { id: 'c', text: "register_tool() is synchronous; register_function() is asynchronous", isCorrect: false },
+              { id: 'd', text: "register_tool() is deprecated; only use register_function()", isCorrect: false },
             ],
-            correctAnswer: 1,
-            explanation: "register_tool(tool: Tool) accepts Tool objects with complete parameter definitions via get_parameters(), supporting complex validation and self-documentation. register_function(name, description, func) is a convenience method for quick integration of simple functions (str → str), ideal for prototyping or wrapping existing functions without boilerplate."
+            explanation: "register_tool(tool: Tool) accepts Tool objects with complete parameter definitions via get_parameters(), supporting complex validation and self-documentation. register_function(name, description, func) is a convenience method for quick integration of simple functions (str → str), ideal for prototyping or wrapping existing functions without boilerplate.",
+            points: 12,
           },
           {
+            id: 'q6',
+            type: 'multiple-choice',
             question: "How does the multi-source SearchTool handle source selection and fallback?",
             options: [
-              "Always uses Tavily API exclusively",
-              "Randomly selects between Tavily and SerpAPI",
-              "Prioritizes Tavily (AI-optimized) → fallback to SerpAPI on failure → unified result formatting",
-              "Calls both sources and merges results"
+              { id: 'a', text: "Always uses Tavily API exclusively", isCorrect: false },
+              { id: 'b', text: "Randomly selects between Tavily and SerpAPI", isCorrect: false },
+              { id: 'c', text: "Prioritizes Tavily (AI-optimized) → fallback to SerpAPI on failure → unified result formatting", isCorrect: true },
+              { id: 'd', text: "Calls both sources and merges results", isCorrect: false },
             ],
-            correctAnswer: 2,
-            explanation: "SearchTool implements intelligent fallback: (1) Prioritizes Tavily API for AI-optimized search with direct answer extraction, (2) If Tavily fails or is unavailable, automatically falls back to SerpAPI for traditional Google search, (3) Formats results uniformly regardless of source, (4) If all sources fail, provides clear error message prompting API key configuration."
+            explanation: "SearchTool implements intelligent fallback: (1) Prioritizes Tavily API for AI-optimized search with direct answer extraction, (2) If Tavily fails or is unavailable, automatically falls back to SerpAPI for traditional Google search, (3) Formats results uniformly regardless of source, (4) If all sources fail, provides clear error message prompting API key configuration.",
+            points: 13,
           },
           {
+            id: 'q7',
+            type: 'multiple-choice',
             question: "What is the purpose of ToolChain in the advanced tool system?",
             options: [
-              "Encrypt tool communications for security",
-              "Sequential execution of multiple tools with variable substitution between steps",
-              "Parallelize all tool executions",
-              "Cache tool results for faster lookups"
+              { id: 'a', text: "Encrypt tool communications for security", isCorrect: false },
+              { id: 'b', text: "Sequential execution of multiple tools with variable substitution between steps", isCorrect: true },
+              { id: 'c', text: "Parallelize all tool executions", isCorrect: false },
+              { id: 'd', text: "Cache tool results for faster lookups", isCorrect: false },
             ],
-            correctAnswer: 1,
-            explanation: "ToolChain enables sequential multi-tool workflows where each step's output becomes available for subsequent steps via variable substitution. Example: Step 1 search[topic] → step1_result, Step 2 calculator[parse from {step1_result}] → step2_result. This supports complex workflows like 'research and calculate' where information from search is used in calculations."
+            explanation: "ToolChain enables sequential multi-tool workflows where each step's output becomes available for subsequent steps via variable substitution. Example: Step 1 search[topic] → step1_result, Step 2 calculator[parse from {step1_result}] → step2_result. This supports complex workflows like 'research and calculate' where information from search is used in calculations.",
+            points: 12,
           },
           {
+            id: 'q8',
+            type: 'multiple-choice',
             question: "Which statement about the Agent base class is TRUE?",
             options: [
-              "It can be directly instantiated to create generic agents",
-              "It is an abstract class (ABC) with @abstractmethod run() that all subclasses must implement",
-              "It only supports synchronous execution",
-              "It does not provide history management functionality"
+              { id: 'a', text: "It can be directly instantiated to create generic agents", isCorrect: false },
+              { id: 'b', text: "It is an abstract class (ABC) with @abstractmethod run() that all subclasses must implement", isCorrect: true },
+              { id: 'c', text: "It only supports synchronous execution", isCorrect: false },
+              { id: 'd', text: "It does not provide history management functionality", isCorrect: false },
             ],
-            correctAnswer: 1,
-            explanation: "Agent is an abstract base class (inherits from ABC) that cannot be directly instantiated. It defines @abstractmethod run(input_text) → str that forces all subclasses (SimpleAgent, ReActAgent, etc.) to implement their own execution logic. It provides built-in history management (add_message, get_history, clear_history) and unified initialization (name, llm, system_prompt, config)."
-          }
+            explanation: "Agent is an abstract base class (inherits from ABC) that cannot be directly instantiated. It defines @abstractmethod run(input_text) → str that forces all subclasses (SimpleAgent, ReActAgent, etc.) to implement their own execution logic. It provides built-in history management (add_message, get_history, clear_history) and unified initialization (name, llm, system_prompt, config).",
+            points: 13,
+          },
         ]}
         passingScore={70}
       />

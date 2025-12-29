@@ -372,53 +372,38 @@ export const chapter6Slides: Slide[] = [
           nodes={[
             {
               id: '1',
-              type: 'custom',
+              type: 'default',
+              label: '👤 User Request',
+              description: 'Build a Bitcoin price display app',
               position: { x: 50, y: 200 },
-              data: {
-                label: 'User Request',
-                description: 'Build a Bitcoin price display app',
-                emoji: '👤',
-              },
             },
             {
               id: '2',
-              type: 'custom',
+              type: 'default',
+              label: '📋 Product Manager',
+              description: 'AssistantAgent: Analyzes requirements, selects tech stack',
               position: { x: 300, y: 100 },
-              data: {
-                label: 'Product Manager',
-                description: 'AssistantAgent: Analyzes requirements, selects tech stack',
-                emoji: '📋',
-              },
             },
             {
               id: '3',
-              type: 'custom',
+              type: 'default',
+              label: '💻 Engineer',
+              description: 'AssistantAgent: Writes Python code using requests + Flask',
               position: { x: 300, y: 300 },
-              data: {
-                label: 'Engineer',
-                description: 'AssistantAgent: Writes Python code using requests + Flask',
-                emoji: '💻',
-              },
             },
             {
               id: '4',
-              type: 'custom',
+              type: 'default',
+              label: '✅ Code Reviewer',
+              description: 'UserProxyAgent: Executes code, reports errors/success',
               position: { x: 600, y: 200 },
-              data: {
-                label: 'Code Reviewer',
-                description: 'UserProxyAgent: Executes code, reports errors/success',
-                emoji: '✅',
-              },
             },
             {
               id: '5',
-              type: 'custom',
+              type: 'default',
+              label: '🚀 Final Output',
+              description: 'Working web app displaying BTC price',
               position: { x: 900, y: 200 },
-              data: {
-                label: 'Final Output',
-                description: 'Working web app displaying BTC price',
-                emoji: '🚀',
-              },
             },
           ]}
           edges={[
@@ -460,10 +445,8 @@ export const chapter6Slides: Slide[] = [
           Create agents with specific roles and organize them in a RoundRobinGroupChat for sequential collaboration.
         </p>
         <CodePlayground
-          template="vanilla"
-          files={{
-            '/autogen_team.py': {
-              code: `# AutoGen v0.7.4 Software Development Team
+          language="python"
+          initialCode={`# AutoGen v0.7.4 Software Development Team
 
 from autogen_agentchat.agents import AssistantAgent, UserProxyAgent
 from autogen_agentchat.teams import RoundRobinGroupChat
@@ -521,9 +504,8 @@ async def main():
 # 1. Clear separation of concerns (thinking vs coding vs testing)
 # 2. Automated feedback loops
 # 3. Sequential execution ensures orderly collaboration
-# 4. Easy to add new roles (e.g., Designer, QA)`,
-            },
-          }}
+# 4. Easy to add new roles (e.g., Designer, QA)`}
+          editable={false}
         />
       </div>
     ),
@@ -691,53 +673,38 @@ async def main():
           nodes={[
             {
               id: '1',
-              type: 'custom',
+              type: 'default',
+              label: '🚀 Start',
+              description: 'User provides essay topic',
               position: { x: 50, y: 200 },
-              data: {
-                label: 'Start',
-                description: 'User provides essay topic',
-                emoji: '🚀',
-              },
             },
             {
               id: '2',
-              type: 'custom',
+              type: 'default',
+              label: '✍️ Generate Node',
+              description: 'LLM writes essay draft',
               position: { x: 300, y: 200 },
-              data: {
-                label: 'Generate Node',
-                description: 'LLM writes essay draft',
-                emoji: '✍️',
-              },
             },
             {
               id: '3',
-              type: 'custom',
+              type: 'default',
+              label: '🤔 Reflect Node',
+              description: 'Critic scores quality (0-1)',
               position: { x: 600, y: 200 },
-              data: {
-                label: 'Reflect Node',
-                description: 'Critic scores quality (0-1)',
-                emoji: '🤔',
-              },
             },
             {
               id: '4',
-              type: 'custom',
+              type: 'default',
+              label: '✅ Quality Check',
+              description: 'Score > 0.9?',
               position: { x: 900, y: 200 },
-              data: {
-                label: 'Quality Check',
-                description: 'Score > 0.9?',
-                emoji: '✅',
-              },
             },
             {
               id: '5',
-              type: 'custom',
+              type: 'default',
+              label: '📄 Final Output',
+              description: 'Polished essay',
               position: { x: 1200, y: 200 },
-              data: {
-                label: 'Final Output',
-                description: 'Polished essay',
-                emoji: '📄',
-              },
             },
           ]}
           edges={[
@@ -752,7 +719,7 @@ async def main():
         <div className="mt-8 grid grid-cols-3 gap-4">
           <div className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500">
             <h4 className="font-semibold text-black mb-2">Node: Generate</h4>
-            <p className="text-sm text-black">Function calls LLM with prompt: "Write 500-word essay on {topic}. Improve from previous feedback: {reflection}"</p>
+            <p className="text-sm text-black">{`Function calls LLM with prompt: "Write 500-word essay on {topic}. Improve from previous feedback: {reflection}"`}</p>
           </div>
           <div className="p-4 bg-red-50 rounded-lg border-l-4 border-red-500">
             <h4 className="font-semibold text-black mb-2">Node: Reflect</h4>
@@ -760,7 +727,7 @@ async def main():
           </div>
           <div className="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-500">
             <h4 className="font-semibold text-black mb-2">Edge: Conditional Loop</h4>
-            <p className="text-sm text-black">If score < 0.9, edge routes back to Generate node with reflection feedback. Max 5 iterations.</p>
+            <p className="text-sm text-black">If score {'<'} 0.9, edge routes back to Generate node with reflection feedback. Max 5 iterations.</p>
           </div>
         </div>
       </div>
@@ -779,10 +746,8 @@ async def main():
           Define nodes as functions, connect them with edges, and let LangGraph handle the cyclic execution.
         </p>
         <CodePlayground
-          template="vanilla"
-          files={{
-            '/langgraph_reflection.py': {
-              code: `# LangGraph Reflection Pattern
+          language="python"
+          initialCode={`# LangGraph Reflection Pattern
 
 from langgraph.graph import StateGraph, END
 from langchain_openai import ChatOpenAI
@@ -871,9 +836,8 @@ print(result['draft'])
 # - Cyclic execution (reflect → generate loop)
 # - Conditional routing based on quality_score
 # - State persistence across iterations
-# - Max iteration safeguard`,
-            },
-          }}
+# - Max iteration safeguard`}
+          editable={false}
         />
       </div>
     ),
@@ -1093,99 +1057,109 @@ print(result['draft'])
     type: 'interactive',
     content: (
       <Quiz
+        chapterId={6}
+        title="Chapter 6 Assessment"
         questions={[
           {
             id: 'q1',
+            type: 'multiple-choice',
             question: 'What is the PRIMARY reason frameworks are preferred over manual agent implementation for production systems?',
             options: [
-              { id: 'a', text: 'Frameworks are always faster than hand-written code' },
-              { id: 'b', text: 'They abstract repetitive work (loops, state, tools) and enforce architectural best practices', correct: true },
-              { id: 'c', text: 'Frameworks eliminate the need for understanding agent paradigms' },
-              { id: 'd', text: 'They automatically handle all edge cases without configuration' },
+              { id: 'a', text: 'Frameworks are always faster than hand-written code', isCorrect: false },
+              { id: 'b', text: 'They abstract repetitive work (loops, state, tools) and enforce architectural best practices', isCorrect: true },
+              { id: 'c', text: 'Frameworks eliminate the need for understanding agent paradigms', isCorrect: false },
+              { id: 'd', text: 'They automatically handle all edge cases without configuration', isCorrect: false },
             ],
             explanation: 'Frameworks provide validated patterns for code reuse, decoupling, state management, and observability—turning best practices into default behavior. They don\'t eliminate understanding or automatically handle all cases, but they prevent common mistakes and speed development.',
             points: 12,
           },
           {
             id: 'q2',
+            type: 'multiple-choice',
             question: 'In AutoGen v0.7.4, what is the key architectural change compared to earlier versions?',
             options: [
-              { id: 'a', text: 'Transition from synchronous to async-first design with layered modules (core + agentchat)', correct: true },
-              { id: 'b', text: 'Replacement of AssistantAgent with a new UnifiedAgent class' },
-              { id: 'c', text: 'Elimination of UserProxyAgent in favor of direct code execution' },
-              { id: 'd', text: 'Introduction of mandatory MCP protocol for all tool calls' },
+              { id: 'a', text: 'Transition from synchronous to async-first design with layered modules (core + agentchat)', isCorrect: true },
+              { id: 'b', text: 'Replacement of AssistantAgent with a new UnifiedAgent class', isCorrect: false },
+              { id: 'c', text: 'Elimination of UserProxyAgent in favor of direct code execution', isCorrect: false },
+              { id: 'd', text: 'Introduction of mandatory MCP protocol for all tool calls', isCorrect: false },
             ],
             explanation: 'v0.7.4 introduces async/await as default (non-blocking concurrent execution) and splits the framework into autogen-core (LLM + messaging) and autogen-agentchat (high-level APIs). AssistantAgent and UserProxyAgent still exist.',
             points: 15,
           },
           {
             id: 'q3',
+            type: 'multiple-choice',
             question: 'Why does the AutoGen "Software Development Team" case use UserProxyAgent as the Code Reviewer instead of another AssistantAgent?',
             options: [
-              { id: 'a', text: 'UserProxyAgent can execute code and report results, providing real feedback instead of just LLM-generated reviews', correct: true },
-              { id: 'b', text: 'AssistantAgent cannot be configured with code review prompts' },
-              { id: 'c', text: 'UserProxyAgent is faster at analyzing code than AssistantAgent' },
-              { id: 'd', text: 'AutoGen requires at least one UserProxyAgent in every group chat' },
+              { id: 'a', text: 'UserProxyAgent can execute code and report results, providing real feedback instead of just LLM-generated reviews', isCorrect: true },
+              { id: 'b', text: 'AssistantAgent cannot be configured with code review prompts', isCorrect: false },
+              { id: 'c', text: 'UserProxyAgent is faster at analyzing code than AssistantAgent', isCorrect: false },
+              { id: 'd', text: 'AutoGen requires at least one UserProxyAgent in every group chat', isCorrect: false },
             ],
             explanation: 'UserProxyAgent has code_execution_config that lets it run Python code in a sandbox. This provides REAL execution results (success/errors) rather than simulated reviews. This is critical for validating code actually works, not just theoretically passes review.',
             points: 15,
           },
           {
             id: 'q4',
+            type: 'multiple-choice',
             question: 'What is the core difference between AgentScope and AutoGen in terms of multi-agent communication?',
             options: [
-              { id: 'a', text: 'AutoGen uses sequential round-robin conversation, AgentScope uses asynchronous message passing with MessageHub', correct: true },
-              { id: 'b', text: 'AgentScope cannot handle multi-turn conversations' },
-              { id: 'c', text: 'AutoGen requires distributed deployment for multi-agent systems' },
-              { id: 'd', text: 'AgentScope agents cannot call external tools' },
+              { id: 'a', text: 'AutoGen uses sequential round-robin conversation, AgentScope uses asynchronous message passing with MessageHub', isCorrect: true },
+              { id: 'b', text: 'AgentScope cannot handle multi-turn conversations', isCorrect: false },
+              { id: 'c', text: 'AutoGen requires distributed deployment for multi-agent systems', isCorrect: false },
+              { id: 'd', text: 'AgentScope agents cannot call external tools', isCorrect: false },
             ],
             explanation: 'AutoGen\'s RoundRobinGroupChat activates agents sequentially in turn. AgentScope uses a MessageHub where agents send/receive messages asynchronously—more flexible but requires manual orchestration. AgentScope also has built-in distributed deployment support.',
             points: 13,
           },
           {
             id: 'q5',
+            type: 'multiple-choice',
             question: 'What is "inception prompting" in the CAMEL framework?',
             options: [
-              { id: 'a', text: 'A technique to initialize agents with pre-defined conversation history' },
-              { id: 'b', text: 'Prompts that inspire autonomous collaboration between role-playing agents without explicit workflow orchestration', correct: true },
-              { id: 'c', text: 'A method to reduce token usage by compressing system messages' },
-              { id: 'd', text: 'A debugging tool that shows the agent\'s internal reasoning process' },
+              { id: 'a', text: 'A technique to initialize agents with pre-defined conversation history', isCorrect: false },
+              { id: 'b', text: 'Prompts that inspire autonomous collaboration between role-playing agents without explicit workflow orchestration', isCorrect: true },
+              { id: 'c', text: 'A method to reduce token usage by compressing system messages', isCorrect: false },
+              { id: 'd', text: 'A debugging tool that shows the agent\'s internal reasoning process', isCorrect: false },
             ],
             explanation: 'Inception prompting seeds agents with roles (AI Researcher, Programmer) and a shared goal. The prompt structure inspires them to autonomously organize multi-turn dialogue, propose ideas, critique each other—without explicit step-by-step workflow definitions.',
             points: 12,
           },
           {
             id: 'q6',
+            type: 'multiple-choice',
             question: 'Why is LangGraph uniquely suited for Reflection-based agent patterns compared to AutoGen or AgentScope?',
             options: [
-              { id: 'a', text: 'LangGraph has native support for cycles (edges looping back to previous nodes), making iterative refinement natural', correct: true },
-              { id: 'b', text: 'LangGraph agents have better LLM reasoning capabilities' },
-              { id: 'c', text: 'Reflection patterns are impossible to implement in AutoGen and AgentScope' },
-              { id: 'd', text: 'LangGraph automatically generates reflection prompts' },
+              { id: 'a', text: 'LangGraph has native support for cycles (edges looping back to previous nodes), making iterative refinement natural', isCorrect: true },
+              { id: 'b', text: 'LangGraph agents have better LLM reasoning capabilities', isCorrect: false },
+              { id: 'c', text: 'Reflection patterns are impossible to implement in AutoGen and AgentScope', isCorrect: false },
+              { id: 'd', text: 'LangGraph automatically generates reflection prompts', isCorrect: false },
             ],
             explanation: 'Traditional frameworks use linear chains (A → B → C). LangGraph models workflows as graphs where edges can loop back (Reflect → Generate → Reflect). This native cycle support makes Reflection (iterate until quality threshold) trivial to implement.',
             points: 15,
           },
           {
             id: 'q7',
+            type: 'multiple-choice',
             question: 'In the LangGraph Reflection example, what determines whether the workflow continues refining or terminates?',
             options: [
-              { id: 'a', text: 'The reflection node returns a quality score; a conditional edge checks if score > 0.9 or max iterations reached', correct: true },
-              { id: 'b', text: 'The user manually approves each iteration before continuing' },
-              { id: 'c', text: 'LangGraph automatically detects when essay quality stops improving' },
-              { id: 'd', text: 'The workflow always runs exactly 5 iterations regardless of quality' },
+              { id: 'a', text: 'The reflection node returns a quality score; a conditional edge checks if score > 0.9 or max iterations reached', isCorrect: true },
+              { id: 'b', text: 'The user manually approves each iteration before continuing', isCorrect: false },
+              { id: 'c', text: 'LangGraph automatically detects when essay quality stops improving', isCorrect: false },
+              { id: 'd', text: 'The workflow always runs exactly 5 iterations regardless of quality', isCorrect: false },
             ],
             explanation: 'The should_continue() function checks state[\'quality_score\'] and state[\'iteration\']. If score > 0.9 OR iteration >= 5, it returns "end" (routes to END). Otherwise returns "generate" (loops back). This is explicit conditional logic, not automatic detection.',
             points: 13,
           },
           {
             id: 'q8',
+            type: 'multiple-choice',
             question: 'Based on the chapter, which framework should you choose for building a distributed agent system managing 50+ customer service agents across multiple data centers?',
             options: [
-              { id: 'a', text: 'AutoGen - its RoundRobinGroupChat can handle large agent counts' },
-              { id: 'b', text: 'AgentScope - built-in distributed deployment and enterprise lifecycle management', correct: true },
-              { id: 'c', text: 'CAMEL - inception prompting scales to many agents naturally' },
-              { id: 'd', text: 'LangGraph - graph structure handles distributed systems better' },
+              { id: 'a', text: 'AutoGen - its RoundRobinGroupChat can handle large agent counts', isCorrect: false },
+              { id: 'b', text: 'AgentScope - built-in distributed deployment and enterprise lifecycle management', isCorrect: true },
+              { id: 'c', text: 'CAMEL - inception prompting scales to many agents naturally', isCorrect: false },
+              { id: 'd', text: 'LangGraph - graph structure handles distributed systems better', isCorrect: false },
             ],
             explanation: 'AgentScope is explicitly designed for large-scale (10+ agents), distributed deployment with production monitoring. AutoGen lacks distributed support, CAMEL is research-focused (2-agent pairs), and LangGraph doesn\'t inherently support distributed execution. Enterprise scale = AgentScope.',
             points: 15,

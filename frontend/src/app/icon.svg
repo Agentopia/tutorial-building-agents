@@ -1,0 +1,26 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Robot Head -->
+  <rect x="8" y="10" width="16" height="14" rx="2" fill="#4F46E5"/>
+  <rect x="8" y="10" width="16" height="14" rx="2" stroke="#312E81" stroke-width="1"/>
+
+  <!-- Eyes -->
+  <circle cx="13" cy="16" r="2" fill="#F0FDFA"/>
+  <circle cx="13" cy="16" r="1" fill="#0EA5E9"/>
+  <circle cx="19" cy="16" r="2" fill="#F0FDFA"/>
+  <circle cx="19" cy="16" r="1" fill="#0EA5E9"/>
+
+  <!-- Mouth/Smile -->
+  <path d="M 12 20 Q 16 22 20 20" stroke="#F0FDFA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Antenna -->
+  <line x1="16" y1="10" x2="16" y2="6" stroke="#312E81" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="16" cy="5" r="2" fill="#06B6D4"/>
+  <circle cx="16" cy="5" r="2" stroke="#312E81" stroke-width="1"/>
+
+  <!-- Circuit pattern details -->
+  <circle cx="11" cy="21" r="0.5" fill="#A5B4FC"/>
+  <circle cx="21" cy="21" r="0.5" fill="#A5B4FC"/>
+
+  <!-- Highlight -->
+  <path d="M 10 12 L 11 11 L 12 12" stroke="#818CF8" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.6"/>
+</svg>
