@@ -360,53 +360,38 @@ export const chapter5Slides: Slide[] = [
           nodes={[
             {
               id: '1',
-              type: 'custom',
+              type: 'default',
+              label: '📰 RSS Plugin',
+              description: '36Kr, Huxiu, IT Home, InfoQ feeds',
               position: { x: 50, y: 50 },
-              data: {
-                label: 'RSS Plugin',
-                description: '36Kr, Huxiu, IT Home, InfoQ feeds',
-                emoji: '📰',
-              },
             },
             {
               id: '2',
-              type: 'custom',
+              type: 'default',
+              label: '💻 GitHub Plugin',
+              description: 'Latest AI open-source projects',
               position: { x: 350, y: 50 },
-              data: {
-                label: 'GitHub Plugin',
-                description: 'Latest AI open-source projects',
-                emoji: '💻',
-              },
             },
             {
               id: '3',
-              type: 'custom',
+              type: 'default',
+              label: '📚 arXiv Plugin',
+              description: 'Latest AI academic papers',
               position: { x: 650, y: 50 },
-              data: {
-                label: 'arXiv Plugin',
-                description: 'Latest AI academic papers',
-                emoji: '📚',
-              },
             },
             {
               id: '4',
-              type: 'custom',
+              type: 'default',
+              label: '🤖 LLM Module',
+              description: 'Senior tech media editor role + structured prompt',
               position: { x: 350, y: 200 },
-              data: {
-                label: 'LLM Module',
-                description: 'Senior tech media editor role + structured prompt',
-                emoji: '🤖',
-              },
             },
             {
               id: '5',
-              type: 'custom',
+              type: 'default',
+              label: '📄 Output Brief',
+              description: '10 news + 5 papers + 5 projects with emojis & links',
               position: { x: 350, y: 350 },
-              data: {
-                label: 'Output Brief',
-                description: '10 news + 5 papers + 5 projects with emojis & links',
-                emoji: '📄',
-              },
             },
           ]}
           edges={[
@@ -601,73 +586,52 @@ export const chapter5Slides: Slide[] = [
           nodes={[
             {
               id: '1',
-              type: 'custom',
+              type: 'default',
+              label: '👤 User Input',
+              description: 'Question or request',
               position: { x: 50, y: 200 },
-              data: {
-                label: 'User Input',
-                description: 'Question or request',
-                emoji: '👤',
-              },
             },
             {
               id: '2',
-              type: 'custom',
+              type: 'default',
+              label: '🎯 Question Classifier',
+              description: 'Route to appropriate sub-agent',
               position: { x: 300, y: 200 },
-              data: {
-                label: 'Question Classifier',
-                description: 'Route to appropriate sub-agent',
-                emoji: '🎯',
-              },
             },
             {
               id: '3',
-              type: 'custom',
+              type: 'default',
+              label: '💬 Daily Assistant',
+              description: 'General Q&A with time tools',
               position: { x: 600, y: 50 },
-              data: {
-                label: 'Daily Assistant',
-                description: 'General Q&A with time tools',
-                emoji: '💬',
-              },
             },
             {
               id: '4',
-              type: 'custom',
+              type: 'default',
+              label: '✍️ Copywriting',
+              description: 'Text optimization (500+ words)',
               position: { x: 600, y: 150 },
-              data: {
-                label: 'Copywriting',
-                description: 'Text optimization (500+ words)',
-                emoji: '✍️',
-              },
             },
             {
               id: '5',
-              type: 'custom',
+              type: 'default',
+              label: '🎨 Multimodal Gen',
+              description: 'Image/video with Doubao',
               position: { x: 600, y: 250 },
-              data: {
-                label: 'Multimodal Gen',
-                description: 'Image/video with Doubao',
-                emoji: '🎨',
-              },
             },
             {
               id: '6',
-              type: 'custom',
+              type: 'default',
+              label: '📊 Data Analysis',
+              description: 'SQL query + BI charts',
               position: { x: 600, y: 350 },
-              data: {
-                label: 'Data Analysis',
-                description: 'SQL query + BI charts',
-                emoji: '📊',
-              },
             },
             {
               id: '7',
-              type: 'custom',
+              type: 'default',
+              label: '📤 Final Output',
+              description: 'Formatted response',
               position: { x: 900, y: 200 },
-              data: {
-                label: 'Final Output',
-                description: 'Formatted response',
-                emoji: '📤',
-              },
             },
           ]}
           edges={[
@@ -796,53 +760,38 @@ export const chapter5Slides: Slide[] = [
           nodes={[
             {
               id: '1',
-              type: 'custom',
+              type: 'default',
+              label: '📧 Gmail Trigger',
+              description: 'Event: Message Received',
               position: { x: 50, y: 200 },
-              data: {
-                label: 'Gmail Trigger',
-                description: 'Event: Message Received',
-                emoji: '📧',
-              },
             },
             {
               id: '2',
-              type: 'custom',
+              type: 'default',
+              label: '🤖 AI Agent Node',
+              description: 'Think → Decide → Tool Call',
               position: { x: 300, y: 200 },
-              data: {
-                label: 'AI Agent Node',
-                description: 'Think → Decide → Tool Call',
-                emoji: '🤖',
-              },
             },
             {
               id: '3',
-              type: 'custom',
+              type: 'default',
+              label: '🔍 SerpAPI Tool',
+              description: 'Search online for answers',
               position: { x: 550, y: 100 },
-              data: {
-                label: 'SerpAPI Tool',
-                description: 'Search online for answers',
-                emoji: '🔍',
-              },
             },
             {
               id: '4',
-              type: 'custom',
+              type: 'default',
+              label: '💾 Vector Store Tool',
+              description: 'Query private knowledge (work hours)',
               position: { x: 550, y: 300 },
-              data: {
-                label: 'Vector Store Tool',
-                description: 'Query private knowledge (work hours)',
-                emoji: '💾',
-              },
             },
             {
               id: '5',
-              type: 'custom',
+              type: 'default',
+              label: '✉️ Gmail Send',
+              description: 'Automated reply with context',
               position: { x: 800, y: 200 },
-              data: {
-                label: 'Gmail Send',
-                description: 'Automated reply with context',
-                emoji: '✉️',
-              },
             },
           ]}
           edges={[
@@ -1019,10 +968,8 @@ export const chapter5Slides: Slide[] = [
           MCP is the new standard for agent tool invocation. Let's see how to configure it in Dify using ModelScope MCP market.
         </p>
         <CodePlayground
-          template="vanilla"
-          files={{
-            '/mcp-config.json': {
-              code: `// MCP Configuration Example: Amap Maps Integration
+          language="javascript"
+          initialCode={`// MCP Configuration Example: Amap Maps Integration
 // Step 1: Go to ModelScope MCP market
 // Step 2: Select "Hosted Type" and choose Amap MCP
 // Step 3: Select "SSE Mode" and click "Connection Configuration"
@@ -1069,9 +1016,8 @@ You are a location assistant powered by Amap APIs.
 // 2. Automatic type validation
 // 3. Streaming support (SSE mode)
 // 4. Unified error handling
-// 5. Cross-platform compatibility`,
-            },
-          }}
+// 5. Cross-platform compatibility`}
+          editable={false}
         />
       </div>
     ),
@@ -1146,99 +1092,109 @@ You are a location assistant powered by Amap APIs.
     type: 'interactive',
     content: (
       <Quiz
+        chapterId={5}
+        title="Chapter 5 Assessment"
         questions={[
           {
             id: 'q1',
+            type: 'multiple-choice',
             question: 'What is the PRIMARY advantage of low-code platforms over pure code development for agent building?',
             options: [
-              { id: 'a', text: 'They completely replace the need for programming skills' },
-              { id: 'b', text: 'They provide a higher level of abstraction, shifting focus from implementation details to business logic', correct: true },
-              { id: 'c', text: 'They always produce faster and more efficient code than hand-written implementations' },
-              { id: 'd', text: 'They eliminate the need for prompt engineering' },
+              { id: 'a', text: 'They completely replace the need for programming skills', isCorrect: false },
+              { id: 'b', text: 'They provide a higher level of abstraction, shifting focus from implementation details to business logic', isCorrect: true },
+              { id: 'c', text: 'They always produce faster and more efficient code than hand-written implementations', isCorrect: false },
+              { id: 'd', text: 'They eliminate the need for prompt engineering', isCorrect: false },
             ],
             explanation: 'Low-code platforms provide a higher abstraction layer that lets developers focus on business logic and prompt engineering rather than low-level implementation. They don\'t eliminate programming entirely, nor do they always produce more efficient code than optimized hand-written implementations.',
             points: 12,
           },
           {
             id: 'q2',
+            type: 'multiple-choice',
             question: 'Which platform is BEST suited for building an enterprise-level contract review system that handles sensitive legal documents and requires private deployment?',
             options: [
-              { id: 'a', text: 'Coze - for its one-click multi-platform publishing' },
-              { id: 'b', text: 'n8n - for its workflow automation capabilities' },
-              { id: 'c', text: 'Dify - for its enterprise security (AES-256, RBAC) and self-hosted deployment', correct: true },
-              { id: 'd', text: 'Pure code - platforms cannot handle sensitive data' },
+              { id: 'a', text: 'Coze - for its one-click multi-platform publishing', isCorrect: false },
+              { id: 'b', text: 'n8n - for its workflow automation capabilities', isCorrect: false },
+              { id: 'c', text: 'Dify - for its enterprise security (AES-256, RBAC) and self-hosted deployment', isCorrect: true },
+              { id: 'd', text: 'Pure code - platforms cannot handle sensitive data', isCorrect: false },
             ],
             explanation: 'Dify provides enterprise-grade security features (AES-256 encryption, RBAC), supports private deployment via Docker, and has a plugin marketplace with 8677+ tools. Coze doesn\'t support MCP and is more consumer-focused. n8n is better for automation workflows than complex document processing.',
             points: 15,
           },
           {
             id: 'q3',
+            type: 'multiple-choice',
             question: 'In the Coze "Daily AI Brief" case, why is configuring RSS links, GitHub queries, and arXiv search parameters BEFORE the LLM module critical?',
             options: [
-              { id: 'a', text: 'The LLM needs pre-filtered, multi-source data as input to generate a comprehensive brief', correct: true },
-              { id: 'b', text: 'Plugins cannot be configured after the LLM module in Coze' },
-              { id: 'c', text: 'It reduces API costs by limiting the data sent to the LLM' },
-              { id: 'd', text: 'The LLM can automatically configure these plugins based on user prompts' },
+              { id: 'a', text: 'The LLM needs pre-filtered, multi-source data as input to generate a comprehensive brief', isCorrect: true },
+              { id: 'b', text: 'Plugins cannot be configured after the LLM module in Coze', isCorrect: false },
+              { id: 'c', text: 'It reduces API costs by limiting the data sent to the LLM', isCorrect: false },
+              { id: 'd', text: 'The LLM can automatically configure these plugins based on user prompts', isCorrect: false },
             ],
             explanation: 'The workflow architecture requires data collection BEFORE LLM processing. Plugins (RSS, GitHub, arXiv) gather multi-source information that the LLM then synthesizes into a structured brief. This is a fundamental data pipeline design principle in agent workflows.',
             points: 12,
           },
           {
             id: 'q4',
+            type: 'multiple-choice',
             question: 'What is the key difference between the Model Context Protocol (MCP) and traditional RESTful APIs for agent tool integration?',
             options: [
-              { id: 'a', text: 'MCP is faster and has lower latency than REST APIs' },
-              { id: 'b', text: 'MCP provides standardized protocol for tool discovery, automatic type validation, and streaming support', correct: true },
-              { id: 'c', text: 'MCP only works with cloud-deployed services, not local APIs' },
-              { id: 'd', text: 'MCP is proprietary to Dify platform and cannot be used elsewhere' },
+              { id: 'a', text: 'MCP is faster and has lower latency than REST APIs', isCorrect: false },
+              { id: 'b', text: 'MCP provides standardized protocol for tool discovery, automatic type validation, and streaming support', isCorrect: true },
+              { id: 'c', text: 'MCP only works with cloud-deployed services, not local APIs', isCorrect: false },
+              { id: 'd', text: 'MCP is proprietary to Dify platform and cannot be used elsewhere', isCorrect: false },
             ],
             explanation: 'MCP offers: (1) standardized tool discovery protocol, (2) automatic type validation, (3) streaming support via SSE, (4) unified error handling, and (5) cross-platform compatibility. It\'s not necessarily faster than REST, works with both cloud/local services, and is an open standard (not Dify-specific).',
             points: 15,
           },
           {
             id: 'q5',
+            type: 'multiple-choice',
             question: 'In the n8n "Intelligent Email Assistant" case, why does the AI Agent node need to be connected to BOTH SerpAPI and Simple Vector Store tools?',
             options: [
-              { id: 'a', text: 'The agent autonomously chooses tools based on the email content - SerpAPI for online searches, Vector Store for private knowledge like work hours', correct: true },
-              { id: 'b', text: 'n8n requires at least two tools to be connected to any AI Agent node' },
-              { id: 'c', text: 'SerpAPI handles incoming emails while Vector Store sends replies' },
-              { id: 'd', text: 'Both tools are used simultaneously for every email to improve answer quality' },
+              { id: 'a', text: 'The agent autonomously chooses tools based on the email content - SerpAPI for online searches, Vector Store for private knowledge like work hours', isCorrect: true },
+              { id: 'b', text: 'n8n requires at least two tools to be connected to any AI Agent node', isCorrect: false },
+              { id: 'c', text: 'SerpAPI handles incoming emails while Vector Store sends replies', isCorrect: false },
+              { id: 'd', text: 'Both tools are used simultaneously for every email to improve answer quality', isCorrect: false },
             ],
             explanation: 'The AI Agent node exhibits autonomous decision-making: it analyzes the email question and chooses the appropriate tool. SerpAPI searches public information (e.g., "What is Huawei\'s latest phone?") while Vector Store queries private knowledge (e.g., "What are my working hours?"). This is NOT linear execution but intelligent tool selection.',
             points: 13,
           },
           {
             id: 'q6',
+            type: 'multiple-choice',
             question: 'Why does the Dify "Super Agent Personal Assistant" use a question classifier for intelligent routing instead of a single agent handling all tasks?',
             options: [
-              { id: 'a', text: 'A single agent would be too slow to handle multiple task types' },
-              { id: 'b', text: 'Multi-agent architecture allows specialized prompts and tools per module, improving accuracy and maintainability', correct: true },
-              { id: 'c', text: 'Dify platform requires multi-agent architecture for complex workflows' },
-              { id: 'd', text: 'It reduces API costs by distributing requests across different LLM models' },
+              { id: 'a', text: 'A single agent would be too slow to handle multiple task types', isCorrect: false },
+              { id: 'b', text: 'Multi-agent architecture allows specialized prompts and tools per module, improving accuracy and maintainability', isCorrect: true },
+              { id: 'c', text: 'Dify platform requires multi-agent architecture for complex workflows', isCorrect: false },
+              { id: 'd', text: 'It reduces API costs by distributing requests across different LLM models', isCorrect: false },
             ],
             explanation: 'The question classifier enables specialized sub-agents (Daily Assistant, Copywriting, Multimodal Gen, Data Analysis, MCP Integration), each with optimized prompts and specific tools. A single agent handling all tasks would have: (1) overly long prompts, (2) tool confusion, (3) harder debugging, and (4) poor maintainability. This is a best practice for complex agent systems.',
             points: 15,
           },
           {
             id: 'q7',
+            type: 'multiple-choice',
             question: 'What is a CRITICAL limitation of n8n\'s built-in Simple Memory and Simple Vector Store that makes them unsuitable for production environments?',
             options: [
-              { id: 'a', text: 'They can only store up to 1000 conversation messages' },
-              { id: 'b', text: 'They are memory-based and non-persistent - data is lost on service restart', correct: true },
-              { id: 'c', text: 'They do not support embeddings from Google Gemini' },
-              { id: 'd', text: 'They cannot be accessed by the AI Agent node' },
+              { id: 'a', text: 'They can only store up to 1000 conversation messages', isCorrect: false },
+              { id: 'b', text: 'They are memory-based and non-persistent - data is lost on service restart', isCorrect: true },
+              { id: 'c', text: 'They do not support embeddings from Google Gemini', isCorrect: false },
+              { id: 'd', text: 'They cannot be accessed by the AI Agent node', isCorrect: false },
             ],
             explanation: 'Simple Memory and Simple Vector Store are in-memory storage solutions. Once the n8n service restarts, ALL conversation history and knowledge bases are permanently lost. Production environments require persistent storage like Redis (for memory) or Pinecone/Qdrant (for vector databases).',
             points: 12,
           },
           {
             id: 'q8',
+            type: 'multiple-choice',
             question: 'Based on the chapter, when should you choose PURE CODE development instead of using Coze, Dify, or n8n?',
             options: [
-              { id: 'a', text: 'When you need ultra-high performance (sub-100ms latency), fine-grained control, or are implementing novel research paradigms like Tree-of-Thoughts', correct: true },
-              { id: 'b', text: 'When building any enterprise-level application with security requirements' },
-              { id: 'c', text: 'When you need visual debugging and observability of agent workflows' },
-              { id: 'd', text: 'When non-technical team members need to participate in agent development' },
+              { id: 'a', text: 'When you need ultra-high performance (sub-100ms latency), fine-grained control, or are implementing novel research paradigms like Tree-of-Thoughts', isCorrect: true },
+              { id: 'b', text: 'When building any enterprise-level application with security requirements', isCorrect: false },
+              { id: 'c', text: 'When you need visual debugging and observability of agent workflows', isCorrect: false },
+              { id: 'd', text: 'When non-technical team members need to participate in agent development', isCorrect: false },
             ],
             explanation: 'Pure code is optimal for: (1) ultra-high performance needs (10k+ concurrent requests, sub-100ms latency), (2) fine-grained optimization where platform abstractions are limiting, and (3) novel paradigms not supported by platforms (e.g., Tree-of-Thoughts, custom search algorithms). For enterprise security, Dify excels; for visual debugging, platforms are superior; for non-tech participation, Coze is ideal.',
             points: 16,

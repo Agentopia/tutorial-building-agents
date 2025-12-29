@@ -308,63 +308,45 @@ export const chapter4Slides: Slide[] = [
           nodes={[
             {
               id: '1',
-              type: 'custom',
+              type: 'input',
+              label: '❓ Question',
+              description: 'User asks: "What is Huawei\'s latest phone?"',
               position: { x: 50, y: 50 },
-              data: {
-                label: 'Question',
-                description: 'User asks: "What is Huawei\'s latest phone?"',
-                emoji: '❓',
-              },
             },
             {
               id: '2',
-              type: 'custom',
+              type: 'default',
+              label: '🧠 Thought',
+              description: 'LLM analyzes: "I need to search for recent Huawei phone releases"',
               position: { x: 250, y: 50 },
-              data: {
-                label: 'Thought',
-                description: 'LLM analyzes: "I need to search for recent Huawei phone releases"',
-                emoji: '🧠',
-              },
             },
             {
               id: '3',
-              type: 'custom',
+              type: 'default',
+              label: '🎬 Action',
+              description: 'Execute: Search["Huawei latest phone 2025"]',
               position: { x: 450, y: 50 },
-              data: {
-                label: 'Action',
-                description: 'Execute: Search["Huawei latest phone 2025"]',
-                emoji: '🎬',
-              },
             },
             {
               id: '4',
-              type: 'custom',
+              type: 'default',
+              label: '👀 Observation',
+              description: 'Tool returns: "HUAWEI Mate 70 and Pura 80 Pro+ are latest models..."',
               position: { x: 450, y: 200 },
-              data: {
-                label: 'Observation',
-                description: 'Tool returns: "HUAWEI Mate 70 and Pura 80 Pro+ are latest models..."',
-                emoji: '👀',
-              },
             },
             {
               id: '5',
-              type: 'custom',
+              type: 'default',
+              label: '💭 Thought',
+              description: 'LLM reflects: "I have enough info to answer now"',
               position: { x: 250, y: 200 },
-              data: {
-                label: 'Thought',
-                description: 'LLM reflects: "I have enough info to answer now"',
-                emoji: '💭',
-              },
             },
             {
               id: '6',
-              type: 'custom',
+              type: 'output',
+              label: '🎉 Finish',
+              description: 'Final answer: "Latest phones are Mate 70 and Pura 80 Pro+..."',
               position: { x: 50, y: 200 },
-              data: {
-                label: 'Finish',
-                description: 'Final answer: "Latest phones are Mate 70 and Pura 80 Pro+..."',
-                emoji: '🎉',
-              },
             },
           ]}
           edges={[
@@ -476,10 +458,8 @@ export const chapter4Slides: Slide[] = [
         </p>
 
         <CodePlayground
-          template="vanilla"
-          files={{
-            '/index.js': {
-              code: `// Simplified ReAct Agent Structure
+          language="javascript"
+          initialCode={`// Simplified ReAct Agent Structure
 class ReActAgent {
   constructor(llmClient, toolExecutor, maxSteps = 5) {
     this.llm = llmClient;
@@ -563,9 +543,8 @@ console.log("Key methods:");
 console.log("- run(): Main loop");
 console.log("- buildPrompt(): Context assembly");
 console.log("- parseOutput(): Extract Thought/Action");
-console.log("- parseAction(): Parse tool calls");`,
-            },
-          }}
+console.log("- parseAction(): Parse tool calls");`}
+          editable={false}
         />
 
         <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
@@ -742,63 +721,45 @@ console.log("- parseAction(): Parse tool calls");`,
           nodes={[
             {
               id: '1',
-              type: 'custom',
+              type: 'default',
+              label: '❓ Question',
+              description: 'Math word problem: "A store sold 15 apples Monday, Tuesday was 2x Monday, Wednesday was Tuesday - 5. Total?"',
               position: { x: 150, y: 50 },
-              data: {
-                label: 'Question',
-                description: 'Math word problem: "A store sold 15 apples Monday, Tuesday was 2x Monday, Wednesday was Tuesday - 5. Total?"',
-                emoji: '❓',
-              },
             },
             {
               id: '2',
-              type: 'custom',
+              type: 'default',
+              label: '📋 Planner',
+              description: 'Generate complete plan: ["Calculate Monday: 15", "Calculate Tuesday: 15×2=30", "Calculate Wed: 30-5=25", "Sum: 15+30+25"]',
               position: { x: 150, y: 180 },
-              data: {
-                label: 'Planner',
-                description: 'Generate complete plan: ["Calculate Monday: 15", "Calculate Tuesday: 15×2=30", "Calculate Wed: 30-5=25", "Sum: 15+30+25"]',
-                emoji: '📋',
-              },
             },
             {
               id: '3',
-              type: 'custom',
+              type: 'default',
+              label: '1️⃣ Step 1 Execute',
+              description: 'Executor: Monday = 15',
               position: { x: 400, y: 180 },
-              data: {
-                label: 'Step 1 Execute',
-                description: 'Executor: Monday = 15',
-                emoji: '1️⃣',
-              },
             },
             {
               id: '4',
-              type: 'custom',
+              type: 'default',
+              label: '2️⃣ Step 2 Execute',
+              description: 'Executor: Tuesday = 30',
               position: { x: 400, y: 280 },
-              data: {
-                label: 'Step 2 Execute',
-                description: 'Executor: Tuesday = 30',
-                emoji: '2️⃣',
-              },
             },
             {
               id: '5',
-              type: 'custom',
+              type: 'default',
+              label: '3️⃣ Step 3 Execute',
+              description: 'Executor: Wednesday = 25',
               position: { x: 400, y: 380 },
-              data: {
-                label: 'Step 3 Execute',
-                description: 'Executor: Wednesday = 25',
-                emoji: '3️⃣',
-              },
             },
             {
               id: '6',
-              type: 'custom',
+              type: 'default',
+              label: '✅ Final Answer',
+              description: 'Total = 70 apples',
               position: { x: 150, y: 380 },
-              data: {
-                label: 'Final Answer',
-                description: 'Total = 70 apples',
-                emoji: '✅',
-              },
             },
           ]}
           edges={[
@@ -847,10 +808,8 @@ console.log("- parseAction(): Parse tool calls");`,
         </p>
 
         <CodePlayground
-          template="vanilla"
-          files={{
-            '/index.js': {
-              code: `// Plan-and-Solve Agent Structure
+          language="javascript"
+          initialCode={`// Plan-and-Solve Agent Structure
 class Planner {
   constructor(llm) {
     this.llm = llm;
@@ -946,9 +905,8 @@ console.log("Plan-and-Solve Structure Demo");
 console.log("\\nKey components:");
 console.log("- Planner: Decomposes problem");
 console.log("- Executor: Runs each step with state");
-console.log("- PlanAndSolveAgent: Orchestrates both phases");`,
-            },
-          }}
+console.log("- PlanAndSolveAgent: Orchestrates both phases");`}
+          editable={false}
         />
 
         <div className="mt-4 p-3 bg-purple-50 rounded-lg border border-purple-200">
@@ -1060,63 +1018,45 @@ console.log("- PlanAndSolveAgent: Orchestrates both phases");`,
           nodes={[
             {
               id: '1',
-              type: 'custom',
+              type: 'default',
+              label: '📝 Task',
+              description: 'Write Python function to find primes 1 to n',
               position: { x: 50, y: 100 },
-              data: {
-                label: 'Task',
-                description: 'Write Python function to find primes 1 to n',
-                emoji: '📝',
-              },
             },
             {
               id: '2',
-              type: 'custom',
+              type: 'default',
+              label: '⚡ Execute',
+              description: 'Generate initial code (simple trial division)',
               position: { x: 250, y: 50 },
-              data: {
-                label: 'Execute',
-                description: 'Generate initial code (simple trial division)',
-                emoji: '⚡',
-              },
             },
             {
               id: '3',
-              type: 'custom',
+              type: 'default',
+              label: '🔍 Reflect',
+              description: 'Critique: "O(n√n) is slow, use Sieve of Eratosthenes"',
               position: { x: 450, y: 50 },
-              data: {
-                label: 'Reflect',
-                description: 'Critique: "O(n√n) is slow, use Sieve of Eratosthenes"',
-                emoji: '🔍',
-              },
             },
             {
               id: '4',
-              type: 'custom',
+              type: 'default',
+              label: '✨ Refine',
+              description: 'Revise code with sieve algorithm O(n log log n)',
               position: { x: 450, y: 180 },
-              data: {
-                label: 'Refine',
-                description: 'Revise code with sieve algorithm O(n log log n)',
-                emoji: '✨',
-              },
             },
             {
               id: '5',
-              type: 'custom',
+              type: 'default',
+              label: '✅ Reflect Again',
+              description: 'Review: "Sieve is optimal, no improvement needed"',
               position: { x: 250, y: 180 },
-              data: {
-                label: 'Reflect Again',
-                description: 'Review: "Sieve is optimal, no improvement needed"',
-                emoji: '✅',
-              },
             },
             {
               id: '6',
-              type: 'custom',
+              type: 'default',
+              label: '🎉 Final Code',
+              description: 'Optimized solution ready for production',
               position: { x: 50, y: 180 },
-              data: {
-                label: 'Final Code',
-                description: 'Optimized solution ready for production',
-                emoji: '🎉',
-              },
             },
           ]}
           edges={[
@@ -1164,10 +1104,8 @@ console.log("- PlanAndSolveAgent: Orchestrates both phases");`,
         </p>
 
         <CodePlayground
-          template="vanilla"
-          files={{
-            '/index.js': {
-              code: `// Reflection Agent Structure
+          language="javascript"
+          initialCode={`// Reflection Agent Structure
 class Memory {
   constructor() {
     this.records = [];
@@ -1271,9 +1209,8 @@ console.log("\\nKey components:");
 console.log("- Memory: Stores execution + reflection trajectory");
 console.log("- execute(): Generate initial solution");
 console.log("- reflect(): Critique current solution");
-console.log("- refine(): Improve based on feedback");`,
-            },
-          }}
+console.log("- refine(): Improve based on feedback");`}
+          editable={false}
         />
 
         <div className="mt-4 p-3 bg-green-50 rounded-lg border border-green-200">
@@ -1484,92 +1421,102 @@ console.log("- refine(): Improve based on feedback");`,
         <h2 className="text-3xl font-bold text-black mb-4">Chapter 4 Assessment</h2>
 
         <Quiz
+          chapterId={4}
+          title="Chapter 4 Assessment"
           questions={[
             {
               id: 'q1',
+              type: 'multiple-choice',
               question: 'What is the core innovation of the ReAct paradigm?',
               options: [
-                { id: 'a', text: 'Using multiple LLMs simultaneously', correct: false },
-                { id: 'b', text: 'Combining reasoning (Thought) with acting (Action) in a synergistic loop', correct: true },
-                { id: 'c', text: 'Pre-compiling all possible actions before execution', correct: false },
-                { id: 'd', text: 'Eliminating the need for external tools', correct: false },
+                { id: 'a', text: 'Using multiple LLMs simultaneously', isCorrect: false },
+                { id: 'b', text: 'Combining reasoning (Thought) with acting (Action) in a synergistic loop', isCorrect: true },
+                { id: 'c', text: 'Pre-compiling all possible actions before execution', isCorrect: false },
+                { id: 'd', text: 'Eliminating the need for external tools', isCorrect: false },
               ],
               points: 15,
             },
             {
               id: 'q2',
+              type: 'multiple-choice',
               question: 'In a tool definition, which element is described as "the most critical" for LLM decision-making?',
               options: [
-                { id: 'a', text: 'Tool name', correct: false },
-                { id: 'b', text: 'Tool description (explains when to use the tool)', correct: true },
-                { id: 'c', text: 'Execution logic (function implementation)', correct: false },
-                { id: 'd', text: 'API endpoint URL', correct: false },
+                { id: 'a', text: 'Tool name', isCorrect: false },
+                { id: 'b', text: 'Tool description (explains when to use the tool)', isCorrect: true },
+                { id: 'c', text: 'Execution logic (function implementation)', isCorrect: false },
+                { id: 'd', text: 'API endpoint URL', isCorrect: false },
               ],
               points: 10,
             },
             {
               id: 'q3',
+              type: 'multiple-choice',
               question: 'What distinguishes Plan-and-Solve from ReAct in terms of workflow?',
               options: [
-                { id: 'a', text: 'Plan-and-Solve uses multiple agents, ReAct uses one', correct: false },
-                { id: 'b', text: 'Plan-and-Solve generates a complete plan before execution, ReAct adjusts dynamically', correct: true },
-                { id: 'c', text: 'Plan-and-Solve requires human approval, ReAct is fully autonomous', correct: false },
-                { id: 'd', text: 'Plan-and-Solve cannot use external tools', correct: false },
+                { id: 'a', text: 'Plan-and-Solve uses multiple agents, ReAct uses one', isCorrect: false },
+                { id: 'b', text: 'Plan-and-Solve generates a complete plan before execution, ReAct adjusts dynamically', isCorrect: true },
+                { id: 'c', text: 'Plan-and-Solve requires human approval, ReAct is fully autonomous', isCorrect: false },
+                { id: 'd', text: 'Plan-and-Solve cannot use external tools', isCorrect: false },
               ],
               points: 15,
             },
             {
               id: 'q4',
+              type: 'multiple-choice',
               question: 'What is the primary purpose of the Memory module in the Reflection paradigm?',
               options: [
-                { id: 'a', text: 'Cache API responses for faster retrieval', correct: false },
-                { id: 'b', text: 'Store execution attempts and reflection feedback for iterative refinement', correct: true },
-                { id: 'c', text: 'Persist user conversations across sessions', correct: false },
-                { id: 'd', text: 'Log errors for debugging', correct: false },
+                { id: 'a', text: 'Cache API responses for faster retrieval', isCorrect: false },
+                { id: 'b', text: 'Store execution attempts and reflection feedback for iterative refinement', isCorrect: true },
+                { id: 'c', text: 'Persist user conversations across sessions', isCorrect: false },
+                { id: 'd', text: 'Log errors for debugging', isCorrect: false },
               ],
               points: 10,
             },
             {
               id: 'q5',
+              type: 'multiple-choice',
               question: 'Which paradigm is MOST suitable for a task requiring real-time chatbot responses with "good enough" quality?',
               options: [
-                { id: 'a', text: 'ReAct (fast, adaptive)', correct: true },
-                { id: 'b', text: 'Plan-and-Solve (structured but slower)', correct: false },
-                { id: 'c', text: 'Reflection (high quality but high latency)', correct: false },
-                { id: 'd', text: 'None of the above', correct: false },
+                { id: 'a', text: 'ReAct (fast, adaptive)', isCorrect: true },
+                { id: 'b', text: 'Plan-and-Solve (structured but slower)', isCorrect: false },
+                { id: 'c', text: 'Reflection (high quality but high latency)', isCorrect: false },
+                { id: 'd', text: 'None of the above', isCorrect: false },
               ],
               points: 15,
             },
             {
               id: 'q6',
+              type: 'multiple-choice',
               question: 'What is a key limitation of the ReAct paradigm?',
               options: [
-                { id: 'a', text: 'Cannot use external tools', correct: false },
-                { id: 'b', text: 'Requires complete plan before execution', correct: false },
-                { id: 'c', text: 'May fall into local optima or infinite loops due to lack of global planning', correct: true },
-                { id: 'd', text: 'Cannot handle multi-step tasks', correct: false },
+                { id: 'a', text: 'Cannot use external tools', isCorrect: false },
+                { id: 'b', text: 'Requires complete plan before execution', isCorrect: false },
+                { id: 'c', text: 'May fall into local optima or infinite loops due to lack of global planning', isCorrect: true },
+                { id: 'd', text: 'Cannot handle multi-step tasks', isCorrect: false },
               ],
               points: 10,
             },
             {
               id: 'q7',
+              type: 'multiple-choice',
               question: 'In Reflection, what signals the termination of the iterative loop?',
               options: [
-                { id: 'a', text: 'User manually stops execution', correct: false },
-                { id: 'b', text: 'Feedback contains "no improvement needed" OR max iterations reached', correct: true },
-                { id: 'c', text: 'Agent runs out of API credits', correct: false },
-                { id: 'd', text: 'First execution always produces final answer', correct: false },
+                { id: 'a', text: 'User manually stops execution', isCorrect: false },
+                { id: 'b', text: 'Feedback contains "no improvement needed" OR max iterations reached', isCorrect: true },
+                { id: 'c', text: 'Agent runs out of API credits', isCorrect: false },
+                { id: 'd', text: 'First execution always produces final answer', isCorrect: false },
               ],
               points: 10,
             },
             {
               id: 'q8',
+              type: 'multiple-choice',
               question: 'Which debugging technique is recommended for diagnosing ReAct prompt issues?',
               options: [
-                { id: 'a', text: 'Increase temperature to 2.0 for more creativity', correct: false },
-                { id: 'b', text: 'Print the complete formatted prompt with history before each LLM call', correct: true },
-                { id: 'c', text: 'Disable all tools and retry', correct: false },
-                { id: 'd', text: 'Switch to a smaller, faster model', correct: false },
+                { id: 'a', text: 'Increase temperature to 2.0 for more creativity', isCorrect: false },
+                { id: 'b', text: 'Print the complete formatted prompt with history before each LLM call', isCorrect: true },
+                { id: 'c', text: 'Disable all tools and retry', isCorrect: false },
+                { id: 'd', text: 'Switch to a smaller, faster model', isCorrect: false },
               ],
               points: 15,
             },
