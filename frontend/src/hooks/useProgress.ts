@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { createClient } from '@supabase/supabase-js'
+import { useAuth } from './useAuth'
+import { supabase } from '@/lib/supabase'
 
 const COURSE_ID = process.env.NEXT_PUBLIC_COURSE_ID || 'elated-neumann'
 
@@ -15,21 +16,21 @@ interface ProgressState {
   [chapterId: string]: ChapterProgress
 }
 
-export function useProgress(userId?: string) {
+export function useProgress() {
+  const { user, isLoading: isAuthLoading } = useAuth()
   const [progress, setProgress] = useState<ProgressState>({})
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // Initialize Supabase client
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-  )
-
   // Load progress from Supabase on mount
   useEffect(() => {
     async function loadProgress() {
-      if (!userId || !process.env.ENABLE_PROGRESS_TRACKING) {
+      // Wait for auth to load
+      if (isAuthLoading) {
+        return
+      }
+
+      if (!user?.userId || !process.env.ENABLE_PROGRESS_TRACKING) {
         setIsLoading(false)
         return
       }
@@ -38,7 +39,7 @@ export function useProgress(userId?: string) {
         const { data, error: fetchError } = await supabase
           .from('course_progress')
           .select('*')
-          .eq('user_id', userId)
+          .eq('user_id', user.userId)
           .eq('course_id', COURSE_ID)
 
         if (fetchError) {
@@ -67,14 +68,14 @@ export function useProgress(userId?: string) {
     }
 
     loadProgress()
-  }, [userId, supabase])
+  }, [user?.userId, isAuthLoading])
 
   // Update progress for a chapter
   const updateProgress = async (
     chapterId: string,
     progressData: Partial<ChapterProgress>
   ): Promise<void> => {
-    if (!userId || !process.env.ENABLE_PROGRESS_TRACKING) {
+    if (!user?.userId || !process.env.ENABLE_PROGRESS_TRACKING) {
       // Fallback: update local state only
       setProgress((prev) => ({
         ...prev,
@@ -87,12 +88,11 @@ export function useProgress(userId?: string) {
     }
 
     try {
-      // Sync to API endpoint (which handles Supabase)
+      // Sync to API endpoint (server gets userId from session)
       const response = await fetch('/api/progress/sync', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          userId,
           chapterId,
           progress: progressData,
         }),

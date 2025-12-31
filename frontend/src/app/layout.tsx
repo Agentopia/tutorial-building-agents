@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Providers from '@/components/Providers'
+import Header from '@/components/Header'
 
 export const metadata: Metadata = {
   title: 'Hello Agents - AI Agents Tutorial',
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-smooth">
         <Providers>
+          <Header />
           {children}
         </Providers>
       </body>

@@ -1,10 +1,24 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
+import { getSessionFromCookie } from '@/lib/auth'
 
 export async function POST(request: Request) {
   try {
+    // Get authenticated user from session
+    const session = await getSessionFromCookie()
+
+    if (!session || session.expiresAt < Date.now()) {
+      return NextResponse.json(
+        { error: 'Unauthorized - Please login' },
+        { status: 401 }
+      )
+    }
+
     const body = await request.json()
-    const { userId, chapterId, progress } = body
+    const { chapterId, progress } = body
+
+    // Use authenticated user ID from session (not from request body)
+    const userId = session.userId
 
     console.log('Progress sync:', { userId, chapterId, progress })
 

@@ -4,12 +4,13 @@ Modern, interactive tutorial platform for learning AI agents from scratch. Built
 
 ## ✅ Current Status
 
-**Progress:** 77% Complete (Phases 1-3 complete, Phase 4 planned)
-**Latest:** Slide-based tutorial format implemented for Chapters 1-6 (2025-12-28)
+**Progress:** 82% Complete (Phases 1-3 complete, Phase 4 SSO complete)
+**Latest:** SSO authentication integrated with training-portal (2025-12-31)
 **See:** [BUILD_PLAN.md](BUILD_PLAN.md) for detailed tracking
 
 ### Tech Stack
 - ✅ **Core:** Next.js 14.2.18 (App Router), React 18.3.1, TypeScript 5
+- ✅ **Authentication:** jose (JWT), js-cookie, Next.js middleware
 - ✅ **Styling:** Tailwind CSS 3.4
 - ✅ **Database:** Supabase Client (@supabase/supabase-js)
 - ✅ **State Management:** Zustand 4.4
@@ -25,18 +26,23 @@ frontend/
 ├── src/
 │   ├── app/
 │   │   ├── api/
+│   │   │   ├── auth/
+│   │   │   │   ├── session/route.ts   ✅ Session API endpoint (NEW!)
+│   │   │   │   └── logout/route.ts    ✅ Logout API endpoint (NEW!)
 │   │   │   ├── manifest/route.ts      ✅ Course metadata endpoint
 │   │   │   ├── health/route.ts        ✅ Health check
-│   │   │   └── progress/sync/route.ts ✅ Progress tracking
+│   │   │   └── progress/sync/route.ts ✅ Progress tracking (SSO-secured)
 │   │   ├── chapters/
 │   │   │   ├── page.tsx               ✅ Chapter list with progress
 │   │   │   └── [id]/page.tsx          ✅ Individual chapters (markdown + slides)
 │   │   ├── demos/                     ✅ Live demo pages
-│   │   ├── layout.tsx                 ✅ Root layout
+│   │   ├── layout.tsx                 ✅ Root layout with Header
+│   │   ├── middleware.ts              ✅ SSO authentication middleware (NEW!)
 │   │   ├── page.tsx                   ✅ Homepage
 │   │   └── globals.css                ✅ Tailwind styles
 │   ├── components/
-│   │   ├── SlideView.tsx              ✅ Slide-based presentation (NEW!)
+│   │   ├── Header.tsx                 ✅ Navigation header with user auth (NEW!)
+│   │   ├── SlideView.tsx              ✅ Slide-based presentation
 │   │   ├── AgentFlowDiagram.tsx       ✅ Interactive React Flow diagrams
 │   │   ├── CodePlayground.tsx         ✅ In-browser code execution (Sandpack)
 │   │   ├── Quiz.tsx                   ✅ Assessment system
@@ -44,11 +50,15 @@ frontend/
 │   │   ├── ElizaChatbot.tsx           ✅ Historical chatbot demo
 │   │   ├── MarkdownRenderer.tsx       ✅ Markdown with syntax highlighting
 │   │   └── ProgressIndicator.tsx      ✅ Progress tracking UI
+│   ├── lib/
+│   │   ├── auth.ts                    ✅ SSO utilities (JWT, sessions) (NEW!)
+│   │   └── supabase.ts                ✅ Singleton Supabase client (NEW!)
 │   ├── data/
-│   │   └── chapter1Slides.tsx         ✅ Curated slide content (NEW!)
+│   │   └── chapter1-7Slides.tsx       ✅ Curated slide content
 │   ├── store/
 │   │   └── learningStore.ts           ✅ Zustand state (progress, achievements)
 │   └── hooks/
+│       ├── useAuth.ts                 ✅ Authentication hook (NEW!)
 │       └── useProgress.ts             ✅ Progress tracking hook
 │
 ├── .env.local                         ✅ Supabase + Portal config
@@ -178,19 +188,28 @@ curl -X POST http://localhost:3001/api/progress/sync \
 - ✅ Chapter 13: Full interactive components
 - ⏳ Chapters 8-12, 14-16: Interactive components pending
 
-### ⏳ Phase 4: Advanced Features (PLANNED)
-**Priority 1: Slide-Based Format Rollout**
+### ✅ Phase 4: Advanced Features (20% COMPLETE)
+**Priority 1: SSO Authentication ✅ COMPLETE (2025-12-31)**
+- [x] Token-based authentication from training-portal (JWT validation)
+- [x] Server-side session management (7-day HttpOnly cookies)
+- [x] Middleware protection for authenticated routes
+- [x] User display in header component (name, email, logout)
+- [x] Secure progress tracking (user ID from session)
+- [x] Fixed Supabase multiple client instances warning
+- [x] End-to-end testing complete (see SSO_TEST_RESULTS.md)
+
+**Priority 2: Slide-Based Format Rollout**
 - [ ] Fix Chapters 6-7 syntax errors (JSX parsing issues in complex slides)
 - [ ] Convert Chapters 8-16 to slide-based tutorials (9 chapters × 2-3 hours)
 - [ ] ~200-220 total slides across course (86 working, 34 pending fixes)
 - [ ] Consistent slide templates and visual design
 
-**Priority 2: Backend Integration**
-- [ ] SSO authentication with training-portal
+**Priority 3: Real-Time Features**
 - [ ] Real-time cross-device progress sync (Supabase subscriptions)
 - [ ] Analytics dashboard (completion rates, time spent, quiz performance)
+- [ ] Session refresh mechanism (automatic renewal before expiration)
 
-**Priority 3: Polish & Optimization**
+**Priority 4: Polish & Optimization**
 - [ ] WCAG 2.1 AA accessibility compliance
 - [ ] Performance optimization (Lighthouse score >90)
 - [ ] Screen reader optimization
@@ -201,7 +220,24 @@ curl -X POST http://localhost:3001/api/progress/sync \
 
 ## 🎯 Key Features
 
-### 🎓 Slide-Based Learning (NEW!)
+### 🔐 SSO Authentication (NEW!)
+Secure integration with BixoryAI Training Portal:
+- **Token-based authentication** using JWT (HS256)
+- **Server-side session management** with 7-day HttpOnly cookies
+- **Middleware protection** for all authenticated routes
+- **User display** in header with name/email
+- **Secure logout** with portal redirect
+- **Progress security** - user ID from session, not client requests
+- **No console warnings** - singleton Supabase client pattern
+
+**Security Features:**
+- HttpOnly cookies prevent XSS attacks
+- Server-side user ID validation prevents spoofing
+- Token expiration (5 minutes for SSO, 7 days for sessions)
+- CSRF protection with SameSite cookies
+- Public routes exempted (API, static files)
+
+### 🎓 Slide-Based Learning
 Transform dense technical content into engaging, PPT-style presentations:
 - **One concept per slide** for focused learning
 - **Visual-first approach** with diagrams, cards, and color coding

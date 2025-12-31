@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useProgress } from '@/hooks/useProgress'
+import { useAuth } from '@/hooks/useAuth'
 
 const chapters = [
   { id: 1, title: 'Introduction to Agents', part: 'I' },
@@ -23,9 +24,8 @@ const chapters = [
 ]
 
 export default function ChaptersPage() {
-  // TODO: Get userId from auth context when SSO is integrated
-  const userId = typeof window !== 'undefined' ? localStorage.getItem('userId') : null
-  const { getChapterProgress, getOverallProgress, isLoading } = useProgress(userId || undefined)
+  const { isAuthenticated } = useAuth()
+  const { getChapterProgress, getOverallProgress, isLoading } = useProgress()
   const overallProgress = getOverallProgress()
 
   return (
@@ -39,7 +39,7 @@ export default function ChaptersPage() {
         <p className="text-gray-600 mb-4">Select a chapter to begin learning</p>
 
         {/* Overall Progress Bar */}
-        {!isLoading && userId && (
+        {!isLoading && isAuthenticated && (
           <div className="mb-8 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-200">
             <div className="flex items-center justify-between mb-2">
               <span className="text-sm font-semibold text-gray-700">Overall Course Progress</span>
@@ -114,7 +114,7 @@ export default function ChaptersPage() {
                         </div>
 
                         {/* Progress Bar */}
-                        {!isLoading && userId && chapterProgress.percentage > 0 && (
+                        {!isLoading && isAuthenticated && chapterProgress.percentage > 0 && (
                           <div className="w-full bg-gray-200 rounded-full h-1.5">
                             <div
                               className="bg-blue-500 h-1.5 rounded-full transition-all duration-300"
