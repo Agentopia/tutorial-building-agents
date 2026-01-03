@@ -1,6 +1,6 @@
 # Hello Agents - Training Portal Integration Status
 
-**Last Updated:** 2025-12-28
+**Last Updated:** 2026-01-02
 
 ## ✅ Completed Integration Tasks
 
@@ -84,6 +84,51 @@
 
 **Status:** ✅ Committed - TypeScript compilation successful, Chapters 6 & 7 now display as interactive slide presentations
 
+### 8. SSO Authentication Integration
+**Implementation:** Complete SSO (Single Sign-On) integration between training-portal and hello-agents standalone course
+
+**Hello-Agents (Course-Side) - Commits: 54269ea, faacaa0:**
+- ✅ JWT token validation middleware using jose library (HS256 signature)
+- ✅ Server-side session management (7-day HttpOnly cookies with SameSite=Lax)
+- ✅ Secure user authentication flow with token expiration (5-min SSO tokens)
+- ✅ User display in header (name, email from session)
+- ✅ Logout functionality with redirect back to portal
+- ✅ Progress tracking security (user ID from session, not client)
+- ✅ Supabase client singleton pattern (eliminates multiple GoTrueClient warnings)
+- ✅ Configuration documentation (SSO_CONFIGURATION.md)
+
+**Training-Portal (Portal-Side) - Commits: 50ca5d5, e6866a3:**
+- ✅ SSO token generation in /learn/[slug] page using generatePortalToken
+- ✅ Automatic redirect to standalone course with sso_token query parameter
+- ✅ Logout endpoint (/logout) with return_url support and domain whitelist validation
+- ✅ Course-SDK TypeScript fixes (window access, type annotations)
+- ✅ Database configuration (prodUrl set to http://localhost:3001 for hello-agents)
+
+**Files Created:**
+- `frontend/src/middleware.ts` - SSO token validation and session management
+- `frontend/src/lib/session.ts` - Session creation/validation utilities
+- `frontend/src/lib/supabase.ts` - Singleton Supabase client
+- `frontend/SSO_CONFIGURATION.md` - Comprehensive SSO setup guide
+- `training-portal/apps/portal/src/app/logout/page.tsx` - Logout with return_url
+- `training-portal/scripts/update-course-produrl.ts` - Database update helper
+
+**Files Modified:**
+- `frontend/src/hooks/useProgress.ts` - Updated to use singleton Supabase client
+- `training-portal/apps/portal/src/app/learn/[slug]/page.tsx` - Added SSO token generation
+- `training-portal/packages/course-sdk/src/auth.ts` - Fixed window access for Node.js
+- `training-portal/packages/course-sdk/src/client.ts` - Fixed TypeScript type errors
+
+**Security Features:**
+- JWT signature verification with shared secret (PORTAL_SSO_SECRET)
+- Course ID validation (prevents token reuse across courses)
+- Token expiration enforcement (5-min SSO, 7-day sessions)
+- HttpOnly cookies (XSS protection)
+- SameSite cookies (CSRF protection)
+- Domain whitelist for return_url (open redirect prevention)
+- Server-side user ID validation
+
+**Status:** ✅ Complete and tested end-to-end - Users login once at portal, seamlessly authenticated in standalone courses
+
 ## 🚀 Running Services
 
 ### Training-Portal
@@ -162,8 +207,8 @@
 ### Hello-Agents `.env.local`
 ```bash
 # Course Configuration
-COURSE_ID="elated-neumann"
-NEXT_PUBLIC_COURSE_ID="elated-neumann"
+COURSE_ID="hello-agents"
+NEXT_PUBLIC_COURSE_ID="hello-agents"
 
 # Portal Integration
 PORTAL_API_URL="http://localhost:8888"
@@ -226,7 +271,7 @@ Both main and vigilant-noether branches share the same database. Course registra
    - Check data persistence across page refreshes
 
 ### Future Enhancement Tasks
-1. **SSO Integration** - Implement token-based auth from training-portal to hello-agents
+1. ~~**SSO Integration**~~ - ✅ **COMPLETE** - Token-based auth implemented (commits 54269ea, 50ca5d5, e6866a3, faacaa0)
 2. **Iframe Embedding** - Embed hello-agents chapters in portal via iframe (alternative to current copy approach)
 3. **Real-time Sync** - Supabase subscriptions for live progress updates across devices
 4. **Progress Tracking Enhancement** - Connect training-portal's "Mark Complete" button to database
@@ -272,12 +317,13 @@ Both main and vigilant-noether branches share the same database. Course registra
 - [ ] End-to-end flow: Enroll → Learn → Complete chapters in training-portal
 - [ ] Progress data persistence verified in Supabase
 - [ ] Cross-device sync tested
-- [ ] SSO token passing from portal to hello-agents
+- [x] SSO token passing from portal to hello-agents ✅ TESTED (2026-01-02)
 - [ ] Iframe embedding tested (if needed)
 
 ---
 
-**Status:** ✅ **Integration Complete** - Ready for end-to-end testing
-**Last Updated:** 2025-12-28
+**Status:** ✅ **Integration Complete** - SSO authentication working, ready for full end-to-end testing
+**Last Updated:** 2026-01-02
 **Database:** Shared PostgreSQL at localhost:54322 (both branches)
 **Content Integration:** Option 2 (Copy Approach) - All markdown in database
+**SSO Status:** ✅ Fully functional - Seamless authentication between portal and standalone courses
